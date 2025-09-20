@@ -13,8 +13,5 @@
   },
   "editor.formatOnPaste": true,
   "editor.formatOnSave": true,
-  "markdown.extension.toc.levels": "2..6",
-  "markdownlint.config": {
-    "MD024": false
-  }
+  "markdown.extension.toc.levels": "2..6"
 }
