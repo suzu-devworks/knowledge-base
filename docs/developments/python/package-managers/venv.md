@@ -1,26 +1,35 @@
 # venv
 
-The venv module supports creating lightweight “virtual environments”, each with their own independent set of Python packages installed in their site directories.
+The `venv` module supports creating lightweight virtual environments, each with their own independent set of Python packages installed in their site directories.
 
-- [venv](#venv)
-  - [Usage](#usage)
-    - [Create new virtualenv](#create-new-virtualenv)
-    - [Delete virtualenv](#delete-virtualenv)
-    - [Switch virtualenv](#switch-virtualenv)
-  - [References](#references)
+## Table of Contents <!-- omit in toc -->
+
+- [Usage](#usage)
+  - [Create new virtualenv](#create-new-virtualenv)
+  - [Delete virtualenv](#delete-virtualenv)
+  - [Activate and deactivate virtualenv](#activate-and-deactivate-virtualenv)
+- [References](#references)
 
 ## Usage
 
 ### Create new virtualenv
 
+Create a new virtual environment:
+
 ```shell
 python -m venv {virtualenv}
 ```
 
-```console
-$ python -m venv .venv
-$ tree .venv
+Example:
 
+```shell
+python -m venv .venv
+tree .venv
+```
+
+Example directory structure:
+
+```console
 .venv
 ├── bin
 │   ├── Activate.ps1
@@ -48,39 +57,41 @@ $ tree .venv
 
 ### Delete virtualenv
 
-The virtualenv goes inside the project folder, so just delete the folder.
+To delete a virtual environment, simply remove the folder:
 
 ```shell
 rm -fr {virtualenv}
 ```
 
-### Switch virtualenv
+### Activate and deactivate virtualenv
 
-For macos, linux:
+**On macOS and Linux:**
 
-```console
-$ python --version
+```shell
+python --version
+# Python 3.6.8
 
-Python 3.6.8
+. .venv/bin/activate
+python --version
+# Python 3.5.0
 
-$ . .venv/bin/activate
-(.venv) $ python --version
-
-Python 3.5.0
-
-$ deactivate
-
-$ python --version
-
-Python 3.6.8
+deactivate
+python --version
+# Python 3.6.8
 ```
 
-For Windows:
+**On Windows (PowerShell):**
 
-```console
-PS> .venv¥Scripts¥Activate.ps1
+```powershell
+.venv\Scripts\Activate.ps1
+```
+
+**On Windows (Command Prompt):**
+
+```cmd
+.venv\Scripts\activate.bat
 ```
 
 ## References
 
-- <https://docs.python.org/ja/3/library/venv.html>
+- [venv — Creation of virtual environments — Python documentation](https://docs.python.org/ja/3/library/venv.html)

@@ -7,57 +7,53 @@ Rye is a comprehensive project and package management solution for Python.
 > [!NOTE]
 > _If you're getting started with Rye, consider uv, the successor project from the same maintainers._
 
-- [Rye](#rye)
-  - [Installation](#installation)
-    - [Using the Standalone Installer](#using-the-standalone-installer)
-    - [Self update](#self-update)
-  - [Configurations](#configurations)
-    - [Use uv](#use-uv)
-  - [Creating and Configuring a project](#creating-and-configuring-a-project)
-    - [How the project was initialized](#how-the-project-was-initialized)
-    - [Install dependency packages](#install-dependency-packages)
-    - [Provide Console Scripts](#provide-console-scripts)
-  - [Creating and Configuring a workspaces](#creating-and-configuring-a-workspaces)
-    - [Workspaces layout](#workspaces-layout)
-    - [Create root project](#create-root-project)
-    - [Append packages project](#append-packages-project)
-  - [Package management](#package-management)
-    - [`add` Add dependencies](#add-add-dependencies)
-    - [`remove` Remove dependencies](#remove-remove-dependencies)
-    - [`lock` Updates the lockfiles without installing dependencies](#lock-updates-the-lockfiles-without-installing-dependencies)
-    - [`list` List dependencies](#list-list-dependencies)
-    - [`sync` Update the project’s environment](#sync-update-the-projects-environment)
-    - [`build` Build Python packages](#build-build-python-packages)
-    - [`run` Run a command](#run-run-a-command)
-  - [References](#references)
+## Table of Contents <!-- omit in toc -->
+
+- [Installation](#installation)
+  - [Using the Standalone Installer](#using-the-standalone-installer)
+  - [Self update](#self-update)
+- [Configurations](#configurations)
+  - [Use uv](#use-uv)
+- [Creating and Configuring a Project](#creating-and-configuring-a-project)
+  - [How the Project Was Initialized](#how-the-project-was-initialized)
+  - [Install Dependency Packages](#install-dependency-packages)
+  - [Provide Console Scripts](#provide-console-scripts)
+- [Creating and Configuring Workspaces](#creating-and-configuring-workspaces)
+  - [Workspaces Layout](#workspaces-layout)
+  - [Create Root Project](#create-root-project)
+  - [Append Packages Project](#append-packages-project)
+- [Package Management](#package-management)
+  - [`add` Add Dependencies](#add-add-dependencies)
+  - [`remove` Remove Dependencies](#remove-remove-dependencies)
+  - [`lock` Update Lockfiles Without Installing Dependencies](#lock-update-lockfiles-without-installing-dependencies)
+  - [`list` List Dependencies](#list-list-dependencies)
+  - [`sync` Update the Project’s Environment](#sync-update-the-projects-environment)
+  - [`build` Build Python Packages](#build-build-python-packages)
+  - [`run` Run a Command](#run-run-a-command)
+- [References](#references)
 
 ## Installation
 
 ### Using the Standalone Installer
 
-To install you can run a curl command:
+To install Rye, run:
 
 ```shell
 curl -sSf https://rye.astral.sh/get | bash
 ```
 
-The install script that is piped to bash can be customized with some environment variables:
+You can customize the install script with environment variables:
 
-`RYE_INSTALL_OPTION="--yes"`:
+- `RYE_INSTALL_OPTION="--yes"`: Skip all prompts.
+- `RYE_TOOLCHAIN={path to python}`: Set the Python interpreter to use as the internal interpreter.
 
-Skip all prompts.
-
-`RYE_TOOLCHAIN={path to python}`
-
-Set it to point to the Python interpreter you want to use as the internal interpreter.
-
-After installation, load the environment and enable rye.
+After installation, load the environment and enable Rye:
 
 ```shell
 source "$HOME/.rye/env"
 ```
 
-It seems to be added to the shell profile during installation.
+This is typically added to your shell profile during installation.
 
 ```console
 $ tail -n 5 ~/.profile
@@ -71,6 +67,8 @@ fi
 
 ### Self update
 
+Update Rye itself:
+
 ```shell
 rye self update
 ```
@@ -81,31 +79,25 @@ rye self update
 
 uv is a Python package manager also developed by Astral.
 
-Rye 0.37.0 already has UV enabled.
+Rye 0.37.0 and later have uv enabled by default.
 
 ```console
 $ rye config --get behavior.use-uv
-
 true
 ```
 
-## Creating and Configuring a project
+## Creating and Configuring a Project
 
-### How the project was initialized
+### How the Project Was Initialized
 
-Create project this command:
+Create a new project:
 
 ```shell
 rye init apps/examples-packaging-rye
-```
-
-Move to the root of your project...
-
-```shell
 cd apps/examples-packaging-rye
 ```
 
-The final directory will look like this:
+Example directory structure:
 
 ```console
 .
@@ -118,15 +110,17 @@ The final directory will look like this:
         └── __init__.py
 ```
 
-Once that is done, you can use rye sync to get the first synchronization. After that, Rye will have created a virtualenv in `.venv` and written lockfiles into `requirements.lock` and `requirements-dev.lock`.
+After initialization, run:
 
 ```shell
 rye sync
 ```
 
-### Install dependency packages
+This creates a virtualenv in `.venv` and writes lockfiles to `requirements.lock` and `requirements-dev.lock`.
 
-Install dependency packages for this project:
+### Install Dependency Packages
+
+Install development dependencies:
 
 ```shell
 rye add -d ruff mypy pytest-cov pyclean
@@ -134,18 +128,18 @@ rye add -d ruff mypy pytest-cov pyclean
 
 ### Provide Console Scripts
 
-How to provide console scripts in the PDM package.
+To provide console scripts in a Rye package:
 
 - [project.scripts - Python Project (pyproject.toml)](https://rye.astral.sh/guide/pyproject/#projectscripts)
 
-Create entry point:
+Create an entry point:
 
-```py
+```python
 def main() -> None:
     print("Hello rye.")
 ```
 
-`pyproject.toml`:
+Add to `pyproject.toml`:
 
 ```toml
 [project.scripts]
@@ -158,7 +152,7 @@ Install the package locally:
 rye sync
 ```
 
-When you run it:
+Run the script:
 
 ```console
 $ examples-rye-cli
@@ -166,9 +160,11 @@ $ examples-rye-cli
 Hello rye.
 ```
 
-## Creating and Configuring a workspaces
+## Creating and Configuring Workspaces
 
-### Workspaces layout
+### Workspaces Layout
+
+Example structure:
 
 ```console
 examples-py
@@ -197,7 +193,7 @@ examples-py
 └── requirements.lock
 ```
 
-### Create root project
+### Create Root Project
 
 Create the root project as a virtual project:
 
@@ -205,35 +201,35 @@ Create the root project as a virtual project:
 rye init --virtual
 ```
 
-Add the following to your pyproject.toml:
+Add workspace members to your `pyproject.toml`:
 
 ```toml
 [tool.rye.workspace]
 members = ["packages/*"]
 ```
 
-If you do it with echo:
+Or with echo:
 
 ```shell
 echo $'\n[tool.rye.workspace]\nmembers = ["packages/*"]' >> pyproject.toml 
 ```
 
-Optionally add packages for global use:
+Optionally add global dev packages:
 
 ```shell
 rye add --dev ruff mypy pyclean
 ```
 
-### Append packages project
+### Append Packages Project
 
-Create each project:
+Create each package project:
 
 ```shell
 rye init packages/examples-lib
 rye init --script packages/examples-cli
 ```
 
-Add a reference project:
+Add a reference to another package:
 
 ```shell
 cd packages/examples-cli
@@ -241,40 +237,41 @@ rye add examples-lib --path ../examples-lib
 cd ../../
 ```
 
-## Package management
+## Package Management
 
-### `add` Add dependencies
+### `add` Add Dependencies
 
 ```shell
 # Specify a version
 rye add "flask>=2.0"
 
-# Add this as dev dependency
+# Add as a dev dependency
 rye add --dev ruff
 ```
 
-### `remove` Remove dependencies
+### `remove` Remove Dependencies
 
 ```shell
 rye remove flask
 ```
 
-### `lock` Updates the lockfiles without installing dependencies
+### `lock` Update Lockfiles Without Installing Dependencies
 
 ```shell
 rye lock --upgrade-package flask
 
-# All
-rye lock--update-all
+# Update all packages
+rye lock --update-all
 ```
 
-### `list` List dependencies
+### `list` List Dependencies
 
 ```shell
 rye list
 ```
 
-<!-- /* spell-checker:disable */ -->
+Example output:
+
 ```console
 -e file:///workspaces/examples-py/packages/examples-cli
 -e file:///workspaces/examples-py/packages/examples-lib
@@ -284,21 +281,20 @@ pyclean==3.0.0
 ruff==0.8.3
 typing-extensions==4.12.2
 ```
-<!-- /* spell-checker:enable */ -->
 
-### `sync` Update the project’s environment
+### `sync` Update the Project’s Environment
 
 ```shell
 rye sync
 ```
 
-### `build` Build Python packages
+### `build` Build Python Packages
 
 ```shell
 rye build --all
 ```
 
-### `run` Run a command
+### `run` Run a Command
 
 ```shell
 rye run --pyproject packages/examples-cli/pyproject.toml examples-cli
@@ -306,4 +302,4 @@ rye run --pyproject packages/examples-cli/pyproject.toml examples-cli
 
 ## References
 
-- <https://rye.astral.sh/>
+- [Rye Documentation](https://rye.astral.sh/)

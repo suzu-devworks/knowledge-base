@@ -1,10 +1,11 @@
 # Prism
 
-Prism, an Open-Source HTTP Mock & Proxy Server.
+Prism is an open-source HTTP mock and proxy server.
 
-- [Prism](#prism)
-  - [Reference](#reference)
+## Table of Contents <!-- omit in toc -->
 
-## Reference
+- [References](#references)
 
-- [Prism](https://stoplight.io/open-source/prism)
+## References
+
+- [Prism Documentation](https://stoplight.io/open-source/prism)

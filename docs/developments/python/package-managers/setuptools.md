@@ -5,32 +5,33 @@ Setuptools is a collection of enhancements to the Python `distutils` that allow 
 <!-- markdownlint-disable MD024 -->
 <!-- /* spell-checker:words distutils */ -->
 
-- [Setuptools](#setuptools)
-  - [Installation](#installation)
-  - [Configurations](#configurations)
-  - [Creating and Configuring a project using a pyproject.toml file](#creating-and-configuring-a-project-using-a-pyprojecttoml-file)
-    - [pyproject.toml](#pyprojecttoml)
-    - [How the project was initialized](#how-the-project-was-initialized)
-    - [Build package](#build-package)
-    - [Managing package version](#managing-package-version)
-    - [Managing dependency packages](#managing-dependency-packages)
-    - [Provide console scripts](#provide-console-scripts)
-  - [Creating and Configuring a Project Using the setup.cfg File](#creating-and-configuring-a-project-using-the-setupcfg-file)
-    - [Controlling files in the distribution](#controlling-files-in-the-distribution)
-    - [How the project was initialized](#how-the-project-was-initialized-1)
-    - [Build package](#build-package-1)
-    - [Using a src layout](#using-a-src-layout)
-    - [Managing package version](#managing-package-version-1)
-    - [Managing dependency packages](#managing-dependency-packages-1)
-    - [Provide console scripts](#provide-console-scripts-1)
-  - [`setup.py` commands](#setuppy-commands)
-    - [Usage](#usage)
-    - [`clean` Clean](#clean-clean)
-  - [References](#references)
+## Table of Contents <!-- omit in toc -->
+
+- [Installation](#installation)
+- [Configurations](#configurations)
+- [Creating and Configuring a Project Using pyproject.toml](#creating-and-configuring-a-project-using-pyprojecttoml)
+  - [pyproject.toml](#pyprojecttoml)
+  - [How the Project Was Initialized](#how-the-project-was-initialized)
+  - [Build Package](#build-package)
+  - [Managing Package Version](#managing-package-version)
+  - [Managing Dependency Packages](#managing-dependency-packages)
+  - [Provide Console Scripts](#provide-console-scripts)
+- [Creating and Configuring a Project Using setup.cfg](#creating-and-configuring-a-project-using-setupcfg)
+  - [Controlling Files in the Distribution](#controlling-files-in-the-distribution)
+  - [How the Project Was Initialized](#how-the-project-was-initialized-1)
+  - [Build Package](#build-package-1)
+  - [Using a src Layout](#using-a-src-layout)
+  - [Managing Package Version](#managing-package-version-1)
+  - [Managing Dependency Packages](#managing-dependency-packages-1)
+  - [Provide Console Scripts](#provide-console-scripts-1)
+- [`setup.py` Commands](#setuppy-commands)
+  - [Usage](#usage)
+  - [`clean` Clean](#clean-clean)
+- [References](#references)
 
 ## Installation
 
-Ensure pip, setuptools, and wheel are up to date.
+Ensure pip, setuptools, and wheel are up to date:
 
 ```shell
 python -m pip install --upgrade pip
@@ -39,42 +40,41 @@ pip install --upgrade setuptools wheel build
 
 ## Configurations
 
-Currently, the mainstream way to manage projects is with pyproject.toml. as defined by PEP 518.
+Currently, the mainstream way to manage projects is with `pyproject.toml` as defined by PEP 518.
 
-When I looked previously, there were three examples with different patterns, but now most of them seem to have been changed to `pyproject.toml`.
+Previously, there were three patterns:
 
-1. legacy pattern of `setup.cfg` + `setup.py`
-2. `pyproject.toml` + `setup.cfg`(main) compatibility pattern
-3. Future-oriented patterns in `pyproject.toml`
+1. Legacy pattern: `setup.cfg` + `setup.py`
+2. Compatibility pattern: `pyproject.toml` + `setup.cfg`
+3. Future-oriented pattern: `pyproject.toml` only
 
-## Creating and Configuring a project using a pyproject.toml file
+Most projects now use `pyproject.toml`.
 
-> Starting with PEP 621, the Python community selected pyproject.toml as a standard way of specifying project metadata.
+## Creating and Configuring a Project Using pyproject.toml
+
+> Starting with PEP 621, the Python community selected `pyproject.toml` as a standard way of specifying project metadata.
 
 ### pyproject.toml
 
-The pyproject.toml file acts as a configuration file for packaging-related tools.
+The `pyproject.toml` file acts as a configuration file for packaging-related tools.
 
 > This specification was originally defined in PEP 518 and PEP 621.
 
 - [Configuring setuptools using pyproject.toml files](https://setuptools.pypa.io/en/latest/userguide/pyproject_config.html)
 - [pyproject.toml specification](https://packaging.python.org/en/latest/specifications/pyproject-toml/#pyproject-toml-spec)
 
-**`[build-system]` table**:
+**`[build-system]` table**:  
+Declares Python-level dependencies required for the project's build system.
 
-Declares Python-level dependencies that must be installed for the project's build system to run successfully.
+**`[project]` table**:  
+Declares project metadata.
 
-**`[build-system]` table**:
+**`[tool]` table**:  
+Configuration for Python-related tools.
 
-Declaring project metadata.
+### How the Project Was Initialized
 
-**`[tool]` table**:
-
-All tools related to Python projects, not just build tools, can be given configuration data by the user.
-
-### How the project was initialized
-
-Create and move project folder:
+Create and move to the project folder:
 
 ```shell
 mkdir -p apps/examples-packaging-setup2
@@ -88,19 +88,16 @@ mkdir -p apps/examples_packaging_setup2/
 touch apps/examples_packaging_setup2/__init__.py
 ```
 
-Create a `pyproject.toml` file for your project configuration.
-There is no command after all.
+Create a `pyproject.toml` file for your project configuration:
 
 ```toml
 [project]
 name = "examples-packaging-setup2"
-
 description = "Python examples of packaging using setuptools."
 license = {text = "MIT"}
 readme = "README.md"
 requires-python = ">=3.11"
 version = "0.2.0"
-
 dependencies = []
 
 [build-system]
@@ -115,7 +112,7 @@ exclude = ["tests*"]
 where = ["src"]
 ```
 
-The final directory will look like this:
+Final directory structure:
 
 ```console
 .
@@ -126,23 +123,23 @@ The final directory will look like this:
         └── __init__.py
 ```
 
-### Build package
+### Build Package
 
 ```shell
 python -m build
 ```
 
-### Managing package version
+### Managing Package Version
 
 - [Single-sourcing the package version](https://packaging.python.org/en/latest/guides/single-sourcing-package-version/)
 
-The version is managed globally in the top-level `__init__.py`.
+Manage the version globally in the top-level `__init__.py`:
 
-```py
+```python
 __version__ = "0.2.1"
 ```
 
-`pyproject.toml`(diff):
+`pyproject.toml` (diff):
 
 ```diff
 [project]
@@ -153,13 +150,11 @@ __version__ = "0.2.1"
 + version = {attr = "examples_packaging_setup2.__version__"}
 ```
 
-### Managing dependency packages
+### Managing Dependency Packages
 
 - [Dependencies Management in Setuptools](https://setuptools.pypa.io/en/latest/userguide/dependency_management.html)
 
-There are no commands, they are handwritten.
-
-Dependencies will be installed together when you list them in `pyproject.toml`:
+List dependencies in `pyproject.toml`:
 
 ```toml
 [project]
@@ -169,7 +164,7 @@ dependencies = [
 ]
 ```
 
-Allows you to declare dependencies that are not installed by default in `pyproject.toml`:
+Declare optional dependencies:
 
 ```toml
 dev = [
@@ -181,27 +176,27 @@ dev = [
   "pyclean",
 ]
 doc = [
-  "sphinx
+  "sphinx"
 ]
 ```
 
-Specify the key when installing:
+Install with extras:
 
 ```shell
 pip install -e .[dev,doc]
 ```
 
-### Provide console scripts
+### Provide Console Scripts
 
-How to provide console scripts in the setuptools package.
+How to provide console scripts in a setuptools package:
 
 - [Entry Points](https://setuptools.pypa.io/en/latest/userguide/entry_point.html)
 
-Create entry point
+Create entry point:
 
 `console/command.py`:
 
-```py
+```python
 def main() -> None:
     print("Hello setuptools with pyproject.toml.")
 ```
@@ -219,7 +214,7 @@ Install the package locally:
 pip install -e .
 ```
 
-When you run it:
+Run:
 
 ```console
 $ examples-setup2-cli
@@ -227,41 +222,33 @@ $ examples-setup2-cli
 Hello setuptools with pyproject.toml.
 ```
 
-## Creating and Configuring a Project Using the setup.cfg File
+## Creating and Configuring a Project Using setup.cfg
 
 This is a legacy pattern.
 
-### Controlling files in the distribution
+### Controlling Files in the Distribution
 
-**`setup.py`**:
-
-Serves two primary functions:
-
-1. your project are configured
-2. the command line interface for running various commands that relate to packaging tasks.
+**`setup.py`**:  
+Configures your project and provides a CLI for packaging tasks.
 
 > When a PEP 517 build is invoked, setuptools will emulate a dummy setup.py file.  
-> However, editable installs are not supported, so you'll eventually need a setup.py.
+> Editable installs are not supported, so you'll eventually need a setup.py.
 
-**`setup.cfg`**:
+**`setup.cfg`**:  
+INI file containing option defaults for setup.py commands.
 
-Ini file containing option defaults for the setup.py command.
-
-**`README.md`**:
-
+**`README.md`**:  
 All projects should contain a readme file.
 
-**`MANIFEST.in`**:
+**`MANIFEST.in`**:  
+Needed to package additional files not automatically included in a source distribution.
 
-needed when you need to package additional files that are not automatically included in a source distribution.
+**`LICENSE.txt`**:  
+Every package should include a license file.
 
-**`LICENSE.txt`**:
+### How the Project Was Initialized
 
-Every package should include a license file detailing the terms of distribution.
-
-### How the project was initialized
-
-Create and move project folder:
+Create and move to the project folder:
 
 ```shell
 mkdir -p apps/examples-packaging-setup
@@ -275,8 +262,7 @@ mkdir -p examples_packaging_setup/
 touch examples_packaging_setup/__init__.py
 ```
 
-Create two files for project settings.
-There are no commands.
+Create project settings files:
 
 `setup.cfg`:
 
@@ -294,15 +280,15 @@ install_requires =
 ```
 <!-- /* spell-checker:words importlib */ -->
 
-If you use `setup.cfg`, `setup.py` is very simple like this:
+If you use `setup.cfg`, `setup.py` is very simple:
 
-```py
-from setuptools import setup # type: ignore
+```python
+from setuptools import setup  # type: ignore
 
 setup()
 ```
 
-The final directory will look like this:
+Final directory structure:
 
 ```console
 .
@@ -313,23 +299,23 @@ The final directory will look like this:
     └── __init__.py
 ```
 
-### Build package
+### Build Package
 
 ```shell
 python -m build
 ```
 
-If you get the error `No module named` build:
+If you get the error `No module named build`:
 
 ```shell
 pip install build
 ```
 
-### Using a src layout
+### Using a src Layout
 
 - [Package Discovery and Namespace Packages](https://setuptools.pypa.io/en/latest/userguide/package_discovery.html#legacy-namespace-packages)
 
-This type of layout, called the src layout, requires additional configuration.
+The src layout requires additional configuration:
 
 ```console
 .
@@ -343,7 +329,7 @@ This type of layout, called the src layout, requires additional configuration.
 
 `setup.cfg`:
 
-```diff
+```ini
 [options]
 packages = find:
 package_dir =
@@ -355,17 +341,17 @@ exclude =
     tests*
 ```
 
-### Managing package version
+### Managing Package Version
 
 - [Single-sourcing the package version](https://packaging.python.org/en/latest/guides/single-sourcing-package-version/)
 
-The version is managed globally in the top-level `__init__.py`.
+Manage the version globally in the top-level `__init__.py`:
 
-```py
+```python
 __version__ = "0.1.1"
 ```
 
-`setup.cfg`(diff):
+`setup.cfg` (diff):
 
 ```diff
 [metadata]
@@ -373,13 +359,11 @@ __version__ = "0.1.1"
 + version = attr: examples_packaging_setup.__version__
 ```
 
-### Managing dependency packages
+### Managing Dependency Packages
 
 - [Dependencies Management in Setuptools](https://setuptools.pypa.io/en/latest/userguide/dependency_management.html)
 
-There are no commands, they are handwritten.
-
-Dependencies will be installed together when you list them in `install_requires`:
+List dependencies in `install_requires`:
 
 ```ini
 [options]
@@ -388,7 +372,7 @@ install_requires =
     importlib-metadata; python_version<"3.10"
 ```
 
-Allows you to declare dependencies that are not installed by default:
+Declare optional dependencies:
 
 ```ini
 [options.extras_require]
@@ -403,23 +387,23 @@ doc =
     sphinx
 ```
 
-Specify the key when installing:
+Install with extras:
 
 ```shell
 pip install -e .[dev,doc]
 ```
 
-### Provide console scripts
+### Provide Console Scripts
 
-How to provide console scripts in the setuptools package.
+How to provide console scripts in a setuptools package:
 
 - [Entry Points](https://setuptools.pypa.io/en/latest/userguide/entry_point.html)
 
-Create entry point
+Create entry point:
 
 `console/command.py`:
 
-```py
+```python
 def main() -> None:
     print("Hello setuptools.")
 ```
@@ -438,7 +422,7 @@ Install the package locally:
 pip install -e .
 ```
 
-When you run it:
+Run:
 
 ```console
 $ examples-setup-cli
@@ -446,7 +430,7 @@ $ examples-setup-cli
 Hello setuptools.
 ```
 
-## `setup.py` commands
+## `setup.py` Commands
 
 - [Running setuptools commands](https://setuptools.pypa.io/en/latest/deprecated/commands.html#running-setuptools-commands)
 
@@ -465,6 +449,6 @@ python setup.py clean --all
 
 ## References
 
-- <https://setuptools.pypa.io/en/latest/userguide/index.html#>
-- <https://packaging.python.org/ja/latest/guides/distributing-packages-using-setuptools/>
-- <https://github.com/pypa/setuptools>
+- [Setuptools User Guide](https://setuptools.pypa.io/en/latest/userguide/index.html#)
+- [Distributing packages using setuptools](https://packaging.python.org/ja/latest/guides/distributing-packages-using-setuptools/)
+- [Setuptools GitHub Repository](https://github.com/pypa/setuptools)

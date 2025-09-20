@@ -1,8 +1,9 @@
 # Audio/Video まわりの基礎知識
 
-- [Audio/Video まわりの基礎知識](#audiovideo-まわりの基礎知識)
-  - [コンテナフォーマット （container format）](#コンテナフォーマット-container-format)
-  - [コーデック (Codec)](#コーデック-codec)
+## Table of Contents <!-- omit in toc -->
+
+- [コンテナフォーマット （container format）](#コンテナフォーマット-container-format)
+- [コーデック (Codec)](#コーデック-codec)
 
 ## コンテナフォーマット （container format）
 
@@ -13,7 +14,7 @@
 
 |          | extension                          |                                   | developed by        |
 | -------- | ---------------------------------- | --------------------------------- | ------------------- |
-| AVI      | `.avi`                             | Audio Video Interleave (AVI)      | Micorosft           |
+| AVI      | `.avi`                             | Audio Video Interleave (AVI)      | Microsoft           |
 | MOV      | `.mov`,`.qt`                       | QuickTime file format (MOV)       | Apple               |
 | MPEG2-PS | `.mpg`,`.m2p`,`.m2ps`              | MPEG Program Stream               | MPEG                |
 | MPEG2-TS | `.ts`,`.mts`,`.m2t`,`.m2ts`        | MPEG transport stream             | MPEG                |
@@ -22,6 +23,8 @@
 | ASF      | `.asf`,`.wma`,`.wmv`               | Advanced Systems Format (ASF)     | Microsoft           |
 | FLV      | `.flv`,`.f4v`,`.f4p`,`.f4a`,`.f4b` | Flash Video                       | Adobe               |
 | WebM     | `.webm`                            | WebM                              | Google              |
+
+<!-- spell-checker: words Xiph -->
 
 *Audio*:
 
@@ -43,6 +46,8 @@
 | H.264/MPEG-4 AVC | H264, AVC1 | MPEG-4 Part 10、ブロック指向の動き補償コーディングに基づくビデオ圧縮規格。                    |
 | H.265/HEVC       | HVC1, HEV1 | 広く使用されているAVCの後継としてMPEG-Hプロジェクトの一部として設計されたビデオ圧縮規格です。 |
 |                  |            |                                                                                               |
+
+<!-- spell-checker: words fourcc -->
 
 *MPEG*:
 

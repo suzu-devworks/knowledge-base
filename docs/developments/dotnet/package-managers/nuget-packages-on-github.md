@@ -1,25 +1,31 @@
 # NuGet packages on GitHub
 
-- [NuGet packages on GitHub](#nuget-packages-on-github)
-  - [Creating a NuGet Package](#creating-a-nuget-package)
-  - [Configuring GitHub Packages as a NuGet Source](#configuring-github-packages-as-a-nuget-source)
-  - [Publishing a NuGet Package to GitHub (Manual)](#publishing-a-nuget-package-to-github-manual)
-  - [Automatic Publishing with GitHub Actions](#automatic-publishing-with-github-actions)
-  - [References](#references)
+## Table of Contents <!-- omit in toc -->
+
+- [Overview](#overview)
+- [Creating a NuGet Package](#creating-a-nuget-package)
+- [Configuring GitHub Packages as a NuGet Source](#configuring-github-packages-as-a-nuget-source)
+- [Publishing a NuGet Package to GitHub (Manual)](#publishing-a-nuget-package-to-github-manual)
+- [Automatic Publishing with GitHub Actions](#automatic-publishing-with-github-actions)
+  - [Setting GITHUB\_TOKEN Permissions](#setting-github_token-permissions)
+- [References](#references)
+
+## Overview
+
+This guide explains how to create, configure, and publish NuGet packages to GitHub Packages, both manually and automatically using GitHub Actions.
 
 ## Creating a NuGet Package
 
-Add nuget property in `*.csproj`
+Add NuGet properties to your `*.csproj` file:
 
 ```xml
   <PropertyGroup>
-    <!-- Properties related to NuGet packaging: -->
     <IsPackable>True</IsPackable>
-    <PackageId>SleighBells.Examples.Shared</PackageId>
+    <PackageId>Examples.Shared</PackageId>
     <Authors>akira suzuki</Authors>
     <Company>suzu-devworks</Company>
     <Version>1.0.0-alpha</Version>
-    <Product>SleighBells.Examples</Product>
+    <Product>Examples</Product>
     <RepositoryUrl>https://github.com/suzu-devworks/examples-dotnet</RepositoryUrl>
     <PackageProjectUrl>https://github.com/suzu-devworks/examples-dotnet</PackageProjectUrl>
     <PackageTags>local;learning</PackageTags>
@@ -29,7 +35,7 @@ Add nuget property in `*.csproj`
   </PropertyGroup>
 ```
 
-Execute package generation (`\*.nupkg`)
+Generate the package (`*.nupkg`):
 
 ```shell
 dotnet pack --configuration Release
@@ -39,40 +45,40 @@ The package file will be output to the `bin/Release/` directory.
 
 ## Configuring GitHub Packages as a NuGet Source
 
-Creating Github personal access token (classic)
+You need a GitHub personal access token to publish packages.  
+See: [Creating a personal access token](https://docs.github.com/ja/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token)
 
-- [Creating a personal access token](https://docs.github.com/ja/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token)
-
-Edit `nuget.config`
-
-If you already have nuget.config, just edit it. Otherwise, create a new one.
+If you do not have `nuget.config`, create it:
 
 ```shell
 dotnet new nugetconfig
 ```
 <!-- spell-checker: words nugetconfig -->
 
-```diff
- <?xml version="1.0" encoding="utf-8"?>
- <configuration>
-   <packageSources>
-     <!--To inherit the global NuGet package sources remove the <clear/> line below -->
-     <clear />
-+    <add key="github" value="https://nuget.pkg.github.com/suzu-devworks/index.json" />
-     <add key="nuget" value="https://api.nuget.org/v3/index.json" />
-   </packageSources>
- </configuration>
+Edit `nuget.config` to add the GitHub source:
+
+```xml
+<?xml version="1.0" encoding="utf-8"?>
+<configuration>
+  <packageSources>
+    <clear />
+    <add key="github" value="https://nuget.pkg.github.com/suzu-devworks/index.json" />
+    <add key="nuget" value="https://api.nuget.org/v3/index.json" />
+  </packageSources>
+</configuration>
 ```
 
 ## Publishing a NuGet Package to GitHub (Manual)
 
+Use the personal access token as the API key:
+
 ```shell
-dotnet nuget push "src/Examples.Core/bin/Release/SW.Examples.Core.1.0.0-alpha.nupkg"  --api-key YOUR_PERSONAL_ACCESS_TOKEN --source "github"
+dotnet nuget push "src/Examples.Shared/bin/Release/Examples.Shared.1.0.0-alpha.nupkg" --api-key YOUR_PERSONAL_ACCESS_TOKEN --source "github"
 ```
 
 ## Automatic Publishing with GitHub Actions
 
-Edit `.github/workflows/dotnet-package.yml`
+Create or edit `.github/workflows/dotnet-package.yml`:
 
 ```yaml
 name: packaging
@@ -88,21 +94,20 @@ on:
       - "src/**"
   workflow_dispatch:
 
-permissions: {}
-
 jobs:
   build:
     runs-on: ubuntu-latest
     permissions:
       contents: read
+      packages: write
 
     steps:
       - uses: actions/checkout@v5
       - uses: actions/setup-dotnet@v5
         with:
-           dotnet-version: '8.0.x'
+          dotnet-version: '8.0.x'
 
-      - name: Auth Github
+      - name: Authenticate to GitHub Packages
         run: dotnet nuget update source github --username suzu-devworks --password ${{ secrets.GITHUB_TOKEN }} --store-password-in-clear-text
 
       - name: Install Tools
@@ -110,7 +115,7 @@ jobs:
 
       - name: Restore dependencies
         run: dotnet restore --locked-mode
-      
+
       - name: Build
         run: dotnet build --configuration Release --no-restore
 
@@ -126,10 +131,11 @@ jobs:
           dotnet nuget push artifacts/*.nupkg --source "github" --skip-duplicate
 ```
 
-Setting `GITHUB_TOKEN`.
+### Setting GITHUB_TOKEN Permissions
+
 Set 'Read and write permissions' for workflows:
 
-- Repository settings > Actions > Workflow permissions
+- Go to Repository settings > Actions > Workflow permissions
 - Select "Read and write permissions"
 
 ## References

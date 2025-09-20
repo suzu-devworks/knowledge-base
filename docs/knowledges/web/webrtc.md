@@ -1,12 +1,15 @@
 # WebRTC
 
-- [WebRTC](#webrtc)
-  - [Debug](#debug)
-  - [References](#references)
+## Table of Contents <!-- omit in toc -->
+
+- [Debug](#debug)
+- [References](#references)
 
 ## Debug
 
 - `chrome://webrtc-internals`
+
+<!-- spell-checker: words webrtc -->
 
 ## References
 

@@ -1,13 +1,17 @@
 # Streaming Protocol
 
-- [Streaming Protocol](#streaming-protocol)
-  - [HLS (HTTP Live Streaming)](#hls-http-live-streaming)
-  - [MPEG-DASH (MPEG - Dynamic Adaptive Streaming over HTTP)](#mpeg-dash-mpeg---dynamic-adaptive-streaming-over-http)
-  - [WebRTC　(Web Real-Time Communication)](#webrtcweb-real-time-communication)
-    - [関連技術](#関連技術)
-  - [SRT](#srt)
-  - [RTMP](#rtmp)
-  - [RSTP](#rstp)
+## Table of Contents <!-- omit in toc -->
+
+- [HLS (HTTP Live Streaming)](#hls-http-live-streaming)
+- [MPEG-DASH (MPEG - Dynamic Adaptive Streaming over HTTP)](#mpeg-dash-mpeg---dynamic-adaptive-streaming-over-http)
+- [WebRTC　(Web Real-Time Communication)](#webrtcweb-real-time-communication)
+  - [関連技術](#関連技術)
+- [SRT](#srt)
+- [RTMP](#rtmp)
+- [RSTP](#rstp)
+
+<!-- spell-checker: words RTMP -->
+<!-- spell-checker: words RSTP -->
 
 ## HLS (HTTP Live Streaming)
 

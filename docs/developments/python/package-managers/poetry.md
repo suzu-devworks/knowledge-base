@@ -1,41 +1,41 @@
-
 # Poetry
 
 Poetry is a tool for dependency management and packaging in Python. It allows you to declare the libraries your project depends on and it will manage (install/update) them for you.
 
 [![Poetry](https://img.shields.io/endpoint?url=https://python-poetry.org/badge/v0.json)](https://python-poetry.org/)
 
-- [Poetry](#poetry)
-  - [Installation](#installation)
-    - [Using pip](#using-pip)
-    - [Self update](#self-update)
-  - [Creating and Configuring a project](#creating-and-configuring-a-project)
-    - [How the project was initialized](#how-the-project-was-initialized)
-    - [Install packages](#install-packages)
-    - [src-layout](#src-layout)
-    - [Provide Console Scripts](#provide-console-scripts)
-  - [Commands](#commands)
-    - [`new/init` Project setup](#newinit-project-setup)
-    - [Create virtualenv](#create-virtualenv)
-    - [Remove the virtualenv](#remove-the-virtualenv)
-    - [`shell` Spawns a shell within the virtualenv](#shell-spawns-a-shell-within-the-virtualenv)
-    - [`run` Spawns a command installed into the virtualenv](#run-spawns-a-command-installed-into-the-virtualenv)
-    - [`install` Restore packages](#install-restore-packages)
-    - [`add` Add package](#add-add-package)
-    - [`show` List packages](#show-list-packages)
-    - [`update` Update package](#update-update-package)
-    - [Update outdated packages](#update-outdated-packages)
-    - [`remove` Uninstall package](#remove-uninstall-package)
-    - [`build` Build package](#build-build-package)
-  - [Tips](#tips)
-    - [Use a task runner like npm](#use-a-task-runner-like-npm)
-  - [References](#references)
+## Table of Contents <!-- omit in toc -->
+
+- [Installation](#installation)
+  - [Using pip](#using-pip)
+  - [Self update](#self-update)
+- [Creating and Configuring a Project](#creating-and-configuring-a-project)
+  - [How the Project Was Initialized](#how-the-project-was-initialized)
+  - [Install Packages](#install-packages)
+  - [src-layout](#src-layout)
+  - [Provide Console Scripts](#provide-console-scripts)
+- [Commands](#commands)
+  - [`new/init` Project Setup](#newinit-project-setup)
+  - [Create Virtualenv](#create-virtualenv)
+  - [Remove the Virtualenv](#remove-the-virtualenv)
+  - [`shell` Spawn a Shell Within the Virtualenv](#shell-spawn-a-shell-within-the-virtualenv)
+  - [`run` Spawn a Command Installed into the Virtualenv](#run-spawn-a-command-installed-into-the-virtualenv)
+  - [`install` Restore Packages](#install-restore-packages)
+  - [`add` Add Package](#add-add-package)
+  - [`show` List Packages](#show-list-packages)
+  - [`update` Update Package](#update-update-package)
+  - [Update Outdated Packages](#update-outdated-packages)
+  - [`remove` Uninstall Package](#remove-uninstall-package)
+  - [`build` Build Package](#build-build-package)
+- [Tips](#tips)
+  - [Use a Task Runner Like npm](#use-a-task-runner-like-npm)
+- [References](#references)
 
 ## Installation
 
 ### Using pip
 
-I installed it with pip and it seems fine.
+You can install Poetry using pip:
 
 ```shell
 pip install poetry
@@ -43,30 +43,30 @@ pip install poetry
 
 ### Self update
 
-Poetry itself can be updated:
+Update Poetry itself:
 
 ```shell
 poetry self update
 ```
 
-## Creating and Configuring a project
+## Creating and Configuring a Project
 
-### How the project was initialized
+### How the Project Was Initialized
 
-Create and move project folder:
+Create and move to the project folder:
 
 ```shell
 mkdir -p apps/examples-packaging-poetry
 cd apps/examples-packaging-poetry
 ```
 
-Generate a template for your project with the following command:
+Generate a template for your project:
 
 ```shell
 poetry new .
 ```
 
-The final directory will look like this:
+Example directory structure:
 
 ```console
 .
@@ -78,9 +78,9 @@ The final directory will look like this:
     └── __init__.py
 ```
 
-### Install packages
+### Install Packages
 
-Install dependency packages for this project:
+Install development dependencies:
 
 ```shell
 poetry add --group dev flake8 mypy black isort pytest-cov pyclean
@@ -88,11 +88,7 @@ poetry add --group dev flake8 mypy black isort pytest-cov pyclean
 
 ### src-layout
 
-If you want to change to src-layout, you need to set it in `pyproject.toml`.
-
-- [packages](https://python-poetry.org/docs/pyproject#packages)
-
-Move the whole folder:
+To use the `src` layout, move your package into a `src` directory and configure `pyproject.toml`:
 
 ```console
 .
@@ -114,20 +110,20 @@ packages = [{include = "examples_packaging_poetry", from = "src"}]
 
 ### Provide Console Scripts
 
-How to provide console scripts in the poetry package.
+To provide console scripts in a Poetry package:
 
-Create entry point `apps/examples_packaging_poetry/console/command.py`:
+Create an entry point, e.g. `src/examples_packaging_poetry/console/command.py`:
 
-```py
+```python
 def main() -> None:
     print("Hello poetry.")
 ```
 
-`pyproject.toml`:
+Add to `pyproject.toml`:
 
-```ini
+```toml
 [tool.poetry.scripts]
-examples-poetry-cli = 'examples_packaging_poetry.console.command:main'
+examples-poetry-cli = "examples_packaging_poetry.console.command:main"
 ```
 
 Install the package locally:
@@ -136,7 +132,7 @@ Install the package locally:
 poetry install
 ```
 
-When you run it:
+Run the script:
 
 ```console
 $ examples-poetry-cli
@@ -146,25 +142,28 @@ Hello poetry.
 
 ## Commands
 
-### `new/init` Project setup
+### `new/init` Project Setup
+
+Create a new project:
 
 ```shell
 mkdir {project}
 cd {project}
-
 poetry new .
+```
 
-or
+Or initialize in an existing folder:
 
+```shell
 poetry init
 ```
 
-`init` is generates `pyproject.toml`.  
-`new` also creates an initial directories and files.
+`init` generates `pyproject.toml`.  
+`new` also creates initial directories and files.
 
-### Create virtualenv
+### Create Virtualenv
 
-Create a virtual environment when installing dependencies
+Install dependencies and create a virtual environment:
 
 ```shell
 poetry install
@@ -172,38 +171,35 @@ poetry install
 
 By default, Poetry creates a virtual environment in `{cache-dir}/virtualenvs`.
 
-If you want a virtual environment in your project folder, enable the following settings in `poetry.toml`:
+To create the virtualenv inside your project folder:
 
 ```shell
 poetry config virtualenvs.in-project true --local
 ```
-<!-- /* spell-checker:words virtualenvs */ -->
 
-however, Poetry will detect and respect an existing virtual environment that has been externally activated.
+Poetry will detect and respect an existing activated virtual environment.
 
-### Remove the virtualenv
+### Remove the Virtualenv
 
 ```shell
 poetry env remove {virtualenv}
 ```
 
-### `shell` Spawns a shell within the virtualenv
+### `shell` Spawn a Shell Within the Virtualenv
 
 ```shell
 poetry shell
 ```
 
-### `run` Spawns a command installed into the virtualenv
-
-It is not a task start.
+### `run` Spawn a Command Installed into the Virtualenv
 
 ```shell
 poetry run {command}
 ```
 
-### `install` Restore packages
+### `install` Restore Packages
 
-Wherever you have `pyproject.toml` do the following
+Install dependencies from `pyproject.toml`:
 
 ```shell
 poetry install
@@ -211,53 +207,59 @@ poetry install
 
 Current projects are installed in editable mode by default.
 
-### `add` Add package
+### `add` Add Package
 
-How to add dependencies:
+Add dependencies:
 
 ```shell
 poetry add {packages...}
 ```
 
-### `show` List packages
+### `show` List Packages
+
+List installed packages:
 
 ```shell
 poetry show
 ```
 
-### `update` Update package
+### `update` Update Package
+
+Update a specific package:
 
 ```shell
 poetry update {packages...}
 ```
 
-Same as deleting `poetry.lock` and running install.
+Equivalent to deleting `poetry.lock` and running install.
 
-### Update outdated packages
+### Update Outdated Packages
 
-show outdated list:
+Show outdated packages:
 
 ```shell
 poetry show --outdated
 ```
 
-Update all dependency packages:
+Update all dependencies:
 
 ```shell
 poetry update
 ```
 
-`poetry.lock` should be updated.
+`poetry.lock` will be updated.
 
-### `remove` Uninstall package
+### `remove` Uninstall Package
+
+Remove a package:
 
 ```shell
 poetry remove {packages...}
 ```
 
-### `build` Build package
+### `build` Build Package
 
-`poetry-core` is python wheels are supported.
+Build a wheel and source distribution:
 
 ```shell
 poetry build
@@ -265,23 +267,17 @@ poetry build
 
 ## Tips
 
-### Use a task runner like npm
+### Use a Task Runner Like npm
 
-The `taskipy` is complementary task runner for python.
+You can use [taskipy](https://github.com/taskipy/taskipy) as a complementary task runner for Python.
 
-<!-- /* spell-checker:words taskipy */ -->
-
-- <https://github.com/taskipy/taskipy>
-
-To install taskipy as a dev dependency, simply run:
+Install taskipy as a dev dependency:
 
 ```shell
 poetry add --group dev taskipy
 ```
 
-In your pyproject.toml file, add a new section called `[tool.taskipy.tasks]`:
-
-**`pyproject.toml`**:
+Add tasks to your `pyproject.toml`:
 
 ```toml
 [tool.taskipy.tasks]
@@ -289,17 +285,15 @@ clean = "pyclean ."
 test = "pytest"
 ```
 
-To called a task, simply run:
+Run a task:
 
 ```shell
 poetry run task clean
-
-or
-
+# or
 task clean
 ```
 
 ## References
 
-- <https://python-poetry.org/>
-- <https://github.com/python-poetry/poetry>
+- [Poetry Official Site](https://python-poetry.org/)
+- [Poetry GitHub Repository](https://github.com/python-poetry/poetry)

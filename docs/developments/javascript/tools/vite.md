@@ -2,18 +2,19 @@
 
 Vite is a blazing fast frontend build tool powering the next generation of web applications.
 
-- [Vite](#vite)
-  - [Multi-Page App](#multi-page-app)
-  - [Environment Variables](#environment-variables)
-  - [Use sass](#use-sass)
-  - [Use alias](#use-alias)
-  - [Reference](#reference)
+## Table of Contents <!-- omit in toc -->
+
+- [Multi-Page App](#multi-page-app)
+- [Environment Variables](#environment-variables)
+- [Use Sass](#use-sass)
+- [Use Alias](#use-alias)
+- [References](#references)
 
 ## Multi-Page App
 
-- [see ...](https://vite.dev/guide/build.html#multi-page-app)
+See [Vite Multi-Page App Guide](https://vite.dev/guide/build.html#multi-page-app).
 
-In the end it will look like this:
+Example project structure:
 
 ```console
 ├── dist/
@@ -31,7 +32,7 @@ In the end it will look like this:
 └── vite.config.js
 ```
 
-`vite.config.js`:
+Sample `vite.config.js`:
 
 ```js
 import { extname, resolve } from "node:path"
@@ -59,18 +60,16 @@ export default defineConfig({
 ```
 
 - Move the `root` to `src`
-- Since the `root` will be changed, specify `publicDir`
-- Since the `root` will be changed, specify `outDir`
-- Since `outDir` will be outside the root, specify `emptyOutDir`
+- Specify `publicDir` and `outDir` since the root is changed
+- Use `emptyOutDir` because `outDir` is outside the root
 
-Furthermore, since we don't want to specify inputs individually, we'll enclose \*.html under pages and retrieve it using glob.
+To automatically include all HTML files under `pages`, use glob:
 
 ```js
 import { glob } from "glob"
 
 const files = await glob("pages/**/*.html", { cwd: root })
 const pages = Object.fromEntries(files.map((path) => [path.replace(extname(path), ""), resolve(root, path)]))
-console.log(pages)
 
 export default defineConfig({
   root,
@@ -84,16 +83,19 @@ export default defineConfig({
   },
 })
 ```
-
-Since I only deleted the extname of the key, assets will become a directory, but that's okay.
 <!-- spell-checker: words extname -->
+
+This will treat each HTML file as an entry point.
+
+Build command:
 
 ```shell
 pnpm run build
 ```
 
-<!-- spell-checker: disable -->
+Example build output:
 
+<!-- spell-checker: disable -->
 ```console
 vite v7.1.1 building for production...
 ✓ 10 modules transformed.
@@ -106,12 +108,13 @@ vite v7.1.1 building for production...
 ../dist/assets/pages/counters/index-C8HyB_Um.js       2.39 kB │ gzip: 1.32 kB
 ✓ built in 90ms
 ```
-
 <!-- spell-checker: enable -->
 
 ## Environment Variables
 
-- [see ...](https://vite.dev/guide/env-and-mode.html)
+See [Vite Environment Variables Guide](https://vite.dev/guide/env-and-mode.html).
+
+Environment variable files:
 
 ```console
 .env                # loaded in all cases
@@ -120,40 +123,42 @@ vite v7.1.1 building for production...
 .env.[mode].local   # only loaded in specified mode, ignored by git
 ```
 
-Vite exposes env variables under import.meta.env object as strings automatically.
+Vite exposes variables prefixed with `VITE_` under `import.meta.env` as strings.
 
-`.env`:
+Example `.env`:
 
 ```properties
 VITE_SOME_KEY=123
 DB_PASSWORD=foobar
 ```
 
-Used:
+Usage:
 
 ```js
 console.log(import.meta.env.VITE_SOME_KEY) // "123"
 console.log(import.meta.env.DB_PASSWORD) // undefined
 ```
 
-HTML Constant Replacement:
+HTML constant replacement:
 
 ```html
 <h1>Vite is running in %MODE%</h1>
 <p>Using data from %VITE_API_URL%</p>
 ```
 
-## Use sass
+## Use Sass
 
-- [see ...](https://ja.vite.dev/config/shared-options.html#css-preprocessoroptions)
+See [Vite CSS Preprocessor Options](https://ja.vite.dev/config/shared-options.html#css-preprocessoroptions).
+
+Install Sass:
 
 ```shell
 pnpm add sass-embedded -D
 ```
 
-## Use alias
+## Use Alias
 
-- [see ...](https://ja.vite.dev/config/shared-options.html#css-preprocessoroptions)
+See [Vite Alias Configuration](https://ja.vite.dev/config/shared-options.html#resolve-alias).
 
 `vite.config.js`:
 
@@ -172,20 +177,19 @@ export default defineConfig({
 
 `tsconfig.json`:
 
-```ts
+```json
 {
   "compilerOptions": {
-    /* use alias */
     "baseUrl": ".",
     "paths": {
       "@/*": [
         "src/*"
       ]
     }
-  },
+  }
 }
 ```
 
-## Reference
+## References
 
-- [Vite](https://vite.dev/)
+- [Vite Official Site](https://vite.dev/)

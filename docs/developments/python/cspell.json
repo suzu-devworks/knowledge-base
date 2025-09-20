@@ -15,6 +15,7 @@
     "pyenv",
     "pyproject",
     "pytest",
+    "sdist",
     "setuptools",
     "venv",
     "virtualenv",

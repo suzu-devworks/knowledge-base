@@ -1,11 +1,13 @@
 # Biome
 
-Biome is best installed as a development dependency of your projects, but it is also available as a standalone executable that doesn’t require Node.js.
+Biome is a tool for formatting, linting, and checking JavaScript and TypeScript code.  
+It is recommended to install Biome as a development dependency in your project, but it is also available as a standalone executable that does not require Node.js.
 
-- [Biome](#biome)
-  - [References](#references)
+## Table of Contents <!-- omit in toc -->
+
+- [References](#references)
 
 ## References
 
-- <https://biomejs.dev/>
-- <https://github.com/biomejs/biome>
+- [Biome Documentation](https://biomejs.dev/)
+- [Biome GitHub Repository](https://github.com/biomejs/biome)

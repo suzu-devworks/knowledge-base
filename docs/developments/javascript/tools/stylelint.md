@@ -1,23 +1,25 @@
 # stylelint
 
-A mighty CSS linter that helps you avoid errors and enforce conventions.
+A powerful CSS linter that helps you avoid errors and enforce conventions.
 
-- [stylelint](#stylelint)
-  - [Installation](#installation)
-    - [Install packages](#install-packages)
-    - [`stylelint.config.js`](#stylelintconfigjs)
-  - [Command line](#command-line)
-  - [Plugins](#plugins)
-    - [Order](#order)
-  - [Configuration](#configuration)
-    - [VSCode extension](#vscode-extension)
-  - [References](#references)
+## Table of Contents <!-- omit in toc -->
+
+- [Installation](#installation)
+  - [Install packages](#install-packages)
+  - [`stylelint.config.js`](#stylelintconfigjs)
+- [Command Line](#command-line)
+- [Plugins](#plugins)
+  - [Order](#order)
+- [Configuration](#configuration)
+  - [VSCode Extension](#vscode-extension)
+- [References](#references)
 
 ## Installation
 
 ### Install packages
 
-You can also launch `create-stylelint` with the npm init command, but the format of the output configuration file seems to be `.stylelintrc.json`, so we will do it manually.
+You can use `npm init stylelint` to launch `create-stylelint`, but the output configuration file will be `.stylelintrc.json`.  
+Here, we configure manually.
 
 ```shell
 npm install --save-dev stylelint stylelint-config-standard-scss
@@ -28,13 +30,12 @@ yarn add -D stylelint stylelint-config-standard-scss
 ```
 
 ```shell
-pnpm add -D  stylelint stylelint-config-standard-scss
-
+pnpm add -D stylelint stylelint-config-standard-scss
 ```
 
 ### `stylelint.config.js`
 
-see <https://stylelint.io/user-guide/configure>.
+See [Stylelint configuration guide](https://stylelint.io/user-guide/configure).
 
 ```js
 /** @type {import('stylelint').Config} */
@@ -43,9 +44,9 @@ export default {
 }
 ```
 
-## Command line
+## Command Line
 
-see <https://stylelint.io/user-guide/cli>
+See [Stylelint CLI documentation](https://stylelint.io/user-guide/cli).
 
 ```shell
 npx stylelint "**/*.css"
@@ -61,8 +62,7 @@ pnpm dlx stylelint "**/*.css"
 
 ## Plugins
 
-I don't have any particular preferences, so recess-order is fine.
-More detailed settings can be done with the stylelint-order plugin.
+For property order, you can use the `stylelint-order` plugin and the `stylelint-config-recess-order` preset.
 
 ### Order
 
@@ -79,11 +79,11 @@ export default {
 
 ## Configuration
 
-### VSCode extension
+### VSCode Extension
 
-use [stylelint](https://marketplace.visualstudio.com/items?itemName=stylelint.vscode-stylelint)
+Use the [Stylelint extension](https://marketplace.visualstudio.com/items?itemName=stylelint.vscode-stylelint) for Visual Studio Code.
 
 ## References
 
-- <https://stylelint.io/>
-- <https://github.com/stylelint/stylelint>
+- [Stylelint Official Site](https://stylelint.io/)
+- [Stylelint GitHub Repository](https://github.com/stylelint/stylelint)

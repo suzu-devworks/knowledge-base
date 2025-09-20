@@ -1,17 +1,18 @@
 # lint-staged
 
-Run tasks like formatters and linters against staged git files and don't let 💩 slip into your code base!
+Run tasks like formatters and linters against staged git files to prevent unwanted code from entering your code base!
 
-- [lint-staged](#lint-staged)
-  - [Installation](#installation)
-    - [Install packages](#install-packages)
-    - [`package.json`](#packagejson)
-  - [Command line](#command-line)
-  - [References](#references)
+## Table of Contents <!-- omit in toc -->
+
+- [Installation](#installation)
+  - [Install packages](#install-packages)
+  - [`package.json`](#packagejson)
+- [Command Line](#command-line)
+- [References](#references)
 
 ## Installation
 
-When I search, I find many examples of using it in combination with [husky](https://typicode.github.io/husky/), but there seems to be something sinister about husky, so here I'm combining it with [simple-git-hooks](https://github.com/toplenboren/simple-git-hooks), which I often see when using lint-staged.
+Many examples use [husky](https://typicode.github.io/husky/) for git hooks, but here we use [simple-git-hooks](https://github.com/toplenboren/simple-git-hooks) for simplicity and reliability.
 
 ### Install packages
 
@@ -37,7 +38,7 @@ pnpm add --D lint-staged simple-git-hooks
 }
 ```
 
-## Command line
+## Command Line
 
 ```shell
 pnpm run lint-staged
@@ -45,5 +46,5 @@ pnpm run lint-staged
 
 ## References
 
-- <https://opencollective.com/lint-staged>
-- <https://github.com/lint-staged/lint-staged>
+- [lint-staged Open Collective](https://opencollective.com/lint-staged)
+- [lint-staged GitHub Repository](https://github.com/lint-staged/lint-staged)
