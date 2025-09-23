@@ -103,7 +103,7 @@ Lines containing "Question" or "Answer":
 awk '/Question|Answer/' input.txt
 ```
 
-Lines starts with '#' (comment):
+Lines that start with the character "#" (comment):
 
 ```shell
 awk '^\#' input.txt
