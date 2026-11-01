@@ -1,14 +1,5 @@
 # Make
 
-## Table of Contents <!-- omit in toc -->
-
-- [Overview](#overview)
-- [Installation](#installation)
-  - [Install from pypi](#install-from-pypi)
-  - [How can we use this in a DevContainers?](#how-can-we-use-this-in-a-devcontainers)
-- [Nested](#nested)
-- [References](#references)
-
 ## Overview
 
 Meson is an open source build system meant to be both extremely fast, and, even more importantly, as user friendly as possible.

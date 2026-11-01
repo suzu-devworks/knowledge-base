@@ -52,6 +52,8 @@ cd apps/examples-packaging-pipenv
 
 Generate a `Pipfile`:
 
+<!-- spell-checker: words Pipfile -->
+
 ```shell
 # Use pyenv if you want other Python versions.
 # A virtual environment is not created if executed inside an existing venv.
@@ -99,6 +101,7 @@ lint = "flake8 --show-source ."
 start = "python main.py runserver"
 test = "pytest"
 ```
+<!-- spell-checker: words runserver -->
 
 Run a script:
 

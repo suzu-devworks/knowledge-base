@@ -44,6 +44,8 @@ exec $SHELL -l
 
 - <https://github.com/anyenv/anyenv>
 
+<!-- spell-checker: words anyenv -->
+
 ### Clone from GitHub
 
 ```shell
@@ -236,6 +238,8 @@ Required-by:
 > zipimport.ZipImportError: can't decompress data; zlib not available  
 > make: \*\*\* [Makefile:1130: install] error 1
 
+<!-- spell-checker: words zipimport -->
+
 As written on the official site, header files and various tools are required because C is being built.
 
 ```shell
@@ -254,6 +258,8 @@ export CPPFLAGS="${CPPFLAGS} -I$(brew --prefix openssl)/include"
 export LDFLAGS="${LDFLAGS} -L$(brew --prefix openssl)/lib"
 pyenv install 3.5.0
 ```
+
+<!-- spell-checker: words CPPFLAGS LDFLAGS -->
 
 ## References
 

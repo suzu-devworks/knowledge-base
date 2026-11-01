@@ -1,11 +1,21 @@
 # Git 設定
 
+## Table of Contents <!-- omit in toc -->
+
+- [Initial Setup](#initial-setup)
+- [Custom favorite setup](#custom-favorite-setup)
+- [Windows の改行コード自動変更を無効化](#windows-の改行コード自動変更を無効化)
+- [認証をキャッシュする](#認証をキャッシュする)
+- [chmodのパーミッション変更を無視する](#chmodのパーミッション変更を無視する)
+- [内部に Proxy がおる](#内部に-proxy-がおる)
+- [自己証明書を許容する](#自己証明書を許容する)
+
 ## Initial Setup
 
 とりあえずは、ユーザー名とEMailをグローバル設定へ設定する。
 
 ```shell
-git config --global user.name "XXXXXX XXXXXX"
+git config --global user.name "Akira Suzuki"
 git config --global user.email "XXXX@kogenet.local"
 ```
 
@@ -25,6 +35,7 @@ git config --global --add push.default nothing
 git config --global core.quotepath false
 
 ```
+<!-- spell-checker: words quotepath -->
 
 ## Windows の改行コード自動変更を無効化
 
@@ -50,6 +61,8 @@ git config --global credential.helper wincred
 
 ```
 
+<!-- spell-checker: words osxkeychain wincred -->
+
 timeout のデフォルトは 900 (15分)らしいっす。
 
 ## chmodのパーミッション変更を無視する
@@ -57,6 +70,7 @@ timeout のデフォルトは 900 (15分)らしいっす。
 ```shell
 git config --global core.filemode false
 ```
+<!-- spell-checker: words filemode -->
 
 ## 内部に Proxy がおる
 
@@ -72,6 +86,8 @@ git config --global remote.<name>.proxy http://proxy.example.com:8080
 ```
 
 公式のマニュアルに https.proxyって無いんだよナー。いらんのかなー。
+
+<!-- spell-checker: words proxyhost -->
 
 ## 自己証明書を許容する
 

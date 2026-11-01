@@ -1,27 +1,5 @@
 # Make
 
-## Table of Contents <!-- omit in toc -->
-
-- [Overview](#overview)
-- [Rules](#rules)
-  - [Target](#target)
-  - [Tasks (Phony Targets)](#tasks-phony-targets)
-  - [Automatic Variables](#automatic-variables)
-  - [Rule verification](#rule-verification)
-- [Implicit Rules](#implicit-rules)
-  - [Show Implicit Rules](#show-implicit-rules)
-  - [Defined Variables](#defined-variables)
-- [Old-Fashioned Suffix Rules](#old-fashioned-suffix-rules)
-- [Macro (Variable) Assignment](#macro-variable-assignment)
-- [Builtin Functions](#builtin-functions)
-  - [Functions That Control Make](#functions-that-control-make)
-  - [Functions for String Substitution and Analysis](#functions-for-string-substitution-and-analysis)
-  - [Functions for File Names](#functions-for-file-names)
-  - [Functions for Conditionals](#functions-for-conditionals)
-  - [Other Functions](#other-functions)
-- [Nested](#nested)
-- [References](#references)
-
 ## Overview
 
 Make is a command-line interface software tool that performs actions ordered by configured dependencies as defined in a configuration file called a makefile.

@@ -8,7 +8,8 @@
 
 ## Overview
 
-Huffman coding is a method of generating prefix codes based on the occurrence frequency of characters in a string. It is one of the most famous data compression algorithms.
+Huffman coding is a method of generating prefix codes based on the occurrence frequency of characters in a string.
+It is one of the most famous data compression algorithms.
 
 ## Encoding principles and examples
 
@@ -21,7 +22,9 @@ Huffman coding is a method of generating prefix codes based on the occurrence fr
     | -- | -- | -- | -- | -- | -- | -- | -- | -- | -- |
     | frequency | 1 | 1 | 1 | 1 | 1 | 1 | 2 | 2 | 2 |
 
-3. Combine the two nodes with the lowest frequencies into a single new node. The new node's frequency is the sum of the two combined nodes' frequencies. Place the new node back into the list while maintaining the sorted order.
+3. Combine the two nodes with the lowest frequencies into a single new node. The new node's frequency
+   is the sum of the two combined nodes' frequencies. Place the new node back into the list
+   while maintaining the sorted order.
 
     | Symbol | D | \_ | P | R | (W\+) | E | B | S |
     | -- | -- | -- | -- | -- | -- | -- | -- | -- |

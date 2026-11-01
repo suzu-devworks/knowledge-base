@@ -1,26 +1,5 @@
 # CMake
 
-## Table of Contents <!-- omit in toc -->
-
-- [Overview](#overview)
-- [Installation](#installation)
-  - [Install from pypi](#install-from-pypi)
-  - [How can we use this in a DevContainers?](#how-can-we-use-this-in-a-devcontainers)
-- [Getting Started](#getting-started)
-  - [Generate a Project Buildsystem](#generate-a-project-buildsystem)
-  - [Build a Project](#build-a-project)
-- [`CMakeLists.txt`](#cmakeliststxt)
-  - [`cmake_minimum_required`](#cmake_minimum_required)
-  - [`project`](#project)
-  - [`add_executable`](#add_executable)
-  - [`set` - Specifying the C++ Standard](#set---specifying-the-c-standard)
-  - [`add_compile_options`](#add_compile_options)
-  - [`add_compile_definitions`](#add_compile_definitions)
-- [Nested](#nested)
-  - [Parent `CMakeLists.txt`](#parent-cmakeliststxt)
-  - [`add_subdirectory`](#add_subdirectory)
-- [References](#references)
-
 ## Overview
 
 CMake is a free, cross-platform, software development tool for building applications via compiler-independent instructions.
@@ -57,6 +36,8 @@ I'm still against using `--break-system-packages`, so I'll consider another appr
 Searching online brings up options like using `pipx`, but executing it in a `Dockerfile` places the files in `/root` since it references `$HOME/.local/bin`. This means it becomes inaccessible when trying to use it with the `vscode` user in a devcontainer. This feature supposedly has a `--global` option to move the virtual environment to a shared location, but it appears to be a recent addition, and it wasn't available in the version obtainable via `apt`.
 
 I think obtaining it from PyPI is the best option after all. It would be best to create a globally accessible virtual environment, perhaps in `/opt`, and link it so that it can be referenced from `/usr/local/bin`.
+
+<!-- spell-checker: words pipx -->
 
 ```Dockerfile
 # PEP 668 compliant package install

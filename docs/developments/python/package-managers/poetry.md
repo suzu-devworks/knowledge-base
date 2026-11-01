@@ -284,6 +284,7 @@ Add tasks to your `pyproject.toml`:
 clean = "pyclean ."
 test = "pytest"
 ```
+<!-- spell-checker: words taskipy -->
 
 Run a task:
 

@@ -42,6 +42,7 @@ if [ -d "${ANYENV_ROOT}" ]; then
     eval "$(pyenv virtualenv-init -)"
 fi
 ```
+<!-- spell-checker: words ANYENV_ROOT anyenv -->
 
 ### Using Homebrew on macOS
 

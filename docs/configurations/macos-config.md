@@ -2,6 +2,28 @@
 
 Configuration macOS Ventura (13.1) for Apple silicon
 
+## Table of Contents <!-- omit in toc -->
+
+- [基本設定](#基本設定)
+  - [コンピュータ名](#コンピュータ名)
+  - [Dock](#dock)
+  - [キーボード](#キーボード)
+  - [マウス](#マウス)
+  - [ロック画面](#ロック画面)
+  - [Finder の表示順と整列](#finder-の表示順と整列)
+- [アプリケーション](#アプリケーション)
+  - [Google Chrome](#google-chrome)
+  - [ESET Cyber Security Pro](#eset-cyber-security-pro)
+  - [Canon Utility](#canon-utility)
+  - [Office 365](#office-365)
+  - [KeePass XC](#keepass-xc)
+  - [VSCode](#vscode)
+  - [Docker Desktop for macOS](#docker-desktop-for-macos)
+  - [Github Desktop](#github-desktop)
+  - [Command Line Tools (CLT) for Xcode](#command-line-tools-clt-for-xcode)
+  - [Homebrew](#homebrew)
+  - [Git for macOS](#git-for-macos)
+
 ## 基本設定
 
 ### コンピュータ名
@@ -73,10 +95,14 @@ defaults write -g ApplePressAndHoldEnabled -bool false
 6. 再起動
 7. モジュールやパターンを更新
 
+<!-- spell-checker: words ESET -->
+
 ### Canon Utility
 
 1. Canon Inkjet Smart Connect をダウンロードして起動すれば全部やってくれそう。
    - <https://canon.jp/support/software/os/select?pr=4807&os=165>
+
+<!-- spell-checker: words Canon Inkjet -->
 
 ### Office 365
 
@@ -123,6 +149,7 @@ echo '# Set PATH, MANPATH, etc., for Homebrew.' >> /Users/akira/.zprofile
 echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> /Users/akira/.zprofile
 eval "$(/opt/homebrew/bin/brew shellenv)"
 ```
+<!-- spell-checker: words MANPATH shellenv  -->
 
 ### Git for macOS
 

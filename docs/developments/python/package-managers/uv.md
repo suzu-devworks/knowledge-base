@@ -306,6 +306,7 @@ examples-py v0.1.0
 └── ruff v0.8.2 (group: dev)
 (*) Package tree already displayed
 ```
+<!-- spell-checker: words iniconfig pluggy -->
 
 ### `sync` Update the project’s environment
 
