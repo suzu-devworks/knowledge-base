@@ -1,17 +1,17 @@
-# Dev Containers 設定 - VSCode
+# Dev Containers Configuration - VSCode
 
 ## Table of Contents <!-- omit in toc -->
 
 - [Troubleshooting](#troubleshooting)
-  - [macOS では TCP port=5000 に接続できない](#macos-では-tcp-port5000-に接続できない)
+  - [Unable to connect to TCP port=5000 on macOS](#unable-to-connect-to-tcp-port5000-on-macos)
   - [Empty reply from server before connecting to nginx](#empty-reply-from-server-before-connecting-to-nginx)
   - [Empty reply from server before connecting to Flask (app server?)](#empty-reply-from-server-before-connecting-to-flask-app-server)
 
 ## Troubleshooting
 
-### macOS では TCP port=5000 に接続できない
+### Unable to connect to TCP port=5000 on macOS
 
-macOS Sequoia 15.1.1 で使用されているようです。
+macOS では TCP port=5000 は Sequoia 15.1.1 で使用されているようです。
 他を当たりましょう。
 
 ```shell

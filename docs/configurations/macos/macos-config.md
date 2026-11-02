@@ -1,17 +1,16 @@
-# macOS 設定
-
-Configuration macOS Ventura (13.1) for Apple silicon
+# macOS configuration
 
 ## Table of Contents <!-- omit in toc -->
 
-- [基本設定](#基本設定)
-  - [コンピュータ名](#コンピュータ名)
+- [Overview](#overview)
+- [Basic settings](#basic-settings)
+  - [Computer name](#computer-name)
   - [Dock](#dock)
-  - [キーボード](#キーボード)
-  - [マウス](#マウス)
-  - [ロック画面](#ロック画面)
-  - [Finder の表示順と整列](#finder-の表示順と整列)
-- [アプリケーション](#アプリケーション)
+  - [Keyboard](#keyboard)
+  - [Mouse](#mouse)
+  - [Lock screen](#lock-screen)
+  - [Finder display order and arrangement](#finder-display-order-and-arrangement)
+- [application install](#application-install)
   - [Google Chrome](#google-chrome)
   - [ESET Cyber Security Pro](#eset-cyber-security-pro)
   - [Canon Utility](#canon-utility)
@@ -24,9 +23,13 @@ Configuration macOS Ventura (13.1) for Apple silicon
   - [Homebrew](#homebrew)
   - [Git for macOS](#git-for-macos)
 
-## 基本設定
+## Overview
 
-### コンピュータ名
+Configuration macOS Ventura (13.1) for Apple silicon
+
+## Basic settings
+
+### Computer name
 
 インストールプロセスにコンピュータ名の変更がないので真っ先に変更する
 
@@ -39,7 +42,7 @@ Configuration macOS Ventura (13.1) for Apple silicon
 
 - システム環境設定 > デスクトップと Dock > Dock サイズ
 
-### キーボード
+### Keyboard
 
 英数字の連続入力（長押し）が効かない (15.1)
 
@@ -53,13 +56,13 @@ defaults write -g ApplePressAndHoldEnabled -bool false
 
 - ~~システム環境設定 > キーボード > テキスト入力 入力ソース 編集 > 日本語 > ライブ変換~~
 
-### マウス
+### Mouse
 
 気持ち悪いのでOFF
 
 - システム環境設定 > マウス > ナチュラルスクロール
 
-### ロック画面
+### Lock screen
 
 - システム環境設定 > ロック画面
   - 使用していない場合にはスクリーンセーバを開始： 3分後
@@ -67,13 +70,13 @@ defaults write -g ApplePressAndHoldEnabled -bool false
   - 電源アダプター接続時に使用していない場合はディスプレイをオフ： 5分後
   - スクリーンセイバー開始後またはディスプレイがオフになったあとにパスワードを要求: 5秒後
 
-### Finder の表示順と整列
+### Finder display order and arrangement
 
 - Finder > 表示 > 表示オプションを表示
   - グループ分け： 種類
   - 表示順序：　名前
 
-## アプリケーション
+## application install
 
 ### Google Chrome
 
