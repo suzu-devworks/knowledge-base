@@ -1,6 +1,18 @@
 # Excel Tips
 
-## シート名をセルから参照
+## Table of Contents <!-- omit in toc -->
+
+- [Reference sheet name from cell](#reference-sheet-name-from-cell)
+- [FIND from the right](#find-from-the-right)
+- [Split file path into path and file name](#split-file-path-into-path-and-file-name)
+- [Search the table for rows that match the condition and get their values](#search-the-table-for-rows-that-match-the-condition-and-get-their-values)
+- [Array formulas](#array-formulas)
+  - [`SUM` / `MIN` / `MAX`](#sum--min--max)
+  - [`AND` / `OR`](#and--or)
+
+## Reference sheet name from cell
+
+> シート名をセルから参照
 
 ```excel
 =INDIRECT(A1&"!A2")
@@ -10,7 +22,9 @@
 2. `INDIRECT` はセルの参照を文字列で指定する関数なので、`INDIRECT("Sheet1!A2")` と記述できます。
 3. 文字列で指定するため、別セルの値との文字列結合が使えます。その結果、`INDIRECT(A1&"!A2")` と指定できます。
 
-## 右からFIND
+## FIND from the right
+
+> 右から検索する方法
 
 ```excel
 =FIND("★", SUBSTITUTE(A1, "/", "★", LEN(A1)-LEN(SUBSTITUTE(A1, "/", ""))))
@@ -23,7 +37,9 @@
    - ※上記では `"★"` ですが、TAB（`CHAR(9)`）などでも可能です（NULL文字 `CHAR(0)` は動作しません）。
 4. 置き換えた文字を `FIND` で検索すれば、実質的に右から検索したことと同義になります。
 
-## ファイルパスをパスとファイル名へ分割
+## Split file path into path and file name
+
+> ファイルパスをフォルダパスとファイル名に分割する方法
 
 **フォルダパスの取得:**
 
@@ -52,7 +68,9 @@
 1. 最後の `"/"` を探すところまでは同じです。
 2. 探した `"/"` より右側（全体の長さ - 最後の `"/"` の位置）を `RIGHT` で取得します。
 
-## 表の中を条件に当てはまる行を検索してその値を取得
+## Search the table for rows that match the condition and get their values
+
+> 表の中を条件に当てはまる行を検索して、その値を取得する方法
 
 ```excel
 =INDEX(A1:A10, MATCH("xxx", B1:B10, 0))
