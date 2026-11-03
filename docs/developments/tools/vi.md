@@ -1,10 +1,12 @@
 # Vi and Vim Tips
 
-## Introduction
+## Table of Contents <!-- omit in toc -->
 
-vi (VIsual editor) was developed by William Nelson Joy, the founder of BSD, to comfortably create the Pascal compiler he was developing when releasing the first BSD.
+## Overview
 
-Vim (Vi IMproved) was born when Dutch programmer Bram Moolenaar tried to use vi on the Amiga he had purchased, but there was no vi for the Amiga at the time. So I created version 1.0 of Vim based on the vi clone Stevie.
+vi (ぶいあい：VIsual editor) は、BSDの創始者であるビル・ジョイ(William Nelson Joy)が、最初のBSDを公開するにあたり開発していたPascalコンパイラを快適に作成するために開発したのが始まりである。
+
+Vim（ゔぃむ：Vi IMproved）誕生のきっかけは、オランダ人のプログラマーブラム・ムーリナー(Bram Moolenaar) が購入したAmigaでviを使おうとしたが、当時Amiga用のviは存在しなかった。そこでviのクローンStevie（スティービー）を元にしてVimのバージョン1.0を作ってしまった。
 
 <!-- spell-checker: words Bram Moolenaar -->
 
@@ -87,7 +89,7 @@ Vim (Vi IMproved) was born when Dutch programmer Bram Moolenaar tried to use vi 
 
 ```text
 :{start position},{end position}s/string1/string2/option
-````
+```
 
 | Option | Description |
 | :-: | :-: |
@@ -104,7 +106,7 @@ Vim (Vi IMproved) was born when Dutch programmer Bram Moolenaar tried to use vi 
 :!cc % -Wall
 /* Change encoding */
 :e ++enc=UTF-8
-````
+```
 
 ### File
 
@@ -141,14 +143,14 @@ Vim (Vi IMproved) was born when Dutch programmer Bram Moolenaar tried to use vi 
 
 <!-- spell-checker: words meric nonu showmode -->
 
+<!-- spell-checker: disable -->
 ```text
 :set all
 --- Options ---
 ambiwidth=single keywordprg=man nosplitbelownoautoindent laststatus=1 nosplitrightnoautoread nolazyredraw startofline...
 -- More --
-````
-
-<!-- spell-checker: words ambiwidth keywordprg nosplitbelownoautoindent laststatus nosplitrightnoautoread nolazyredraw startofline -->
+```
+<!-- spell-checker: enable -->
 
 ### External command
 
@@ -171,7 +173,7 @@ Press ENTER or type command to continue [Enter]
 
 # Execute command and replace with result line
 :.!echo foo
-````
+```
 
 ### Visual Mode
 
@@ -190,7 +192,7 @@ unexpected vim-minimal
 
 ```bash
 sudo dnf install vim-enhanced
-````
+```
 
 ## Configuration
 
@@ -206,11 +208,11 @@ if [ -n "${BASH_VERSION-}" -o -n "${KSH_VERSION-}" -o -n "${ZSH_VERSION-}" ]; th
   # for bash and zsh, only if no alias is already set
   alias vi >/dev/null 2>&1 || alias vi=vim
 fi
-````
+```
 
 ### .vimrc configuration file
 
-The system-wide settings are /etc/vimrc, but normally the following files are created in the home folder.
+システム全体の設定は、/etc/vimrc だが、通常はhomeフォルダに下記のようなファイルを作る。
 
 ```vim
 $HOME/.vimrc
@@ -250,7 +252,7 @@ set shiftwidth=2
 set autoindent
 " Increase or decrease the indentation of the next line to match the end of the line entered at line break
 set smartindent
-````
+```
 
 <!-- spell-checker: words expandtab tabstop softtabstop shiftwidth autoindent smartindent -->
 

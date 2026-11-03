@@ -1,21 +1,41 @@
 # Anyenv Tips
 
-This is a simple wrapper for rbenv style environment managers. You don't have to git clone or modify your shell profile for each `**env` anymore if you install `anyenv`.
+## Table of Contents <!-- omit in toc -->
 
-Oh, so you’re Japanese, just like me!
+- [Overview](#overview)
+- [Environments](#environments)
+- [Installing](#installing)
+  - [Manual git checkout `anyenv`](#manual-git-checkout-anyenv)
+- [Installing `anyenv-update`](#installing-anyenv-update)
+  - [Manual git checkout `anyenv-update`](#manual-git-checkout-anyenv-update)
+- [Installing `pyenv`](#installing-pyenv)
+  - [Installing `nodenv`](#installing-nodenv)
+  - [Installing `rbenv`](#installing-rbenv)
+- [Commands](#commands)
+  - [`anyenv global` - Show the global Any version](#anyenv-global---show-the-global-any-version)
+  - [`anyenv version` - Show the global Any version](#anyenv-version---show-the-global-any-version)
+  - [`anyenv versions` - List all Any versions](#anyenv-versions---list-all-any-versions)
+
+## Overview
+
+This is a simple wrapper for rbenv style environment managers.
+You don't have to git clone or modify your shell profile for each `**env` anymore if you install `anyenv`.
+
+おっ、日本人じゃん！
 
 <!-- spell-checker: words anyenv rbenv pyenv nodenv ndenv anyenv-update -->
 
-## Installing `anyenv`
+## Environments
 
-> This is a record of:
->
-> - installing anyenv master (3cb8ad1) on OSX 10.11, dated 2017-09-02
-> - installing anyenv 1.1.1 from GitHub on Fedora 31, dated 2020-01-28
+- 2017-09-02: anyenv master (3cb8ad1) on OSX 10.11
+- 2017-10-04: anyenv-update master (b6cefdb) on Fedora 26
+- 2020-01-28: anyenv 1.1.1 from GitHub on Fedora 31
+
+## Installing
 
 ### Manual git checkout `anyenv`
 
-Just as it is officially written.
+公式に書いてあるままです。
 
 - [riywo/anyenv \- github](https://github.com/riywo/anyenv)
 
@@ -65,7 +85,7 @@ ANYENV_DEFINITION_ROOT(/Users/akira/.config/anyenv/anyenv-install) doesn't exist
 ~/.anyenv/bin/anyenv init
 ```
 
-Initialize install manifest directory:
+インストールマニフェストディレクトリを初期化します:
 
 ```zsh
 anyenv install --init
@@ -84,15 +104,11 @@ Completed!
 
 ## Installing `anyenv-update`
 
-I want to update the version of `**env` itself all at once.
-
-> This is a record of:
->
-> - installing anyenv-update master(b6cefdb) on Fedora 26, dated 2017-10-04
+`**env`自体のバージョンを一括更新したい。
 
 ### Manual git checkout `anyenv-update`
 
-This is also what is written on the site.
+これも公式通りです。
 
 - [znz/anyenv-update \- github](https://github.com/znz/anyenv-update)
 
@@ -151,13 +167,13 @@ Install pyenv succeeded!
 Please reload your profile (exec $SHELL -l) or open a new session.
 ```
 
-Apply to the login shell:
+ログイン シェルに適用します：
 
 ```bash
 exec $SHELL -l
 ```
 
-Confirm execution:
+確認します:
 
 ```console
 $ pyenv --version
@@ -167,7 +183,7 @@ pyenv 1.2.16-5-g7097f820
 
 ### Installing `nodenv`
 
-I thought `ndenv` was missing, but it was changed.
+ndenv が無くなったと思いましたが、変更されていました。
 
 ```bash
 anyenv install nodenv
@@ -258,7 +274,7 @@ Install rbenv succeeded!
 Please reload your profile (exec $SHELL -l) or open a new session.
 ```
 
-Apply to the login shell:
+ログイン シェルに適用します。
 
 ```bash
 exec $SHELL -l
