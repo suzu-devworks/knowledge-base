@@ -74,7 +74,6 @@ ERROR:  column c.relhasoids does not exist
 LINE 1: ...riggers, c.relrowsecurity, c.relforcerowsecurity, c.relhasoi...
                                                              ^
 ```
-<!-- spell-checker: words relrowsecurity relforcerowsecurity relhasoi relhasoids  -->
 
 原因:
 
@@ -94,4 +93,3 @@ sudo echo "deb http://apt.postgresql.org/pub/repos/apt/ `lsb_release -cs`-pgdg m
 sudo apt update
 sudo apt install -y postgresql-client-12
 ```
-<!-- spell-checker: words pgdg -->

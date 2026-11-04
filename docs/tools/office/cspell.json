@@ -1,0 +1,15 @@
+{
+  "version": "0.2",
+  "ignorePaths": [],
+  "dictionaryDefinitions": [],
+  "dictionaries": [],
+  "words": [
+    "COUNTIF",
+    "ISBLANK",
+    "VLOOKUP"
+  ],
+  "ignoreWords": [],
+  "import": [
+    "../../../.vscode/cspell.json"
+  ]
+}

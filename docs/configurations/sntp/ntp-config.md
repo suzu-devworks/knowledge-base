@@ -28,8 +28,6 @@ NTP (Network Time Protocol) は、ネットワークを経由してコンピュ�
 > 2006年（平成18年）6月12日より、[NICT](http://www2.nict.go.jp/w/w114/tsp/PubNtp/index.html) にて
 > 毎秒100万リクエストの処理能力を持つStratum 1 の公開NTPサービスが開始されました。
 
-<!-- spell-checker: words NICT -->
-
 ## Environments
 
 動作確認および検証を実施した環境は以下の通りです。
@@ -57,8 +55,6 @@ sudo yum install ntp
 ```bash
 sudo iptables -A INPUT -m state --state NEW -m udp -p udp --dport 123 -j ACCEPT
 ```
-
-<!-- spell-checker: words dport -->
 
 ## ntpd Configuration
 
@@ -153,7 +149,6 @@ sudo systemctl status ntpd
 ...
 Hint: Some lines were ellipsized, use -l to show in full.
 ```
-<!-- spell-checker: words ellipsized -->
 
 ntpd の自動起動を有効化:
 
@@ -167,8 +162,6 @@ sudo systemctl enable ntpd
 ntpq -p
 ```
 
-<!-- spell-checker: words ntpq -->
-
 ```console
      remote           refid      st t when poll reach   delay   offset  jitter
 ==============================================================================
@@ -178,7 +171,6 @@ ntpq -p
  ntp3.jst.mfeed. .INIT.          16 u    -   64    0    0.000    0.000   0.000
 *LOCAL(0)        .LOCL.          10 l   49   64    1    0.000    0.000   0.000
 ```
-<!-- spell-checker: words refid mfeed LOCL -->
 
 ### Using SystemV Service
 
@@ -218,8 +210,6 @@ ntpq -p
 ```
 
 chkconfig で ntpd の自動起動を設定:
-
-<!-- spell-checker: words chkconfig -->
 
 ```bash
 sudo chkconfig ntpd on
@@ -265,8 +255,6 @@ ntpdate: 時間サーバーと同期中:                    [  OK  ]
 
 設定ファイルパス: `/etc/sysconfig/ntpdate`
 
-<!-- spell-checker: words hwclock sysconfig -->
-
 ```ini
 # Options for ntpdate
 OPTIONS="-p 2"
@@ -305,7 +293,6 @@ NTPで合わせたシステムクロックをハードウェアクロックへ�
 ```bash
 sudo hwclock --systohc
 ```
-<!-- spell-checker: words systohc -->
 
 ## Troubleshooting
 

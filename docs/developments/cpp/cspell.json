@@ -1,0 +1,36 @@
+{
+  "version": "0.2",
+  "ignorePaths": [],
+  "dictionaryDefinitions": [],
+  "dictionaries": [],
+  "words": [
+    "addprefix",
+    "addsuffix",
+    "ARMCC",
+    "CFLAGS",
+    "cmakelang",
+    "CPPFLAGS",
+    "CXXFLAGS",
+    "DDEBUG",
+    "findstring",
+    "firstword",
+    "ifdef",
+    "intcmp",
+    "lastword",
+    "LDFLAGS",
+    "LDLIBS",
+    "notdir",
+    "patsubst",
+    "pipx",
+    "pypi",
+    "venv",
+    "Werror",
+    "Wextra",
+    "wordlist",
+    "Wpedantic"
+  ],
+  "ignoreWords": [],
+  "import": [
+    "../../../.vscode/cspell.json"
+  ]
+}

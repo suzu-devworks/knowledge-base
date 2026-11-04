@@ -1,0 +1,16 @@
+{
+  "version": "0.2",
+  "ignorePaths": [],
+  "dictionaryDefinitions": [],
+  "dictionaries": [],
+  "words": [
+    "SYSCOLUMNS",
+    "SYSIBM",
+    "SYSTABLES",
+    "SYSVIEWS"
+  ],
+  "ignoreWords": [],
+  "import": [
+    "../../../.vscode/cspell.json"
+  ]
+}

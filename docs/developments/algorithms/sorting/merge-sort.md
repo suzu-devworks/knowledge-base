@@ -77,7 +77,6 @@ int main(void) {
     }
 }
 ```
-<!-- spell-checker: words malloc stdlib -->
 
 ```console
 0 =   5

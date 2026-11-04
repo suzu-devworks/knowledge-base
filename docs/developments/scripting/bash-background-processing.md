@@ -14,7 +14,9 @@ This document explains how to perform asynchronous processing using background t
 
 ## Running and Stopping Background Processes
 
-By adding an ampersand (&) after a command, you can run it as a background process and immediately enter the next command. In a multi-CPU environment, you can see that each command uses its own CPU when viewed with top. However, this does not guarantee faster execution, especially if there are other bottlenecks, such as a single HDD.
+By adding an ampersand (&) after a command, you can run it as a background process and immediately enter the next
+command. In a multi-CPU environment, you can see that each command uses its own CPU when viewed with top. However, this
+does not guarantee faster execution, especially if there are other bottlenecks, such as a single HDD.
 
 Run a process in the background:
 
@@ -55,7 +57,6 @@ You can terminate a foreground process with CTRL+C, but you cannot terminate a b
 tar zcvf vm.tar.gz \~/VM/ &\> /dev/null &
 tar zcvf old.tar.gz \~OLD/ &\> /dev/null &
 ```
-<!-- spell-checker:words zcvf -->
 
 ```console
 # Execute the script
@@ -85,7 +86,8 @@ ps | grep tar | awk '{print $1}' | xargs kill
 
 ## Waiting for a Background Process to Finish
 
-You can group commands using { } and place & at the end. The commands inside the braces will be processed sequentially as a single background process.
+You can group commands using { } and place & at the end. The commands inside the braces will be processed sequentially
+as a single background process.
 
 This is a method to wait for background processes to finish using semaphore files.
 

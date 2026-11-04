@@ -1,14 +1,18 @@
 # venv
 
-The `venv` module supports creating lightweight virtual environments, each with their own independent set of Python packages installed in their site directories.
-
 ## Table of Contents <!-- omit in toc -->
 
+- [Overview](#overview)
 - [Usage](#usage)
   - [Create new virtualenv](#create-new-virtualenv)
   - [Delete virtualenv](#delete-virtualenv)
   - [Activate and deactivate virtualenv](#activate-and-deactivate-virtualenv)
 - [References](#references)
+
+## Overview
+
+The `venv` module supports creating lightweight virtual environments, each with their own independent set of Python
+packages installed in their site directories.
 
 ## Usage
 
@@ -53,7 +57,6 @@ Example directory structure:
 
 179 directories, 1466 files
 ```
-<!-- /* spell-checker:words pyvenv */ -->
 
 ### Delete virtualenv
 

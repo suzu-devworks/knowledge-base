@@ -1,0 +1,27 @@
+{
+  "version": "0.2",
+  "ignorePaths": [],
+  "dictionaryDefinitions": [],
+  "dictionaries": [],
+  "words": [
+    "accheck",
+    "Chrony",
+    "chronyc",
+    "chronyd",
+    "dport",
+    "ellipsized",
+    "hwclock",
+    "LOCL",
+    "makestep",
+    "mfeed",
+    "ntpq",
+    "refid",
+    "restorecon",
+    "sourcestats",
+    "systohc"
+  ],
+  "ignoreWords": [],
+  "import": [
+    "../../../.vscode/cspell.json"
+  ]
+}

@@ -1,0 +1,28 @@
+{
+  "version": "0.2",
+  "ignorePaths": [],
+  "dictionaryDefinitions": [],
+  "dictionaries": [],
+  "words": [
+    "amop",
+    "amproc",
+    "attrdef",
+    "conninfo",
+    "Ctype",
+    "GSSAPI",
+    "myvar",
+    "pgdg",
+    "relforcerowsecurity",
+    "relhasoi",
+    "relhasoids",
+    "relrowsecurity",
+    "TIMESTAMPTZ",
+    "uuidv",
+    "VARCHAR",
+    "xact"
+  ],
+  "ignoreWords": [],
+  "import": [
+    "../../../.vscode/cspell.json"
+  ]
+}

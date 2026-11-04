@@ -1,5 +1,12 @@
 # Algorithm for String Searching
 
+## Table of Contents <!-- omit in toc -->
+
+- [Overview](#overview)
+- [Brute-force (Simple-search)](#brute-force-simple-search)
+- [Boyer-Moore](#boyer-moore)
+- [Reference](#reference)
+
 ## Overview
 
 文字列探索とは、ある文字列の中から別のある文字列を探索することである。
@@ -11,9 +18,6 @@
 | Knuth-Morris-Pratt | テキスト（文字列）$S$から単語$W$を探すにあたり、不一致となった位置と単語自身の情報から次に照合を試すべき位置を決定することで検索を効率化する。 | $O(k + n)$ ($k$は$S$の長さ、$n$は$W$の長さ) | 線形 |
 | Aho-Corasick | 入力テキスト($S$)について有限の文字列群（辞書）($W$)の各要素を探す辞書式マッチングアルゴリズムの一種である。全パターンのマッチングを一斉に探索する。 | $O(m + n)$ ($m$は$S$の長さ、$n$は$W$の長さ) | 線形 |
 | Rabin-Karp | ハッシュ関数を利用してテキストからパターン（サブ文字列）を探す文字列検索アルゴリズムの一種。1つのパターンの検索にはあまり用いられないが、理論的には重要であり、複数パターンの検索には効果的である。 | $O(n)$ | $O(nm)$ |
-
-<!-- spell-checker: words Corasick Karp -->
----
 
 ## Brute-force (Simple-search)
 
@@ -61,10 +65,6 @@ int search(const char *text, int textlen, const char *pattern, int patternlen)
     return match_count;
 }
 ```
-
-<!-- spell-checker: words textlen patternlen strncmp -->
-
----
 
 ## Boyer-Moore
 

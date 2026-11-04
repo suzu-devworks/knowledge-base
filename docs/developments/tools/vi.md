@@ -8,8 +8,6 @@ vi (ぶいあい：VIsual editor) は、BSDの創始者であるビル・ジョ�
 
 Vim（ゔぃむ：Vi IMproved）誕生のきっかけは、オランダ人のプログラマーブラム・ムーリナー(Bram Moolenaar) が購入したAmigaでviを使おうとしたが、当時Amiga用のviは存在しなかった。そこでviのクローンStevie（スティービー）を元にしてVimのバージョン1.0を作ってしまった。
 
-<!-- spell-checker: words Bram Moolenaar -->
-
 ## Commands
 
 ### Move cursor
@@ -129,8 +127,6 @@ Vim（ゔぃむ：Vi IMproved）誕生のきっかけは、オランダ人のプ
 | ex | :noh | Unhighlight search results |
 | ex | :ve[rsion] | Version display. You can also see the configuration file name. |
 
-<!-- spell-checker: words rsion -->
-
 ### set command
 
 | Mode | Key input | Description |
@@ -140,8 +136,6 @@ Vim（ゔぃむ：Vi IMproved）誕生のきっかけは、オランダ人のプ
 | ex | :set tabstop=4 | Setting the number of tabs |
 | ex | :set showmode | mode display |
 | ex | :set all | Display setting items |
-
-<!-- spell-checker: words meric nonu showmode -->
 
 <!-- spell-checker: disable -->
 ```text
@@ -214,10 +208,9 @@ fi
 
 システム全体の設定は、/etc/vimrc だが、通常はhomeフォルダに下記のようなファイルを作る。
 
+<!-- spell-checker: disable -->
 ```vim
 $HOME/.vimrc
-
-<!-- spell-checker: words vimrc -->
 
 "----------------------------------------------------
 "Display related
@@ -235,8 +228,6 @@ set list
 " Arrow keys
 set nocompatible
 
-<!-- spell-checker: words listchars nocompatible Zenkaku cterm ctermfg guibg -->
-
 "----------------------------------------------------
 " indent
 "----------------------------------------------------
@@ -253,8 +244,7 @@ set autoindent
 " Increase or decrease the indentation of the next line to match the end of the line entered at line break
 set smartindent
 ```
-
-<!-- spell-checker: words expandtab tabstop softtabstop shiftwidth autoindent smartindent -->
+<!-- spell-checker: enable -->
 
 ## Troubleshooting
 

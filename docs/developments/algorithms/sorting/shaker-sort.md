@@ -9,7 +9,8 @@
 
 ## Overview
 
-Shaker Sort is an improved version of Bubble Sort. While Bubble Sort scans in only one direction, Shaker Sort scans back and forth, making it more efficient.
+Shaker Sort is an improved version of Bubble Sort. While Bubble Sort scans in only one direction, Shaker Sort scans back
+and forth, making it more efficient.
 
 ## Algorithm and example
 

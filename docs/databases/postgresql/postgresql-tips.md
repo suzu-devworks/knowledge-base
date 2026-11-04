@@ -72,8 +72,6 @@ postgres=# SET encoding TO 'UTF8';
 
 ### `\conninfo` Connection Information
 
-<!-- spell-checker: words conninfo -->
-
 ```sql
 postgres=# \conninfo
            Connection Information
@@ -93,7 +91,6 @@ postgres=# \conninfo
  Hot Standby          | off
 (12 rows)
 ```
-<!-- spell-checker: words GSSAPI -->
 
 ## Database Information and Meta Commands
 
@@ -113,7 +110,6 @@ postgres-# \l
            |          |          |                 |            |            |        |           | postgres=CTc/postgres
 (3 rows)
 ```
-<!-- spell-checker: words Ctype libc -->
 
 ### `\connect`, `\c` Connect to Database
 
@@ -198,8 +194,6 @@ postgres=# \dtS
 
 > `\dtS` でシステムテーブルも含めて表示できます
 
-<!-- spell-checker: words amop amproc attrdef -->
-
 ### `\d <table_name>` Table Details
 
 テーブルの詳細情報を確認:
@@ -257,7 +251,6 @@ postgres=# \dt
  public | personals   | table | postgres
 (3 rows)
 ```
-<!-- spell-checker: words VARCHAR, TIMESTAMPTZ -->
 
 ## Variables
 
@@ -267,7 +260,6 @@ psqlは一般的なUnixコマンドシェルに似た変数の置換機能を提
 ```sql
 postgres=# \set myvar 'Hello, World!'
 ```
-<!-- spell-checker: words myvar -->
 
 この変数を確認するには、`\echo`コマンドを使用します。
 
@@ -391,8 +383,6 @@ postgres=# SELECT * FROM users;
 テーブルにトランザクションが関与している場合、そのトランザクションのIDを取得することができます。
 例えば、`pg_current_xact_id()` 関数を使用すると、現在のトランザクションのIDを取得できます。
 
-<!-- spell-checker: words xact -->
-
 ```sql
 postgres=# SELECT pg_current_xact_id();
  pg_current_xact_id 
@@ -467,8 +457,6 @@ postgres=# select uuidv7() ;
 (1 row)
 ```
 
-<!-- spell-checker: words uuidv7 -->
-
 > なんとなく並びそう
 
 uuidv7() が追加されたことにより gen_random_uuid() を uuidv4() のエイリアスで使用できるようになりました。
@@ -480,5 +468,3 @@ postgres=# select uuidv4() ;
  380c0e1b-ad1d-4887-8010-276f6532c75e
 (1 row)
 ```
-
-<!-- spell-checker: words uuidv4 -->

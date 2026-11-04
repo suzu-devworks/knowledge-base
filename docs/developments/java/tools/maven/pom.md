@@ -1,13 +1,16 @@
 # pom.xml
 
-POM stands for `Project Object Model`.
-
 ## Table of Contents <!-- omit in toc -->
 
+- [Overview](#overview)
 - [Artifact Version](#artifact-version)
   - [DefaultArtifactVersion](#defaultartifactversion)
   - [Qualifiers](#qualifiers)
 - [Super pom](#super-pom)
+
+## Overview
+
+POM stands for `Project Object Model`.
 
 ## Artifact Version
 
@@ -24,7 +27,8 @@ It is recommended to follow the [Semantic Version](https://semver.org/lang/ja/) 
 The points to note here are:
 
 > [!NOTE]
-> Where MajorVersion, MinorVersion, IncrementalVersion, and BuildNumber are all numbers, and qualifiers are strings. If the version number does not match this format, the entire version number is treated as the qualifier.
+> Where MajorVersion, MinorVersion, IncrementalVersion, and BuildNumber are all numbers, and qualifiers are strings. If
+> the version number does not match this format, the entire version number is treated as the qualifier.
 
 In other words, it seems that 1.2.9.1 > 1.2.10.1.
 It's just letters.
@@ -33,7 +37,8 @@ But I don't know if this has been improved in Maven 3...
 
 ### Qualifiers
 
-Modifiers are appended to the version number using a dash and can be in upper or lower case, although the common convention is to use upper case.
+Modifiers are appended to the version number using a dash and can be in upper or lower case, although the common
+convention is to use upper case.
 
 | #   | Qualifier      | Examples                        | Description                                     |
 | --- | -------------- | ------------------------------- | ----------------------------------------------- |

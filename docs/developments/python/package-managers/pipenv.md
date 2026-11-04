@@ -1,12 +1,8 @@
 # Pipenv
 
-Pipenv is a Python virtual environment management tool that bridges the gaps between pip, pyenv, and virtualenv.
-
-It combines pip and venv.  
-Note: Pipenv does not provide wheel package creation; use another tool such as setuptools for packaging.
-
 ## Table of Contents <!-- omit in toc -->
 
+- [Overview](#overview)
 - [Installation](#installation)
 - [Creating and Configuring a Project](#creating-and-configuring-a-project)
   - [How the Project Was Initialized](#how-the-project-was-initialized)
@@ -31,6 +27,13 @@ Note: Pipenv does not provide wheel package creation; use another tool such as s
   - [Read Environment File](#read-environment-file)
 - [References](#references)
 
+## Overview
+
+Pipenv is a Python virtual environment management tool that bridges the gaps between pip, pyenv, and virtualenv.
+
+It combines pip and venv.  
+Note: Pipenv does not provide wheel package creation; use another tool such as setuptools for packaging.
+
 ## Installation
 
 Install using pip (recommended in a venv):
@@ -51,8 +54,6 @@ cd apps/examples-packaging-pipenv
 ```
 
 Generate a `Pipfile`:
-
-<!-- spell-checker: words Pipfile -->
 
 ```shell
 # Use pyenv if you want other Python versions.
@@ -101,7 +102,6 @@ lint = "flake8 --show-source ."
 start = "python main.py runserver"
 test = "pytest"
 ```
-<!-- spell-checker: words runserver -->
 
 Run a script:
 
@@ -275,7 +275,8 @@ pipenv --venv
 
 ### Read Environment File
 
-If you prepare a `.env` file in the project folder, it will be automatically loaded when using `pipenv shell` or `pipenv run`.
+If you prepare a `.env` file in the project folder, it will be automatically loaded when using `pipenv shell` or `pipenv
+run`.
 
 Example `.env`:
 

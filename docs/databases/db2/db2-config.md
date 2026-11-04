@@ -28,4 +28,3 @@ SELECT * FROM SYSIBM.SYSCOLUMNS WHERE NAME = 'XXX';
 -- Retrieve all system views
 SELECT * FROM SYSIBM.SYSVIEWS;
 ```
-<!-- spell-checker: words SYSIBM SYSVIEWS SYSCOLUMNS SYSTABLES -->

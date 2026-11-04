@@ -1,12 +1,8 @@
 # Setuptools
 
-Setuptools is a collection of enhancements to the Python `distutils` that allow developers to more easily build and distribute Python packages, especially ones that have dependencies on other packages.
-
-<!-- markdownlint-disable MD024 -->
-<!-- /* spell-checker:words distutils */ -->
-
 ## Table of Contents <!-- omit in toc -->
 
+- [Overview](#overview)
 - [Installation](#installation)
 - [Configurations](#configurations)
 - [Creating and Configuring a Project Using pyproject.toml](#creating-and-configuring-a-project-using-pyprojecttoml)
@@ -28,6 +24,11 @@ Setuptools is a collection of enhancements to the Python `distutils` that allow 
   - [Usage](#usage)
   - [`clean` Clean](#clean-clean)
 - [References](#references)
+
+## Overview
+
+Setuptools is a collection of enhancements to the Python `distutils` that allow developers to more easily build and
+distribute Python packages, especially ones that have dependencies on other packages.
 
 ## Installation
 
@@ -278,7 +279,6 @@ install_requires =
     requests
     importlib-metadata; python_version<"3.10"
 ```
-<!-- /* spell-checker:words importlib */ -->
 
 If you use `setup.cfg`, `setup.py` is very simple:
 

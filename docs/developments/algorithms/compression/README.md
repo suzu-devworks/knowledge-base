@@ -8,13 +8,16 @@
 
 ## Overview
 
-Data compression is the process of converting data into another data set with a smaller data size while maintaining its essential properties. This is also called high-efficiency coding, and in information theory, it is known as source coding.
+Data compression is the process of converting data into another data set with a smaller data size while maintaining its
+essential properties. This is also called high-efficiency coding, and in information theory, it is known as source
+coding.
 
 ## Lossless and Lossy compression
 
 Lossless compression is a compression method where the data, when restored, is completely identical to the original.  
 
-Lossy compression is a compression method where the data, when restored, is not completely identical to the original. In many lossy compression methods, components that are not strongly recognized by humans are removed to compress the data.
+Lossy compression is a compression method where the data, when restored, is not completely identical to the original. In
+many lossy compression methods, components that are not strongly recognized by humans are removed to compress the data.
 
 | Name | Type | Theory | Description |
 | :---- | :---- | :---- | :---- |
@@ -24,9 +27,6 @@ Lossy compression is a compression method where the data, when restored, is not 
 | Byte Pair Encoding | Lossless | Dictionary coding | This algorithm replaces the most frequent pairs of consecutive bytes with a single new byte that does not appear in the data. |
 | Run-length encoding | Lossless | Dictionary coding | This compression algorithm replaces sequences of identical data with a single data value and the number of times it appears in the sequence. |
 | Deflate | Lossless | Hybrid | This is a lossless data compression algorithm that combines Huffman coding with the LZ77 algorithm. |
-
-<!-- spell-checker: words Fano -->
-<!-- spell-checker: words LZSS -->
 
 ## References
 

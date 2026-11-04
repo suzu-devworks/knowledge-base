@@ -1,0 +1,26 @@
+{
+  "version": "0.2",
+  "ignorePaths": [],
+  "dictionaryDefinitions": [],
+  "dictionaries": [],
+  "words": [
+    "elif",
+    "esac",
+    "fname",
+    "getline",
+    "gsub",
+    "infile",
+    "nodate",
+    "pathes",
+    "procs",
+    "progfile",
+    "swpd",
+    "systime",
+    "Unsets",
+    "zcvf"
+  ],
+  "ignoreWords": [],
+  "import": [
+    "../../../.vscode/cspell.json"
+  ]
+}

@@ -10,27 +10,31 @@
 
 Shannon-Fano coding is a lossless data compression method invented by Claude Shannon and Roberto Fano in 1948.
 
-<!-- spell-checker: words Fano -->
+Neither Shannon–Fano algorithm is guaranteed to generate an optimal code. For this reason, Shannon–Fano codes are almost
+never used.
 
-Neither Shannon–Fano algorithm is guaranteed to generate an optimal code. For this reason, Shannon–Fano codes are almost never used.
-
-Huffman coding is almost as computationally simple and produces prefix codes that always achieve the lowest possible expected code word length, under the constraints that each symbol is represented by a code formed of an integral number of bits.
+Huffman coding is almost as computationally simple and produces prefix codes that always achieve the lowest possible
+expected code word length, under the constraints that each symbol is represented by a code formed of an integral number
+of bits.
 
 ## Encoding principles and examples
 
-When splitting data into two, the data size can vary, and analysis becomes difficult depending on how the data at an indivisible position is encoded.
+When splitting data into two, the data size can vary, and analysis becomes difficult depending on how the data at an
+indivisible position is encoded.
 
 1. Original string
     > WEB+DB\_PRESS
 
-2. Find the number of occurrences of each symbol in the data to be compressed, and sort the symbols in descending order of their count. If the counts are the same, the order is arbitrary.
+2. Find the number of occurrences of each symbol in the data to be compressed, and sort the symbols in descending order
+   of their count. If the counts are the same, the order is arbitrary.
 
     | Symbol | E | B | S | W | \+ | D | \_ | P | R |
     | -- | -- | -- | -- | -- | -- | -- | -- | -- | -- |
     | Count | 2 | 2 | 2 | 1 | 1 | 1 | 1 | 1 | 1 |
     | Probabilities | 0.22 | 0.22 | 0.22 | 0.11 | 0.11 | 0.11 | 0.11 | 0.11 | 0.11 |
 
-3. Split the sorted data into two parts with as equal a total count as possible. Assign a '0' to one part and a '1' to the other.
+3. Split the sorted data into two parts with as equal a total count as possible. Assign a '0' to one part and a '1' to
+   the other.
 
     | Symbol | E | B | S | W | \+ | D | \_ | P | R |
     | -- | -- | -- | -- | -- | -- | -- | -- | -- | -- |

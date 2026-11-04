@@ -8,15 +8,18 @@
 
 ## Overview
 
-Shell Sort sorts sub arrays of elements at a certain interval. The interval is then reduced, and the process is repeated until the interval is 1\.
+Shell Sort sorts sub arrays of elements at a certain interval. The interval is then reduced, and the process is repeated
+until the interval is 1\.
 
 **Choosing a gap:**
 
-A common choice for the gap h is the sequence ${h_{n+1}=3h_{n}+1}$, starting with h=1,4,13,40,121,.... Applying the gaps in descending order results in an average time complexity of around ${\displaystyle O(n^{1.25})}$.
+A common choice for the gap h is the sequence ${h_{n+1}=3h_{n}+1}$, starting with h=1,4,13,40,121,.... Applying the gaps
+in descending order results in an average time complexity of around ${\displaystyle O(n^{1.25})}$.
 
 **Data locality:**
 
-Array index references can be scattered, leading to poor memory access efficiency. Accessing contiguous memory is more efficient, especially for large datasets.
+Array index references can be scattered, leading to poor memory access efficiency. Accessing contiguous memory is more
+efficient, especially for large datasets.
 
 ## Implementation in C
 
@@ -75,5 +78,3 @@ int main(void) {
 ## References
 
 - [Shellsort - Wikipedia](https://en.wikipedia.org/wiki/Shellsort)
-
-<!-- spell-checker: words Shellsort -->

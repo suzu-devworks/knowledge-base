@@ -6,8 +6,23 @@
   "words": [
     "cref",
     "decompiler",
+    "ilspy",
+    "ilspycmd",
+    "imnsx",
+    "ldarg",
+    "ldarga",
+    "ldloc",
+    "ldloca",
+    "ldnull",
+    "ldstr",
+    "maxstack",
+    "mscorlib",
     "MSIL",
-    "seealso"
+    "netcoreapp",
+    "nugetconfig",
+    "seealso",
+    "stloc",
+    "subexpression"
   ],
   "ignoreWords": [],
   "import": [

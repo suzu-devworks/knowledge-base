@@ -90,11 +90,8 @@ ClamAV 本体、データベース更新ツール、systemd スキャナーモ�
 ```bash
 sudo dnf install clamav clamav-update clamav-scanner-systemd
 ```
-<!-- spell-checker: words clamav  -->
 
 ## Freshclam Configuration
-
-<!-- spell-checker: words freshclam -->
 
 ### Configuring freshclam Command
 
@@ -146,8 +143,6 @@ MAILTO=root
 0 */3 * * * root /usr/share/clamav/freshclam-sleep
 ```
 
-<!-- spell-checker: words clamupdate  -->
-
 `/etc/sysconfig/freshclam` の確認：
 
 ```console
@@ -155,8 +150,6 @@ $ sudo grep -e FRESHCLAM_DELAY /etc/sysconfig/freshclam
 
 # FRESHCLAM_DELAY= ★ コメントアウト済み
 ```
-
-<!-- spell-checker: words sysconfig -->
 
 起動しない場合は、コメントアウト処理を実施します。
 
@@ -185,8 +178,6 @@ sudo sed -e 's/^FRESHCLAM_DELAY/\#FRESHCLAM_DELAY/g' -i /etc/sysconfig/freshclam
 }
 ```
 
-<!-- spell-checker: words notifempty -->
-
 `/etc/freshclam.conf` の編集：
 
 ```text
@@ -212,8 +203,6 @@ LogVerbose yes
 ```
 
 ### Integration with clamd Daemon
-
-<!-- spell-checker: words clamd  -->
 
 `freshclam` で定義ファイルを更新した際、`clamd` にデータベースを再読み込み（RELOAD）させる連携設定を行います。
 
@@ -268,11 +257,7 @@ Tue Jan  7 22:52:32 2020 -> Database updated (6660758 signatures) from database.
 
 `clamd` はサーバー（デーモン）として動作し、TCP または Unix ソケットを通じてクライアントからの要求を受け取りウイルスを検査します。頻繁にスキャンを実施する環境では `clamscan` よりも `clamd` を利用する方が効率的です。
 
-<!-- spell-checker: words clamscan -->
-
 ### Configuring clamdscan Command
-
-<!-- spell-checker: words clamdscan -->
 
 未設定状態で実行するとエラーになります。
 
@@ -321,8 +306,6 @@ ExcludePath ^/proc/
 ExcludePath ^/sys/
 ExcludePath ^/dev/
 ```
-
-<!-- spell-checker: words virusgroup -->
 
 ### On-Access Scan Setup
 
@@ -375,6 +358,7 @@ GNOME の `notify-send` を使用してデスクトップ通知を設定しま�
 
 通知スクリプト `/usr/local/bin/clamd-detected.sh` を作成します。
 
+<!-- spell-checker: disable -->
 ```bash
 #!/bin/bash
 PATH=/usr/bin
@@ -400,7 +384,7 @@ for XUSER in "${XUSERS[@]}"; do
                       /usr/bin/notify-send -i dialog-warning "ClamAV Alert" "$alert"
 done
 ```
-<!-- spell-checker: words VIRUSEVENT VIRUSNAME emerg XUSERS XUSER DBUS -->
+<!-- spell-checker: enable -->
 
 `/etc/clamd.d/scan.conf` にスクリプト呼び出し設定を追加します。
 
@@ -447,8 +431,6 @@ LogTime yes
 }
 ```
 
-<!-- spell-checker: words missingok postrotate killall endscript -->
-
 ログローテーション設定のテストを実行します。
 
 ```bash
@@ -480,7 +462,6 @@ SELinux の Boolean 値を確認します。
 antivirus_can_scan_system --> on
 antivirus_use_jit --> on
 ```
-<!-- spell-checker: words getsebool -->
 
 `on` になっていない場合は永続設定を有効化します。
 
@@ -488,8 +469,6 @@ antivirus_use_jit --> on
 sudo setsebool -P antivirus_use_jit on 
 sudo setsebool -P antivirus_can_scan_system on
 ```
-
-<!-- spell-checker: words setsebool -->
 
 ### Starting the Service
 
@@ -544,8 +523,6 @@ ERROR: Could not connect to clamd on LocalSocket /run/clamd.scan/clamd.sock: Per
 sudo usermod -aG virusgroup $USER
 ```
 
-<!-- spell-checker: words usermod -->
-
 > ※ 設定適用にはシステムの再起動または再ログインが必要です。
 
 ## Running clamdscan
@@ -592,8 +569,6 @@ EICAR が提供している無害なテスト用サンプルウイルスを取�
 
 - [Download Anti Malware Testfile - EICAR](https://www.eicar.org/download-anti-malware-testfile/)
 
-<!-- spell-checker: words EICAR -->
-
 サンプルウイルスの取得とスキャン・削除の実行：
 
 ```console
@@ -619,8 +594,6 @@ $ clamdscan --remove
 Infected files: 4 (ウイルスが発見され駆除された）
 Time: 16.540 sec (0 m 16 s)
 ```
-
-<!-- spell-checker: words eicarcom -->
 
 ## Obsolete: clamscan Command
 

@@ -12,7 +12,8 @@
 
 ## Overview
 
-This guide explains how to create, configure, and publish NuGet packages to GitHub Packages, both manually and automatically using GitHub Actions.
+This guide explains how to create, configure, and publish NuGet packages to GitHub Packages, both manually and
+automatically using GitHub Actions.
 
 ## Creating a NuGet Package
 
@@ -53,7 +54,6 @@ If you do not have `nuget.config`, create it:
 ```shell
 dotnet new nugetconfig
 ```
-<!-- spell-checker: words nugetconfig -->
 
 Edit `nuget.config` to add the GitHub source:
 

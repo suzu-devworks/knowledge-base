@@ -33,7 +33,6 @@ AWK (/ɔːk/) is a scripting language designed for text processing and typically
 ```console
 usage: awk [-F fs] [-v var=value] [-f progfile | 'prog'] [file ...]
 ```
-<!-- spell-checker: words progfile -->
 
 Execute 'program' is:
 
@@ -51,7 +50,9 @@ awk -f script.awk input.txt
 
 ### Basic Structure
 
-After performing the initial processing, it reads each line from the stream and processes each line according to the regular expression pattern. If there are multiple patterns that match, they are processed from the top. Finally, after processing all lines, it performs the final processing. All variables used in AWK are initialized before starting.
+After performing the initial processing, it reads each line from the stream and processes each line according to the
+regular expression pattern. If there are multiple patterns that match, they are processed from the top. Finally, after
+processing all lines, it performs the final processing. All variables used in AWK are initialized before starting.
 
 ```awk
 BEGIN { initial processing } 
@@ -177,7 +178,6 @@ Add a date prefix:
 ```shell
 awk '{print strftime("%Y/%m/%d-%H:%M%S : ",systime()), $0}' input.txt
 ```
-<!-- spell-checker: words systime -->
 
 ### Arrays
 
@@ -256,7 +256,6 @@ exit [expression]
 | `printf format, item1, item2, ...` | Outputs to standard output in a more complex format. |
 | `length ([string])` | Returns the number of characters. |
 | `gsub (regexp, replacement [, target])` | Replaces occurrences of the first argument (regexp) in the third argument (target) with the second argument (replacement). The third argument is modified in place. |
-<!-- spell-checker: words gsub -->
 
 ## Examples
 
@@ -305,11 +304,11 @@ BEGIN {
    }
 }
 ```
-<!-- spell-checker: words getline -->
 
 ### Data Aggregation
 
-This script processes financial data from note.dat to calculate the total balance, maximum withdrawal, maximum deposit, and average for different categories.
+This script processes financial data from note.dat to calculate the total balance, maximum withdrawal, maximum deposit,
+and average for different categories.
 
 `summary.awk`:
 

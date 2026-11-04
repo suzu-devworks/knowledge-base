@@ -19,7 +19,8 @@
 
 ## Generate Range Numbers
 
-You can use the brace expansion feature of Bash to generate a sequence of numbers. If this feature is not available, use the seq command.
+You can use the brace expansion feature of Bash to generate a sequence of numbers. If this feature is not available, use
+the seq command.
 
 Example with brace expansion:
 
@@ -49,7 +50,6 @@ Move all results
 #!/bin/sh
 find / -name *-nodate | xargs -I%_ mv %_ "<PATH>"
 ```
-<!-- spell-checker: words nodate -->
 
 ## Rename File Extensions in Bulk
 
@@ -76,7 +76,6 @@ do
   rm "${fname}"
 done
 ```
-<!-- spell-checker: words fname -->
 
 ## Convert a DOS text file to UNIX format
 
@@ -86,7 +85,6 @@ infile="$1"
 outfile="$2"
 cat "${infile}" | tr -d '\015' | iconv -f CP932 -t UTF8 > "${outfile}"
 ```
-<!-- spell-checker: words infile -->
 
 ## Convert a UNIX text file to DOS format
 
@@ -117,7 +115,6 @@ echo $after $before | awk '
   }
 '
 ```
-<!-- spell-checker: words esac -->
 
 ## Find Files Containing a Specified Keyword
 
@@ -189,7 +186,6 @@ find "$1" \-type d \-maxdepth 1 \-mindepth 1 | xargs du \-sk | awk '
     }
   }' | sort \-nr
 ```
-<!-- spell-checker: words pathes -->
 
 ## Analyzing the output of the vmstat command
 
@@ -204,7 +200,6 @@ egrep -v 'procs|swpd' $1 | sed -n -e '2,$ p' > $vm_path
 tail -9 result > result.log
 rm $vm_path result
 ```
-<!-- spell-checker: words procs swpd -->
 
 ## find and Spaces in Filenames
 
@@ -244,4 +239,3 @@ for item in *; do
   fi
 done
 ```
-<!-- spell-checker: words elif -->

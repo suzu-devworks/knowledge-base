@@ -4,9 +4,11 @@
   "dictionaryDefinitions": [],
   "dictionaries": [],
   "words": [
+    "codehaus",
     "Darchetype",
     "Dartifact",
     "Dgroup",
+    "Dlicense",
     "Doutput",
     "Logback",
     "mvnw",

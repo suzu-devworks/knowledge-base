@@ -9,7 +9,10 @@
 
 ## Overview
 
-Bubble Sort compares adjacent elements and swaps them if they are in the wrong order. Despite its slow worst-case time, its simple algorithm and easy implementation make it a common choice. It is a stable in-place sort, also known as sinking sort. The following code sorts by comparing two elements from the end of the array and pushing the smallest value to the front.
+Bubble Sort compares adjacent elements and swaps them if they are in the wrong order. Despite its slow worst-case time,
+its simple algorithm and easy implementation make it a common choice. It is a stable in-place sort, also known as
+sinking sort. The following code sorts by comparing two elements from the end of the array and pushing the smallest
+value to the front.
 
 ## Algorithm and example
 

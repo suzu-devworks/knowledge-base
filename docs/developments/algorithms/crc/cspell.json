@@ -1,0 +1,19 @@
+{
+  "version": "0.2",
+  "ignorePaths": [],
+  "dictionaryDefinitions": [],
+  "dictionaries": [],
+  "words": [
+    "Btrfs",
+    "CCITT",
+    "ENDP",
+    "refin",
+    "refout",
+    "XMODEM",
+    "xorout"
+  ],
+  "ignoreWords": [],
+  "import": [
+    "../../../../.vscode/cspell.json"
+  ]
+}

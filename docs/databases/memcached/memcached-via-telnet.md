@@ -21,8 +21,6 @@ memcachedはデフォルトでポート11211でTCP/UDPリクエストを受け�
 
 ただし、UDPでの接続は最近のバージョンではデフォルトで無効化されているため、通常はTCPで接続します。
 
-<!-- spell-checker: words netcat -->
-
 ## Connect/Disconnect
 
 How to connect:
@@ -241,8 +239,6 @@ NOT_FOUND
 
 ### incr, decr
 
-<!-- spell-checker: words incr decr -->
-
 構文:
 
 ```text
@@ -359,7 +355,6 @@ ITEM num1 [5 b; 0 s]
 ITEM key1 [19 b; 0 s]
 END
 ```
-<!-- spell-checker: words cachedump -->
 
 バージョン:
 

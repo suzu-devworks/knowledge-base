@@ -1,0 +1,24 @@
+{
+  "version": "0.2",
+  "ignorePaths": [],
+  "dictionaryDefinitions": [],
+  "dictionaries": [],
+  "words": [
+    "anyenv",
+    "Bram",
+    "meric",
+    "Moolenaar",
+    "ndenv",
+    "nodenv",
+    "nonu",
+    "pyenv",
+    "riywo",
+    "rsion",
+    "showmode",
+    "vimrc"
+  ],
+  "ignoreWords": [],
+  "import": [
+    "../../../.vscode/cspell.json"
+  ]
+}

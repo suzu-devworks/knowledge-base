@@ -71,7 +71,6 @@ mvn license:license-list
 [INFO] Finished at: 2022-12-11T12:39:58Z
 [INFO] ------------------------------------------------------------------------
 ```
-<!-- spell-checker: words codehaus -->
 
 ### Reporting on third-party licenses
 
@@ -81,7 +80,6 @@ $ mvn license:third-party-report
 # exclude `test`
 $ mvn license:add-third-party -Dlicense.excludedScopes=test
 ```
-<!-- spell-checker: words Dlicense -->
 
 ```console
 [INFO] Scanning for projects...

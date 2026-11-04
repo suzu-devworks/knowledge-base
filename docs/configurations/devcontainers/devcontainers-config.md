@@ -46,8 +46,6 @@ ESET Cyber security を使用している場合ファイアーウォールに阻
 <!-- markdownlint-disable-next-line MD033 -->
 <img width="484" alt="Adding Docker to Application Rules" src="./assets/devcontainers-config-001.png" />
 
-<!-- spell-checker: words ESET -->
-
 ### Empty reply from server before connecting to Flask (app server?)
 
 ```console

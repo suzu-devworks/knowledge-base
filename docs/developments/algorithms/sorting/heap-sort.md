@@ -9,7 +9,9 @@
 
 ## Overview
 
-Heap Sort first transforms the unsorted portion of the data into a heap (a binary tree with a specific ordering property). It then extracts the maximum (or minimum) value from the heap and places it in the sorted portion, detaching the sorted part from the heap.
+Heap Sort first transforms the unsorted portion of the data into a heap (a binary tree with a specific ordering
+property). It then extracts the maximum (or minimum) value from the heap and places it in the sorted portion, detaching
+the sorted part from the heap.
 
 ## Algorithm and example
 
@@ -80,5 +82,3 @@ int main(void) {
 ## References
 
 - [Heapsort - Wikipedia](https://en.wikipedia.org/wiki/Heapsort)
-
-<!-- spell-checker: words Heapsort -->

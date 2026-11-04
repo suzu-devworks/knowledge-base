@@ -1,14 +1,17 @@
 # pip
 
-Pip is a package-management system written in Python and is used to install and manage software packages. ([Wikipedia](https://en.wikipedia.org/wiki/Pip_(package_manager)))
-
 ## Table of Contents <!-- omit in toc -->
 
+- [Overview](#overview)
 - [Tips](#tips)
   - [Write `requirements.txt`](#write-requirementstxt)
   - [Install the current project for development](#install-the-current-project-for-development)
   - [Build package](#build-package)
 - [References](#references)
+
+## Overview
+
+Pip is a package-management system written in Python and is used to install and manage software packages. ([Wikipedia](https://en.wikipedia.org/wiki/Pip_(package_manager)))
 
 ## Tips
 
@@ -46,12 +49,13 @@ python -m build
 
 Example output:
 
+<!-- spell-checker: disable -->
 ```console
 (PY3.9.1) % ls -1 dist
 hellosetuptools-0.0.1.dev0-py3-none-any.whl
 hellosetuptools-0.0.1.dev0.tar.gz
 ```
-<!-- spell-checker:words hellosetuptools -->
+<!-- spell-checker: enable -->
 
 ## References
 

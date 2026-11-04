@@ -21,7 +21,7 @@
   - [Directive Reference](#directive-reference)
 - [Troubleshooting](#troubleshooting)
   - [(SOLVED) Unable to sync time with NICT](#solved-unable-to-sync-time-with-nict)
-  - [(SOLVED) 501 Not authorised](#solved-501-not-authorised)
+  - [(SOLVED) 501 Not authorized](#solved-501-not-authorized)
   - [(SOLVED) SELinux prevents chronyd from write access to chronyd.pid](#solved-selinux-prevents-chronyd-from-write-access-to-chronydpid)
 - [References](#references)
 
@@ -33,8 +33,6 @@ Fedora 16 から採用され、Red Hat Enterprise Linux 8 や SUSE Linux Enterpr
 デフォルトの NTP クライアントおよびサーバーとして標準採用されています。
 
 - [Chrony Official Project Homepage](https://chrony-project.org/)
-
-<!-- spell-checker: words chrony -->
 
 ## Environments
 
@@ -67,8 +65,6 @@ yum list chrony ntp ntpdate
 ```
 
 ## `chronyc` Commands
-
-<!-- spell-checker: words chronyc -->
 
 ### Commands Without Authentication
 
@@ -105,13 +101,10 @@ MS Name/IP address         Stratum Poll Reach LastRx Last sample
 ^* ntp-a3.nict.go.jp             1   6   377    32   +723us[ +682us] +/-   13ms
 ^- ntp3.jst.mfeed.ad.jp          2   6   377    29   -415us[ -415us] +/-  126ms
 ```
-<!-- spell-checker: words nict mfeed -->
 
 > [ `+` または `*` が同期中のソースを示す ]
 
 `sourcestats` : ドリフト速度やオフセットなどの統計情報を表示
-
-<!-- spell-checker: words sourcestats -->
 
 ```bash
 chronyc sourcestats
@@ -184,8 +177,6 @@ localhost                       0      0   -   -     -       1      0   -    18
 sudo /usr/libexec/chrony-helper command clients
 ```
 
-<!-- spell-checker: words libexec -->
-
 ```console
 Hostname                      NTP   Drop Int IntL Last     Cmd   Drop Int  Last
 ===============================================================================
@@ -194,8 +185,6 @@ Hostname                      NTP   Drop Int IntL Last     Cmd   Drop Int  Last
 ```
 
 `accheck` : アクセス制御（許可/拒否）の判定をチェック
-
-<!-- spell-checker: words accheck -->
 
 ```bash
 sudo chronyc accheck 192.168.100.1
@@ -208,8 +197,6 @@ sudo chronyc accheck 192.168.100.1
 ```
 
 `makestep`: 強制的に時刻ステップ同期を実行
-
-<!-- spell-checker: words makestep -->
 
 ```bash
 sudo chronyc -d makestep]
@@ -225,8 +212,6 @@ Received 28 bytes
 Reply cmd=43 reply=1 stat=0
 200 OK
 ```
-
-<!-- spell-checker: words chronyd -->
 
 ## Client Configuration
 
@@ -284,7 +269,6 @@ log measurements statistics tracking
 ## Send a message to syslog if a clock adjustment is larger than 0.5 seconds.
 logchange 0.5
 ```
-<!-- spell-checker: enable -->
 
 ## Server Configuration
 
@@ -311,7 +295,6 @@ FedoraWorkstation (active)
   icmp-blocks: 
   rich rules: 
 ```
-<!-- spell-checker: words dhcpv6-client mdns  -->
 
 NTPサービスを一時的に追加:
 
@@ -489,21 +472,17 @@ sudo systemctl status chronyd
 - 対策:
   - `/etc/sysconfig/chronyd` ファイルを作成または編集し、IPv4 通信を強制するオプションを追加します。
 
-<!-- spell-checker: words sysconfig -->
-
 ```ini
 # /etc/sysconfig/chronyd
 OPTIONS=-4
 ```
 
-### (SOLVED) 501 Not authorised
+### (SOLVED) 501 Not authorized
 
 > 2018-08-05: FC28
 
-<!-- spell-checker: words authorised -->
-
 - 現象:
-  - `chronyc -a makestep` 等を実行した際、`501 Not authorised` エラーが発生する。  
+  - `chronyc -a makestep` 等を実行した際、`501 Not authorized` エラーが発生する。  
 - 原因:
   - バージョン 2.2 以降、パスワード認証コマンドが廃止されました。  
 - 対策:
@@ -514,7 +493,7 @@ NG:
 ```console
 $ chronyc -a makestep
 
-501 Not authorised
+501 Not authorized
 ```
 
 OK:
@@ -537,8 +516,6 @@ $ sudo chronyc makestep
 ```bash
 sudo restorecon -v /var/run/chrony/chronyd.pid
 ```
-
-<!-- spell-checker: words restorecon -->
 
 ## References
 

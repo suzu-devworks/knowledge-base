@@ -1,18 +1,10 @@
 # PDM
 
-PDM is a modern Python package and dependency manager supporting the latest PEP standards. It is more than just a package manager.
-
 [![pdm-managed](https://img.shields.io/endpoint?url=https%3A%2F%2Fcdn.jsdelivr.net%2Fgh%2Fpdm-project%2F.github%2Fbadge.json)](https://pdm-project.org)
-
-`pyproject.toml` supports PEP 621.
-
-> [!WARNING]
-> **PEP 582 has been rejected**
->
-> This feature was the reason for PDM's creation, so PDM will retain support for it. However, using virtual environments is recommended.
 
 ## Table of Contents <!-- omit in toc -->
 
+- [Overview](#overview)
 - [Installation](#installation)
   - [Using the Standalone Installer](#using-the-standalone-installer)
   - [Self update](#self-update)
@@ -36,6 +28,19 @@ PDM is a modern Python package and dependency manager supporting the latest PEP 
   - [`list` List Packages](#list-list-packages)
   - [`build` Build Package](#build-build-package)
 - [References](#references)
+
+## Overview
+
+PDM is a modern Python package and dependency manager supporting the latest PEP standards. It is more than just a
+package manager.
+
+`pyproject.toml` supports PEP 621.
+
+> [!WARNING]
+> **PEP 582 has been rejected**
+>
+> This feature was the reason for PDM's creation, so PDM will retain support for it. However, using virtual environments
+> is recommended.
 
 ## Installation
 

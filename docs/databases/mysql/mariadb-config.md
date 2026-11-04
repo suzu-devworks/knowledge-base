@@ -31,8 +31,6 @@ MySQLのオリジナルコードの作者である Michael "Monty" Widenius に�
 
 - [MariaDB Official Site](https://mariadb.org/)
 
-<!-- spell-checker: words Widenius -->
-
 ## Environments
 
 - 2018-06-11: MariaDB 10.3.7 on Docker
@@ -82,7 +80,6 @@ sudo systemctl status mariadb
      CGroup: /system.slice/mariadb.service
                └─5988 /usr/libexec/mysqld --basedir=/usr
 ```
-<!-- spell-checker: words libexec mysqld  -->
 
 サービスの停止:
 
@@ -95,7 +92,6 @@ sudo systemctl stop mariadb
 ```bash
 journalctl -xe -u mariadb
 ```
-<!-- spell-checker: words journalctl -->
 
 ### Setup Default Security
 
@@ -216,7 +212,6 @@ MySQL [test_db1]> show tables;
 +--------------------+
 4 rows in set (0.01 sec)
 ```
-<!-- spell-checker: words salgrade -->
 
 ## Install Command Line Tools（`mysql`）
 
@@ -286,8 +281,6 @@ MariaDB [(none)]> show grants for ruser;
 1 row in set (0.000 sec)
 ```
 
-<!-- spell-checker: words ruser -->
-
 ### Verify User
 
 ホスト側から作成したユーザーで接続を確認します（権限を未付与のため操作制限があります）。
@@ -348,7 +341,6 @@ MariaDB [(none)]> show variables like 'collation%';
 +----------------------+-------------------+
 3 rows in set (0.00 sec)
 ```
-<!-- spell-checker: words charsets -->
 
 標準の `utf8` 設定では最大3バイトまでしか扱えないため、絵文字などを扱う場合は `utf8mb4` への変更が必要です。
 
@@ -361,7 +353,6 @@ MariaDB [(none)]> show character set;
 | utf8mb4  | UTF-8 Unicode               | utf8mb4_general_ci  |      4 |
 +----------+-----------------------------+---------------------+--------+
 ```
-<!-- spell-checker: words maxlen -->
 
 ### Server-side configuration
 
@@ -457,7 +448,6 @@ CREATE DATABASE & USE を含めてダンプする場合:
 ```bash
 mysqldump -h 127.0.0.1 -u ruser -p --databases scott | gzip > scott.sql.gz
 ```
-<!-- spell-checker: words mysqldump -->
 
 ## Reference
 

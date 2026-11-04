@@ -1,14 +1,10 @@
 # Rye
 
-Rye is a comprehensive project and package management solution for Python.
-
 [![Rye](https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/astral-sh/rye/main/artwork/badge.json)](https://rye.astral.sh)
-
-> [!NOTE]
-> _If you're getting started with Rye, consider uv, the successor project from the same maintainers._
 
 ## Table of Contents <!-- omit in toc -->
 
+- [Overview](#overview)
 - [Installation](#installation)
   - [Using the Standalone Installer](#using-the-standalone-installer)
   - [Self update](#self-update)
@@ -31,6 +27,13 @@ Rye is a comprehensive project and package management solution for Python.
   - [`build` Build Python Packages](#build-build-python-packages)
   - [`run` Run a Command](#run-run-a-command)
 - [References](#references)
+
+## Overview
+
+Rye is a comprehensive project and package management solution for Python.
+
+> [!NOTE]
+> _If you're getting started with Rye, consider uv, the successor project from the same maintainers._
 
 ## Installation
 

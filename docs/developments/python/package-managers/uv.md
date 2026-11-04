@@ -1,11 +1,10 @@
 # uv
 
-An extremely fast Python package and project manager, written in Rust.
-
 [![uv](https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/astral-sh/uv/main/assets/badge/v0.json)](https://github.com/astral-sh/uv)
 
 ## Table of Contents <!-- omit in toc -->
 
+- [Overview](#overview)
 - [Installation](#installation)
   - [Using the Standalone Installer](#using-the-standalone-installer)
   - [Use with Docker](#use-with-docker)
@@ -31,6 +30,10 @@ An extremely fast Python package and project manager, written in Rust.
   - [`build` Build Python packages](#build-build-python-packages)
   - [`run` Run a command](#run-run-a-command)
 - [References](#references)
+
+## Overview
+
+An extremely fast Python package and project manager, written in Rust.
 
 ## Installation
 
@@ -306,7 +309,6 @@ examples-py v0.1.0
 └── ruff v0.8.2 (group: dev)
 (*) Package tree already displayed
 ```
-<!-- spell-checker: words iniconfig pluggy -->
 
 ### `sync` Update the project’s environment
 

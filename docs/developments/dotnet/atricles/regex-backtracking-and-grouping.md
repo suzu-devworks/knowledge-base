@@ -18,8 +18,10 @@
 
 ## Backtracking
 
-Backtracking occurs in regular expressions when the pattern contains optional quantifiers (`*`, `+`, `{n,m}`) or alternations (`|`, `(?(name)yes|no)`).  
-It is a core feature that enables powerful and flexible pattern matching, but can also significantly affect the performance of the regex engine.
+Backtracking occurs in regular expressions when the pattern contains optional quantifiers (`*`, `+`, `{n,m}`) or
+alternations (`|`, `(?(name)yes|no)`).
+It is a core feature that enables powerful and flexible pattern matching, but can also significantly affect the
+performance of the regex engine.
 
 ## Grouping
 
@@ -32,7 +34,8 @@ It is a core feature that enables powerful and flexible pattern matching, but ca
 Parentheses are used for capturing groups.  
 Groups are numbered from left to right, starting at 1.  
 Group 0 refers to the entire match.  
-If group names are duplicated, the value of the `Group` object is determined by the last successful capture in the input string.
+If group names are duplicated, the value of the `Group` object is determined by the last successful capture in the input
+string.
 
 ### Named Matched Subexpressions (Capturing)
 
@@ -43,8 +46,6 @@ If group names are duplicated, the value of the `Group` object is determined by 
 
 Assigns a name to the capturing group.  
 You can reference the matched subexpression within the same regex using `\k<name>`.
-
-<!-- spell-checker: words subexpression -->
 
 ### Balancing Group Definitions (Capturing)
 
@@ -68,8 +69,6 @@ Groups subexpressions without capturing them.
 ```regexp
 (?imnsx-imnsx:subexpressions)
 ```
-
-<!-- spell-checker: words imnsx -->
 
 Set options for a specific group:
 

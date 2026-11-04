@@ -30,8 +30,6 @@ SQL Server Express では SQL Server Agent サービスが利用できない（�
    - 指定した世代数（例: 5世代）を超えた古いバックアップファイルを自動削除します。
 4. **関連フォルダのバックアップ（`xcopy`）**: バックアップで指定したフォルダをバックアップ先へ同期コピーします。
 
-<!-- spell-checker: words xcopy -->
-
 ## Backup Script (db-backup.bat)
 
 <!-- spell-checker: disable -->
@@ -176,4 +174,3 @@ BACKUP DATABASE [EXAMPLES] TO DISK = @filepath WITH INIT,
     NAME = N'EXAMPLES - Regular Backup'
 GO
 ```
-<!-- spell-checker: words GETDATE SQLEXPRESS nvarchar varchar filetime -->

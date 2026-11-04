@@ -80,8 +80,6 @@
 `VLOOKUP` は検索列が必ず左端に無ければ使用できないため、列の配置に制約があります。
 上記のように `INDEX` と `MATCH` を組み合わせると、`MATCH()` で一致した位置（行・列）を取得できるため、列位置の制約を受けません。
 
-<!-- spell-checker: words VLOOKUP -->
-
 ## Array formulas
 
 > 配列数式
@@ -105,5 +103,3 @@
 =IF(COUNTIF($C:$C, $G2), INDEX(B:B, MAX(IF($C$2:$C$999=$G2, ROW($C$2:$C$999)))))
 =INDEX(A1:A99, MATCH(TRUE, A1:A99<>0, 0))
 ```
-
-<!-- spell-checker: words ISBLANK COUNTIF -->

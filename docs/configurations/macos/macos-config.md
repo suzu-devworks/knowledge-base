@@ -98,14 +98,10 @@ defaults write -g ApplePressAndHoldEnabled -bool false
 6. 再起動
 7. モジュールやパターンを更新
 
-<!-- spell-checker: words ESET -->
-
 ### Canon Utility
 
 1. Canon Inkjet Smart Connect をダウンロードして起動すれば全部やってくれそう。
    - <https://canon.jp/support/software/os/select?pr=4807&os=165>
-
-<!-- spell-checker: words Canon Inkjet -->
 
 ### Office 365
 
@@ -152,7 +148,6 @@ echo '# Set PATH, MANPATH, etc., for Homebrew.' >> /Users/akira/.zprofile
 echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> /Users/akira/.zprofile
 eval "$(/opt/homebrew/bin/brew shellenv)"
 ```
-<!-- spell-checker: words MANPATH shellenv  -->
 
 ### Git for macOS
 

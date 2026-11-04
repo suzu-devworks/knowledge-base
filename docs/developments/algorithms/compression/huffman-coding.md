@@ -64,7 +64,7 @@ It is one of the most famous data compression algorithms.
 
     Huffman tree:
 
-    ```console
+    ```text
               0┌─────────────────────┐1
          0┌────┴────┐1       0┌──────┴──────┐1
       0┌──┴──┐1 0┌──┴──┐1 0┌──┴──┐1     0┌──┴───┐1

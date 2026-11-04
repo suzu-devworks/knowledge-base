@@ -1,12 +1,8 @@
 # pyenv-virtualenv
 
-pyenv-virtualenv is a pyenv plugin that provides features to manage virtualenv and conda environments for Python on UNIX-like systems.
-
-> [!WARNING]
-> _This document is current as of 2019-06-08._
-
 ## Table of Contents <!-- omit in toc -->
 
+- [Overview](#overview)
 - [Install](#install)
   - [Clone from GitHub](#clone-from-github)
   - [Using Homebrew on macOS](#using-homebrew-on-macos)
@@ -15,6 +11,14 @@ pyenv-virtualenv is a pyenv plugin that provides features to manage virtualenv a
   - [Delete a virtualenv](#delete-a-virtualenv)
   - [Switch virtualenv](#switch-virtualenv)
 - [References](#references)
+
+## Overview
+
+pyenv-virtualenv is a pyenv plugin that provides features to manage virtualenv and conda environments for Python on
+UNIX-like systems.
+
+> [!WARNING]
+> _This document is current as of 2019-06-08._
 
 ## Install
 
@@ -42,7 +46,6 @@ if [ -d "${ANYENV_ROOT}" ]; then
     eval "$(pyenv virtualenv-init -)"
 fi
 ```
-<!-- spell-checker: words ANYENV_ROOT anyenv -->
 
 ### Using Homebrew on macOS
 

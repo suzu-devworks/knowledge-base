@@ -1,7 +1,5 @@
 # ILSpy
 
-ILSpy is an open-source .NET assembly browser and decompiler.
-
 ## Table of Contents <!-- omit in toc -->
 
 - [Overview](#overview)
@@ -15,9 +13,9 @@ ILSpy is an open-source .NET assembly browser and decompiler.
   - [Run ilspycmd](#run-ilspycmd)
 - [References](#references)
 
-<!-- spell-checker: words ilspycmd -->
-
 ## Overview
+
+ILSpy is an open-source .NET assembly browser and decompiler.
 
 This guide explains how to build and use `ilspycmd` in a remote container environment.
 
@@ -55,7 +53,6 @@ code ICSharpCode.Decompiler.Console.csproj
   </PropertyGroup>
 </Project>
 ```
-<!-- spell-checker: words netcoreapp -->
 
 ### Build the Project
 
@@ -69,7 +66,6 @@ dotnet build
 dotnet nuget add source /path/to/ILSpy/ICSharpCode.Decompiler.Console/bin/Debug/ --name ilspy-local
 dotnet nuget list source
 ```
-<!-- spell-checker: words ilspy -->
 
 ### Install the Local Tool
 

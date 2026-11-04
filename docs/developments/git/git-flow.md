@@ -14,8 +14,6 @@ Vincent Driessen proposes "A successful Git branching model" as a development mo
 
 There are also antis.
 
-<!-- spell-checker: words Driessen -->
-
 ## Git Flow Example
 
 ```mermaid

@@ -1,12 +1,8 @@
 # pyenv
 
-pyenv lets you easily switch between multiple versions of Python. It's simple, unobtrusive, and follows the UNIX tradition of single-purpose tools that do one thing well.
-
-> [!WARNING]
-> _This document is current as of 2019-06-08._
-
 ## Table of Contents <!-- omit in toc -->
 
+- [Overview](#overview)
 - [Install](#install)
   - [Using anyenv](#using-anyenv)
   - [Clone from GitHub](#clone-from-github)
@@ -23,6 +19,14 @@ pyenv lets you easily switch between multiple versions of Python. It's simple, u
   - [Suggested build environment on Fedora](#suggested-build-environment-on-fedora)
   - [Ignoring ensure pip failure: pip 7.1.2 requires SSL/TLS on macOS](#ignoring-ensure-pip-failure-pip-712-requires-ssltls-on-macos)
 - [References](#references)
+
+## Overview
+
+pyenv lets you easily switch between multiple versions of Python. It's simple, unobtrusive, and follows the UNIX
+tradition of single-purpose tools that do one thing well.
+
+> [!WARNING]
+> _This document is current as of 2019-06-08._
 
 ## Install
 
@@ -43,8 +47,6 @@ exec $SHELL -l
 ```
 
 - <https://github.com/anyenv/anyenv>
-
-<!-- spell-checker: words anyenv -->
 
 ### Clone from GitHub
 
@@ -238,8 +240,6 @@ Required-by:
 > zipimport.ZipImportError: can't decompress data; zlib not available  
 > make: \*\*\* [Makefile:1130: install] error 1
 
-<!-- spell-checker: words zipimport -->
-
 As written on the official site, header files and various tools are required because C is being built.
 
 ```shell
@@ -258,8 +258,6 @@ export CPPFLAGS="${CPPFLAGS} -I$(brew --prefix openssl)/include"
 export LDFLAGS="${LDFLAGS} -L$(brew --prefix openssl)/lib"
 pyenv install 3.5.0
 ```
-
-<!-- spell-checker: words CPPFLAGS LDFLAGS -->
 
 ## References
 

@@ -23,8 +23,6 @@ You don't have to git clone or modify your shell profile for each `**env` anymor
 
 おっ、日本人じゃん！
 
-<!-- spell-checker: words anyenv rbenv pyenv nodenv ndenv anyenv-update -->
-
 ## Environments
 
 - 2017-09-02: anyenv master (3cb8ad1) on OSX 10.11
@@ -38,8 +36,6 @@ You don't have to git clone or modify your shell profile for each `**env` anymor
 公式に書いてあるままです。
 
 - [riywo/anyenv \- github](https://github.com/riywo/anyenv)
-
-<!-- spell-checker: words riywo -->
 
 ```bash
 git clone https://github.com/anyenv/anyenv ~/.anyenv
@@ -279,13 +275,13 @@ Please reload your profile (exec $SHELL -l) or open a new session.
 ```bash
 exec $SHELL -l
 ```
-
+<!-- spell-checker: disable -->
 ```console
 $ rbenv --version
 
 rbenv 1.1.1-6-g2d7cefe
 ```
-<!-- spell-checker: words: cefe -->
+<!-- spell-checker: enable -->
 
 ## Commands
 

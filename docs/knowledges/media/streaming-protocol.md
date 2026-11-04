@@ -10,9 +10,6 @@
 - [RTMP](#rtmp)
 - [RSTP](#rstp)
 
-<!-- spell-checker: words RTMP -->
-<!-- spell-checker: words RSTP -->
-
 ## HLS (HTTP Live Streaming)
 
 Apple が iPhone から Flash を削除する取り組みの一環として 2009 年にリリースしました。
@@ -49,7 +46,8 @@ HLS と DASH の主な違いは。
 
 ## WebRTC　(Web Real-Time Communication)
 
-ウェブブラウザやモバイルアプリケーションにシンプルなAPI経由でリアルタイム通信（RTC）を提供する自由かつオープンソースのプロジェクトです。直接ピアツーピア通信を可能にすることで、Web ページ内でのオーディオおよびビデオ通信が可能になり、プラグインのインストールやネイティブ アプリのダウンロードが不要になります。
+ウェブブラウザやモバイルアプリケーションにシンプルなAPI経由でリアルタイム通信（RTC）を提供する自由かつオープンソースのプロジェクトです。
+直接ピアツーピア通信を可能にすることで、Web ページ内でのオーディオおよびビデオ通信が可能になり、プラグインのインストールやネイティブ アプリのダウンロードが不要になります。
 
 Apple、Google、Microsoft、Mozilla、Operaによってサポートされており、
 仕様は、 World Wide Web Consortium (W3C) およびInternet Engineering Task Force (IETF)によって公開されています。
@@ -66,7 +64,8 @@ WebRTC自体には、シグナリング（ピア同士の検索と接続確立�
 [RFC 8445](https://tex2e.github.io/rfc-translater/html/rfc8445.html) で標準化されています。
 
 - **STUN (Session Traversal Utilities for NATs)**  
-NAT traversal (NAT通過)の方法の１つとして使われる標準化された通信プロトコルです。STUNサーバーは外部ネットワークから見た際の自身のIPアドレスを教えてくれます。そのアドレスと自身のPCのアドレスを比較してNAT越えが必要かを判断します。  
+NAT traversal (NAT通過)の方法の１つとして使われる標準化された通信プロトコルです。STUNサーバーは外部ネットワークから見た際の自身のIPアドレスを教えてくれます。
+そのアドレスと自身のPCのアドレスを比較してNAT越えが必要かを判断します。  
 [RFC 8489](https://tex2e.github.io/rfc-translater/html/rfc8489.html) で標準化されています。
 
 - **TURN (Traversal Using Relay around NAT)**  

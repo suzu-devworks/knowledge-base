@@ -50,8 +50,6 @@ MySQLは高速性と堅牢性を追求したマルチユーザ・マルチスレ
 sudo dnf install libaio
 ```
 
-<!-- spell-checker: words libaio -->
-
 ### Download Binary
 
 Linux Generic x86 - 64bit のパッケージを公式サイトから取得します。
@@ -85,7 +83,6 @@ sudo bin/mysqld_safe --user=mysql &
 # mysql コマンドへのシンボリックリンクを作成
 sudo ln -s /usr/local/mysql/bin/mysql /usr/local/bin/
 ```
-<!-- spell-checker: words mysqld zxvf -->
 
 ### Change root@localhost Password
 
@@ -126,7 +123,6 @@ mysql> select host,user,plugin from mysql.user;
 +-----------+------------------+-----------------------+
 4 rows in set (0.00 sec)
 ```
-<!-- spell-checker: words infoschema -->
 
 ### Start Server
 
@@ -141,7 +137,6 @@ Stop the MySQL server using the following command:
 ```bash
 sudo bin/mysqladmin -u root -p shutdown
 ```
-<!-- spell-checker: words mysqladmin -->
 
 ### Start Server with Systemd
 
@@ -195,7 +190,6 @@ sudo systemctl status mysqld
 ```bash
 journalctl -xe -u mysqld
 ```
-<!-- spell-checker: words journalctl -->
 
 ### Show Server Info
 
@@ -211,7 +205,6 @@ bin/mysqladmin -u root -p version
 bin/mysqlshow -u root -p
 bin/mysqlshow -u root -p mysql
 ```
-<!-- spell-checker: words mysqlshow -->
 
 接続後にサーバ情報を確認:
 
@@ -233,8 +226,6 @@ Fedora標準リポジトリでは MariaDB が提供されているため、MySQL
 
 - [MySQL :: Download MySQL Yum Repository](https://dev.mysql.com/downloads/repo/yum/)
 
-<!-- spell-checker: words noarch -->
-
 ### Install
 
 ```bash
@@ -242,7 +233,6 @@ sudo dnf localinstall ./mysql80-community-release-fc28-1.noarch.rpm
 sudo dnf repolist enabled
 sudo dnf install mysql-community-server
 ```
-<!-- spell-checker: words localinstall repolist -->
 
 ## Installation with Docker
 
@@ -354,7 +344,6 @@ mysql> show variables like 'collation%';
 mysql> alter database example_sjis character set cp932 collate cp932_bin;
 mysql> show variables like 'collation%';
 ```
-<!-- spell-checker: words sjis -->
 
 ### Create Remote Access User
 
@@ -372,7 +361,6 @@ mysql -p
 mysql> create user ruser identified with mysql_native_password by '*****';
 mysql> select host,user,plugin from mysql.user;
 ```
-<!-- spell-checker: words ruser -->
 
 ```bash
 mysql -h 127.0.0.1 -P 3306 -u ruser -p

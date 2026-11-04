@@ -2,11 +2,18 @@
 
 ## Table of Contents <!-- omit in toc -->
 
+- [Overview](#overview)
+- [Algorithm and example](#algorithm-and-example)
+- [Implementation in C](#implementation-in-c)
+- [References](#references)
+
 ## Overview
 
-Quick Sort selects a pivot value and partitions the array into two sub-arrays: one containing values less than the pivot, and one containing values greater than the pivot. This process is then repeated recursively on the sub-arrays.
+Quick Sort selects a pivot value and partitions the array into two sub-arrays: one containing values less than the
+pivot, and one containing values greater than the pivot. This process is then repeated recursively on the sub-arrays.
 
-Choosing a pivot: Selecting a pivot from the middle of the array is more efficient than choosing the first or last element. Even better is to sample a few values (around three) from the array and use their median as the pivot.
+Choosing a pivot: Selecting a pivot from the middle of the array is more efficient than choosing the first or last
+element. Even better is to sample a few values (around three) from the array and use their median as the pivot.
 
 ## Algorithm and example
 

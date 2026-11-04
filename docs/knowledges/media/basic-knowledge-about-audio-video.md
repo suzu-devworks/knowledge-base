@@ -2,10 +2,10 @@
 
 ## Table of Contents <!-- omit in toc -->
 
-- [コンテナフォーマット （container format）](#コンテナフォーマット-container-format)
-- [コーデック (Codec)](#コーデック-codec)
+- [Container format](#container-format)
+- [Codec](#codec)
 
-## コンテナフォーマット （container format）
+## Container format
 
 > デジタル分野におけるコンテナフォーマットは複数の個別データを単一ファイル（コンテナ）へ格納する規格（フォーマット）である。
 > [wikipedia ...](https://ja.wikipedia.org/wiki/%E3%82%B3%E3%83%B3%E3%83%86%E3%83%8A%E3%83%95%E3%82%A9%E3%83%BC%E3%83%9E%E3%83%83%E3%83%88)
@@ -24,8 +24,6 @@
 | FLV      | `.flv`,`.f4v`,`.f4p`,`.f4a`,`.f4b` | Flash Video                       | Adobe               |
 | WebM     | `.webm`                            | WebM                              | Google              |
 
-<!-- spell-checker: words Xiph -->
-
 *Audio*:
 
 |     | extension           |                                 | developed by            |
@@ -34,7 +32,7 @@
 | MP3 | `.mp3`              | MPEG-1 Audio Layer-3            | Fraunhofer-Gesellschaft |
 | AAC | `.aac`,`.m4a`,`mp4` | Advanced Audio Coding           | ISO/IEC                 |
 
-## コーデック (Codec)
+## Codec
 
 > コーデック (Codec) は、符号化方式を使ってデータのエンコード（符号化）とデコード（復号）を双方向にできる装置やソフトウェアなどのこと。 また、そのためのアルゴリズムを指す用語としても使われている。
 > [wikipedia ...](https://ja.wikipedia.org/wiki/%E3%82%B3%E3%83%BC%E3%83%87%E3%83%83%E3%82%AF)
@@ -46,8 +44,6 @@
 | H.264/MPEG-4 AVC | H264, AVC1 | MPEG-4 Part 10、ブロック指向の動き補償コーディングに基づくビデオ圧縮規格。                    |
 | H.265/HEVC       | HVC1, HEV1 | 広く使用されているAVCの後継としてMPEG-Hプロジェクトの一部として設計されたビデオ圧縮規格です。 |
 |                  |            |                                                                                               |
-
-<!-- spell-checker: words fourcc -->
 
 *MPEG*:
 

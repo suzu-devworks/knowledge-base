@@ -303,7 +303,8 @@ eeebbbcccddd eeebbbcccddd
 
 ### Using Shell Variables
 
-Normally, sed commands are enclosed in single quotes to prevent the shell from interpreting them unexpectedly. However, to use shell variables, you must use double quotes.
+Normally, sed commands are enclosed in single quotes to prevent the shell from interpreting them unexpectedly. However,
+to use shell variables, you must use double quotes.
 
 Using `$HOSTNAME`:
 

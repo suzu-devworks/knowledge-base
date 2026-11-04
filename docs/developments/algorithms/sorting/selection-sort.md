@@ -9,7 +9,8 @@
 
 ## Overview
 
-Selection Sort finds the minimum or maximum value in the unsorted portion of the array and swaps it with the first element of that unsorted portion.
+Selection Sort finds the minimum or maximum value in the unsorted portion of the array and swaps it with the first
+element of that unsorted portion.
 
 ## Algorithm and example
 
@@ -49,7 +50,6 @@ int main(void) {
     }
 }
 ```
-<!-- spell-checker: words minindex -->
 
 ## References
 

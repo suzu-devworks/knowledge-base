@@ -71,8 +71,6 @@ pip install -U pip setuptools
 pip install python-memcached
 ```
 
-<!-- spell-checker: words pyenv venv setuptools -->
-
 データの登録（`registered-multiple.py`）:
 
 ```python
@@ -115,8 +113,6 @@ key05.value : value05
 Telnetで各ノードに接続し、キーが分散して格納されていることを確認します。
 
 Node 1 (11211) の内容確認:
-
-<!-- spell-checker: words cachedump -->
 
 ```console
 $ telnet 127.0.0.1 11211
@@ -224,7 +220,6 @@ key=key04 exp=-1 la=1793668833 cas=8 fetch=no cls=1 size=77 flags=16
 key=key05 exp=-1 la=1793668833 cas=9 fetch=no cls=1 size=77 flags=16 
 END
 ```
-<!-- spell-checker: words metadump -->
 
 > Node 2 に元々格納されていたキーの一部（例: `key05`）が Node 1 側に書き込まれていることがわかります。
 

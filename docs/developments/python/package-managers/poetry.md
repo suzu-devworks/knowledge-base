@@ -1,11 +1,10 @@
 # Poetry
 
-Poetry is a tool for dependency management and packaging in Python. It allows you to declare the libraries your project depends on and it will manage (install/update) them for you.
-
 [![Poetry](https://img.shields.io/endpoint?url=https://python-poetry.org/badge/v0.json)](https://python-poetry.org/)
 
 ## Table of Contents <!-- omit in toc -->
 
+- [Overview](#overview)
 - [Installation](#installation)
   - [Using pip](#using-pip)
   - [Self update](#self-update)
@@ -30,6 +29,11 @@ Poetry is a tool for dependency management and packaging in Python. It allows yo
 - [Tips](#tips)
   - [Use a Task Runner Like npm](#use-a-task-runner-like-npm)
 - [References](#references)
+
+## Overview
+
+Poetry is a tool for dependency management and packaging in Python. It allows you to declare the libraries your project
+depends on and it will manage (install/update) them for you.
 
 ## Installation
 
@@ -284,7 +288,6 @@ Add tasks to your `pyproject.toml`:
 clean = "pyclean ."
 test = "pytest"
 ```
-<!-- spell-checker: words taskipy -->
 
 Run a task:
 

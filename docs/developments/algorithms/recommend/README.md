@@ -1,10 +1,30 @@
 # Algorithm for Recommend
 
+## Table of Contents <!-- omit in toc -->
+
+- [Overview](#overview)
+  - [Bridging the gap between ideal and reality](#bridging-the-gap-between-ideal-and-reality)
+  - [Process for making a recommendation](#process-for-making-a-recommendation)
+  - [Indicators (moments) that indicate the actual situation](#indicators-moments-that-indicate-the-actual-situation)
+  - [Predict against the actual situation (linear model)](#predict-against-the-actual-situation-linear-model)
+  - [Linear and nonlinear models](#linear-and-nonlinear-models)
+- [Recommendations focusing on items](#recommendations-focusing-on-items)
+  - [Correlation coefficient](#correlation-coefficient)
+  - [Preprocessing](#preprocessing)
+  - [Analysis](#analysis)
+  - [Postprocessing](#postprocessing)
+- [Recommendations focusing on content](#recommendations-focusing-on-content)
+  - [Preprocessing](#preprocessing-1)
+  - [Analysis](#analysis-1)
+  - [Postprocessing](#postprocessing-1)
+
 ## Overview
 
 コンピュータによって蓄積したデータに基づいて「おすすめ」を提示する仕組みをレコメンドシステムと呼ぶ。
 
-### 理想と現実のギャップを埋める
+### Bridging the gap between ideal and reality
+
+> 理想と現実のギャップを埋める
 
 レコメンドするうえで、最も理想的な情報はすべての商品に対する顧客の評価である。その中で一番良いものこそ、最良のレコメンドとなる。しかし現実問題として、すべての顧客が商品を評価することはない。このギャップが縮まるほど、商品の評価が理想的な状況に近づく。
 
@@ -15,7 +35,9 @@
   - データが得られない部分
   - 本来存在するはずなのに得られていない情報
 
-### レコメンドするまでの流れ
+### Process for making a recommendation
+
+> レコメンドするまでの流れ
 
 レコメンドシステムが情報のギャップを埋めるアルゴリズムを中心に全体の流れを追ったのが次のフローである。
 
@@ -27,7 +49,9 @@
 | 4 | 分析 | 欠損値を補完した入力値を分析する。分析結果から仮定に基づいた予想値を決める。 |
 | 5 | 後処理 | 求まった予想値をもとにレコメンド商品を決定する。 |
 
-### 実態を示す指標（モーメント）
+### Indicators (moments) that indicate the actual situation
+
+> 実態を示す指標（モーメント）
 
 統計的な分布から実態が推測できる。これがモーメント（分布に対する積率母関数）と呼ばれる。
 
@@ -41,11 +65,15 @@
 | 4次モーメント（尖度） | $k_{w} = \frac{n(n+1)}{(n-1)(n-2)(n-3){\sigma}^4}\sum_{i=1}^{n}({x}_{i}-\mu)^4$ | 山の尖り |
 | … | | |
 
-### 実態に対して予測する（線形モデル）
+### Predict against the actual situation (linear model)
+
+> 実態に対して予測する（線形モデル）
 
 実態を表現しているモーメントを保つようにギャップを補えば、それは観測結果と整合するはずである。
 
-### 線形モデルと非線形モデル
+### Linear and nonlinear models
+
+> 線形モデルと非線形モデル
 
 厳密には、線形性を有した関数で行う予測を線形モデルいう。
 線形性を有した関数とは直線に限らず、乗算と加算で合成できるものを指し、たとえば三角関数なども含まれる。個々の成分を乗じたり加減算で分解できるのが特徴。
@@ -53,11 +81,15 @@
 
 ---
 
-## アイテムに注目したレコメンド
+## Recommendations focusing on items
+
+> アイテムに注目したレコメンド
 
 商品間の類似性に着目したレコメンド。同時に購入されるという現象から、商品の類似性をつかむのが狙い。そのためには商品の類似性を比較できる値が必要となる。
 
-### 相関係数
+### Correlation coefficient
+
+> 相関係数
 
 任意の2つの対象の類似性や因果関係を図る指標。
 対象$X$と対象$Y$について$N$個の観測結果 $\{x_i, y_i\}$ があるとき、相関係数 $C_{xy}$ は次のように定義できる。
@@ -69,22 +101,36 @@ $$
 
 $$\overline{x} = \frac{1}{n}\sum_{i=1}^{n}x_i, \quad \overline{y} = \frac{1}{n}\sum_{i=1}^{n}y_i$$
 
-### 前処理
+### Preprocessing
 
-### 分析
+> 前処理
 
-### 後処理
+### Analysis
+
+> 分析
+
+### Postprocessing
+
+> 後処理
 
 ---
 
-## コンテンツに注目したレコメンド
+## Recommendations focusing on content
+
+> コンテンツに注目したレコメンド
 
 商品のレビュー・評価など、顧客の好みといった要素に着目したレコメンド。
 
-### 前処理
+### Preprocessing
 
-### 分析
+> 前処理
 
-### 後処理
+### Analysis
+
+> 分析
+
+### Postprocessing
+
+> 後処理
 
 ---

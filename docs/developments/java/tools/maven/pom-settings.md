@@ -83,7 +83,8 @@ Jar or War
 
 ## Replace `${version}` in the resource folder
 
-If you enable filtering in the maven resource plugin, you can replace the ${x} you set in the properties in the resource folder.
+If you enable filtering in the maven resource plugin, you can replace the ${x} you set in the properties in the resource
+folder.
 
 - <https://qiita.com/kozy4324/items/9fa17a98203761012fd9>
 

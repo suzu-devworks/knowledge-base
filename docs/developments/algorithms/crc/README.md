@@ -1,10 +1,28 @@
 # Algorithm for CRC
 
+## Table of Contents <!-- omit in toc -->
+
+- [Overview](#overview)
+- [How to calculate CRC](#how-to-calculate-crc)
+  - [modulo 2](#modulo-2)
+  - [Left shift/ Right shift](#left-shift-right-shift)
+  - [Initializer](#initializer)
+  - [Specify](#specify)
+- [Optimize](#optimize)
+  - [Omit the most significant bit of the generator polynomial](#omit-the-most-significant-bit-of-the-generator-polynomial)
+- [Standard CRC (Polynomial)](#standard-crc-polynomial)
+- [CRC-5-USB in USB](#crc-5-usb-in-usb)
+- [CRC-16 in USB](#crc-16-in-usb)
+- [CRC-15-CAN in CAN2.0](#crc-15-can-in-can20)
+- [CRC-16-CCITT in Bluetooth](#crc-16-ccitt-in-bluetooth)
+- [CRC-32 in PNG](#crc-32-in-png)
+- [Reference](#reference)
+
 ## Overview
 
 巡回冗長検査（じゅんかいじょうちょうけんさ、Cyclic Redundancy Check, CRC）は、誤り検出符号の一種で、主にデータ転送などに伴う偶発的な誤りの検出によく使われている。
 
-### CRCの計算方法
+## How to calculate CRC
 
 CRCは大きなデータ（数値）をある素数で割った時のあまりを送信するデータの末尾につけ、同じ計算を受信側で行うことで誤りを検出する方法であり、$n$ビットのCRCは$n$ビット未満のバースト誤りを検出することができる。
 
@@ -79,7 +97,9 @@ CRC計算の初期値として、固定ビットパターン（全ビット0 or 
 
 ## Optimize
 
-### 生成多項式の最上位ビットを省略
+### Omit the most significant bit of the generator polynomial
+
+> 生成多項式の最上位ビットを省略
 
 $n$ビットCRCは $(n+1)$ ビットの除数で定義されるもので、最上位ビットは常に1である。すると$n$ビットのレジスタではオーバフローする。最上位ビットは省略して計算しても結果が同じになる。
 最上位ビット（MSB）を確認し、最終的にMSBがクリアされ、MSBをもたらすもの、されていた場合に残りの部分から（XOR）生成多項式を引きます。
@@ -147,9 +167,6 @@ $n$ビットCRCは $(n+1)$ ビットの除数で定義されるもので、最�
 | CRC-32 | Mpeg-2, zlib, PNG, Ethernet, GZip, PKZIP | 0x04C11DB7 | 0xEDB88320 | 0x82608EDB |
 | CRC-32C | iSCSI, Btrfs, ext4 | 0x1EDC6F41 | 0x82F63B78 | 0x8F6E37A0 |
 
-<!-- spell-checker: words Btrfs CCITT XMODEM -->
----
-
 ## CRC-5-USB in USB
 
 USBの仕様では、PID以外の全てのフィールドでCRCを計算し誤り検知を行う。
@@ -172,9 +189,6 @@ CRCはPID以外の11ビットから計算する。
 ```text
 width=5 poly=0x05 init=0x1f refin=true refout=true xorout=0x1f check=0x19 name="CRC-5/USB"
 ```
-
-<!-- spell-checker: words ENDP refin refout xorout -->
----
 
 ## CRC-16 in USB
 

@@ -1,8 +1,31 @@
 # Make
 
+## Table of Contents <!-- omit in toc -->
+
+- [Overview](#overview)
+- [Rules](#rules)
+  - [Target](#target)
+  - [Tasks (Phony Targets)](#tasks-phony-targets)
+  - [Automatic Variables](#automatic-variables)
+  - [Rule verification](#rule-verification)
+- [Implicit Rules](#implicit-rules)
+  - [Show Implicit Rules](#show-implicit-rules)
+  - [Defined Variables](#defined-variables)
+- [Old-Fashioned Suffix Rules](#old-fashioned-suffix-rules)
+- [Macro (Variable) Assignment](#macro-variable-assignment)
+- [Builtin Functions](#builtin-functions)
+  - [Functions That Control Make](#functions-that-control-make)
+  - [Functions for String Substitution and Analysis](#functions-for-string-substitution-and-analysis)
+  - [Functions for File Names](#functions-for-file-names)
+  - [Functions for Conditionals](#functions-for-conditionals)
+  - [Other Functions](#other-functions)
+- [Nested](#nested)
+- [References](#references)
+
 ## Overview
 
-Make is a command-line interface software tool that performs actions ordered by configured dependencies as defined in a configuration file called a makefile.
+Make is a command-line interface software tool that performs actions ordered by configured dependencies as defined in a
+configuration file called a makefile.
 
 ## Rules
 
@@ -10,7 +33,8 @@ A makefile is composed of blocks of text called rules.
 
 ### Target
 
-To create a target, make checks the dependencies files and executes the commands. The commands must be preceded by a Tab character.
+To create a target, make checks the dependencies files and executes the commands. The commands must be preceded by a Tab
+character.
 
 ```make
 # target rule.  
@@ -19,11 +43,13 @@ target: dependencies ...
    ...
 ```
 
-If no target is specified with the make command, the first target in the makefile is executed. Because of this, it is conventional to place an all target at the beginning.
+If no target is specified with the make command, the first target in the makefile is executed. Because of this, it is
+conventional to place an all target at the beginning.
 
 ### Tasks (Phony Targets)
 
-You can specify a file name that does not actually exist as a target. These are called tasks or phony targets. Common conventional targets include `clean` and `install`.
+You can specify a file name that does not actually exist as a target. These are called tasks or phony targets. Common
+conventional targets include `clean` and `install`.
 
 ```make
 # task rule.  
@@ -78,7 +104,8 @@ archive(target1.o): depend-1.o depend-2.o depend-3.o
     @echo $*    # archive
 ```
 
-To use an internal macro like `$@` as a literal string, you must escape the dollar sign with another `$`. Escaping `$@` results in `$$@`.
+To use an internal macro like `$@` as a literal string, you must escape the dollar sign with another `$`. Escaping `$@`
+results in `$$@`.
 
 ### Rule verification
 
@@ -97,7 +124,8 @@ clang   build/example-0.o  -lgtk-3 -lgdk-3 -lpangocairo-1.0 -lpango-1.0 -latk-1.
 
 ## Implicit Rules
 
-Implicit rules tell make how to use customary techniques so that you do not have to specify them in detail when you want to use them
+Implicit rules tell make how to use customary techniques so that you do not have to specify them in detail when you want
+to use them
 
 ### Show Implicit Rules
 
@@ -135,11 +163,10 @@ clean
 | LDLIBS | (No description given) |
 | TARGET_ARCH | Target options for cross-compilation |
 
-<!-- spell-checker: words LDLIBS CFLAGS CPPFLAGS CXXFLAGS LDFLAGS -->
-
 ## Old-Fashioned Suffix Rules
 
-Suffix rules are an older method. Although they are used in some implicit rules, pattern rules are more general and clearer, so suffix rules have become obsolete.
+Suffix rules are an older method. Although they are used in some implicit rules, pattern rules are more general and
+clearer, so suffix rules have become obsolete.
 
 ```make
 # double suffix rule  
@@ -180,7 +207,6 @@ ifdef ERROR1
 $(error error is $(ERROR1))
 endif
 ```
-<!-- spell-checker: words ifdef -->
 
 ### Functions for String Substitution and Analysis
 
@@ -209,8 +235,6 @@ endif
 - `$(lastword names…)`  
   Returns the last name.
 
-<!-- spell-checker: words patsubst wordlist findstring firstword lastword -->
-
 ### Functions for File Names
 
 - `$(dir names…)`  
@@ -230,8 +254,6 @@ endif
 - `$(wildcard pattern)`  
   Returns a list of file names matching a wildcard.
 
-<!-- spell-checker: words addprefix addsuffix notdir -->
-
 ### Functions for Conditionals
 
 - `$(if condition,then-part[,else-part])`  
@@ -243,8 +265,6 @@ endif
 - `$(intcmp lhs,rhs[,lt-part[,eq-part[,gt-part]]])`  
   Numerical comparison of integers.
 
-<!-- spell-checker: words intcmp -->
-
 ### Other Functions
 
 - `$(foreach var,list,text)`  
@@ -254,6 +274,7 @@ endif
 
 To handle nested subdirectories:
 
+<!-- spell-checker: disable -->
 ```make
 # List the subdirectories here, separated by spaces  
 subdirs := \
@@ -271,7 +292,7 @@ clean: $(subdirs)
 $(subdirs): 
    $(MAKE) $(MAKECMDGOALS) -C $@ 
 ```
-<!-- spell-checker: words subdirs MAKECMDGOALS -->
+<!-- spell-checker: enable -->
 
 ## References
 

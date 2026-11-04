@@ -1,7 +1,5 @@
 # FFmpeg - Media Convertor
 
-FFmpeg は動画と音声を変換することのできるUNIX系OS生まれのフリーソフトウェアであり、下記のライブラリなどを含む。ライセンスはコンパイル時のオプションにより、LGPLかGPLとなる。
-
 ## Table of Contents <!-- omit in toc -->
 
 - [Overview](#overview)
@@ -13,6 +11,8 @@ FFmpeg は動画と音声を変換することのできるUNIX系OS生まれの�
 - [Reference](#reference)
 
 ## Overview
+
+FFmpeg は動画と音声を変換することのできるUNIX系OS生まれのフリーソフトウェアであり、下記のライブラリなどを含む。ライセンスはコンパイル時のオプションにより、LGPLかGPLとなる。
 
 ### Libraries
 
@@ -35,8 +35,6 @@ FFmpeg は動画と音声を変換することのできるUNIX系OS生まれの�
 | .mp4          | H.264 デコーダー MPEG-4 AAC デコーダ                              |
 | .VOR (DVD-VR) | MPEG-2 Video デコーダー DVD AC-3 (ATSC A/52) デコーダー           |
 
-<!-- spell-checker: words ATSC -->
-
 ## Installation
 
 ### Install from RPMFusion
@@ -44,21 +42,15 @@ FFmpeg は動画と音声を変換することのできるUNIX系OS生まれの�
 RPMFusion の ffmpeg は、ライセンスの問題上 faac 対応ではないので aac へ変換できないらしい。  
 つまりmp4を作成できない。・・・そのうちやろう。（[参考](http://www.hyde-tech.com/~hyde/fedora_12_installation_notes.html#ffmpeg)）
 
-<!-- spell-checker: words faac -->
-
-<!-- spell-checker: disable -->
 ```shell
 yum --enablerepo=rpmfusion-free,rpmfusion-free-update install ffmpeg
 ```
-<!-- spell-checker: enable -->
 
 ## Usage and command line options
 
-<!-- spell-checker: disable -->
 ```shell
 ffmpeg [options] [[infile options] -i infile]... {[outfile options] outfile}... 
 ```
-<!-- spell-checker: enable -->
 
 | Category   | Option   | Description                                                                                      |
 | :--------- | :------- | :----------------------------------------------------------------------------------------------- |
@@ -77,8 +69,6 @@ ffmpeg [options] [[infile options] -i infile]... {[outfile options] outfile}...
 
 | \# 動画ファイルを mp3 へ変換する  $ ffmpeg \-i src.flv \-ab 128k out.mp3 \# mp4も同じ $ ffmpeg \-i in-file.mp4 \-ab 128k out-file.mp3 \# 動画ではないがaacも同じ (faad2-libsが必要) $ ffmpeg \-i in-file.m4a \-ab 128k out-file.mp3 |
 | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-
-<!-- spell-checker: words faad Kbit acodec vcodec -->
 
 ## Reference
 

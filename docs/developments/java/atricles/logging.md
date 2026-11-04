@@ -38,7 +38,8 @@ The actual logging backends and implementations.
 
 ### Logging Adapter (Bridge)
 
-Adapters translate between facades and implementations. Use them when you cannot change a third-party JAR that depends on an older logging API.
+Adapters translate between facades and implementations. Use them when you cannot change a third-party JAR that depends
+on an older logging API.
 
 - `jcl-over-slf4j.jar` = Apache Commons Logging -> SLF4J
 - `jul-to-slf4j.jar` = java.util.logging -> SLF4J

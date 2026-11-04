@@ -1,0 +1,27 @@
+{
+  "version": "0.2",
+  "ignorePaths": [],
+  "dictionaryDefinitions": [],
+  "dictionaries": [],
+  "words": [
+    "clamav",
+    "clamd",
+    "clamdscan",
+    "clamscan",
+    "clamupdate",
+    "EICAR",
+    "eicarcom",
+    "emerg",
+    "endscript",
+    "Freshclam",
+    "killall",
+    "missingok",
+    "notifempty",
+    "postrotate",
+    "virusgroup",
+  ],
+  "ignoreWords": [],
+  "import": [
+    "../../../.vscode/cspell.json"
+  ]
+}

@@ -9,8 +9,6 @@
 
 - `chrome://webrtc-internals`
 
-<!-- spell-checker: words webrtc -->
-
 ## References
 
 - WebRTC (Real-Time Communication in Browsers)

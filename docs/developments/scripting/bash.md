@@ -32,13 +32,16 @@
 
 ## Overview
 
-Bash (Bourne-Again Shell) is one of the shells used in Unix, written for the GNU Project. Bash is standard on many Linux systems and Mac OS X (10.3 and later) and runs on many Unix-like operating systems. It has also been ported to Microsoft Windows by the Cygwin project.
+Bash (Bourne-Again Shell) is one of the shells used in Unix, written for the GNU Project. Bash is standard on many Linux
+systems and Mac OS X (10.3 and later) and runs on many Unix-like operating systems. It has also been ported to Microsoft
+Windows by the Cygwin project.
 
 ## Syntax
 
 ### Quotation
 
-The shell provides three types of quotation marks to control the expansion and substitution of special characters like meta-characters: the single quote ', the double quote ", and the backtick \`. Each has a different function.
+The shell provides three types of quotation marks to control the expansion and substitution of special characters like
+meta-characters: the single quote ', the double quote ", and the backtick \`. Each has a different function.
 
 | Symbol | Description |
 | :---- | :---- |
@@ -72,7 +75,8 @@ command < file_name
 
 ### Here Documents
 
-The \<\< redirection operator provides a special mechanism called a "here document," which allows you to remove the need for external files.
+The \<\< redirection operator provides a special mechanism called a "here document," which allows you to remove the need
+for external files.
 
 ```shell
 grep $1 << EOD
@@ -126,7 +130,8 @@ If Bash v4 is not available, use `tr "A-Z" "a-z"`.
 
 ### Environment Variables
 
-Environment variables are a type of shell variable used to configure the user's environment. They are usually set with export to affect all commands executed during the login session.
+Environment variables are a type of shell variable used to configure the user's environment. They are usually set with
+export to affect all commands executed during the login session.
 
 ```shell
 # Setting an environment variable
@@ -163,7 +168,8 @@ unset array
 
 ### Positional Parameters
 
-These are variables for receiving command-line arguments. The shift command can be used to shift them, which allows you to reference arguments beyond the 9th. The shift command does not affect $0.
+These are variables for receiving command-line arguments. The shift command can be used to shift them, which allows you
+to reference arguments beyond the 9th. The shift command does not affect $0.
 
 | Parameter | Description |
 | :---- | :---- |
@@ -247,7 +253,8 @@ $ [ (OPTION) ]
 
 ### `if` ... `else`
 
-Checks the exit status of a command in the conditional expression. If it is true (0), the then block is executed. Conditional expressions are often written in shorthand, but the test command is also commonly used.
+Checks the exit status of a command in the conditional expression. If it is true (0), the then block is executed.
+Conditional expressions are often written in shorthand, but the test command is also commonly used.
 
 ```shell
 if condition1; then
@@ -261,7 +268,6 @@ else
   ...
 fi
 ```
-<!-- spell-checker: words elif -->
 
 Simple conditions can sometimes be replaced with && and ||.
 
@@ -275,7 +281,8 @@ command1 || command2
 
 ### `case`
 
-Evaluates a single shell variable and executes one or more commands if a matching pattern is found. The ;; can be replaced with ; to fall through to the next pattern. The final \*) is the default case.
+Evaluates a single shell variable and executes one or more commands if a matching pattern is found. The ;; can be
+replaced with ; to fall through to the next pattern. The final \*) is the default case.
 
 ```shell
 case $variable in
@@ -294,11 +301,11 @@ case $variable in
     ;;
 esac
 ```
-<!-- spell-checker: words esac -->
 
 ### `for`
 
-Used to execute a set of commands a specified number of times. If in and the following values are omitted, the positional parameters ($\*) are used. For simple loops of consecutive numbers, you can use the seq command.
+Used to execute a set of commands a specified number of times. If in and the following values are omitted, the
+positional parameters ($\*) are used. For simple loops of consecutive numbers, you can use the seq command.
 
 ```shell
 for variable [in String1, String2....]
@@ -313,7 +320,8 @@ for i in $(seq 0 9); do echo $i; done
 
 ### `while`
 
-Executes a loop as long as a certain condition is met. The condition is the same as in if, judging whether the command's exit status is true (0).
+Executes a loop as long as a certain condition is met. The condition is the same as in if, judging whether the command's
+exit status is true (0).
 
 ```shell
 while condition
@@ -385,7 +393,6 @@ returnValue=`sub_sample`
 | times | Displays process execution times. |
 | trap \[Command\]\[n\] | Executes Command when signal n is received. |
 | wait \[n\] | Waits for the process with PID n to finish. |
-<!-- spell-checker: words Unsets -->
 
 ## Login Shell
 

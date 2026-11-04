@@ -194,8 +194,6 @@ cid         name        type        notnull     dflt_value  pk
 
 SQLite には `TRUNCATE` 文が存在しないため `DELETE` を代用します。`AUTOINCREMENT` のシーケンス値をリセットする場合は、管理テーブル `sqlite_sequence` から該当レコードを削除します。
 
-<!-- spell-checker: words AUTOINCREMENT -->
-
 ```sql
 sqlite> .mode column
 sqlite> .header on
@@ -244,7 +242,6 @@ id          typeof(id)  name        typeof(name)
 3           integer     123         integer     
 4           integer                 null        
 ```
-<!-- spell-checker: words hogehoge -->
 
 ### Join Tables across Multiple Database Files
 

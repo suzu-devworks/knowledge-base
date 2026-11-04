@@ -5,10 +5,27 @@
   "dictionaries": [],
   "words": [
     "akira",
+    "chkconfig",
+    "DBUS",
     "devworks",
+    "ESET",
+    "getsebool",
+    "infoschema",
+    "Inkjet",
+    "journalctl",
+    "libaio",
+    "libc",
+    "libexec",
+    "localinstall",
+    "nict",
+    "noarch",
     "rdbms",
+    "setsebool",
     "sntp",
-    "suzu"
+    "stdlib",
+    "suzu",
+    "sysconfig",
+    "usermod"
   ],
   "ignoreWords": [],
   "import": []
