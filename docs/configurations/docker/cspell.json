@@ -1,0 +1,25 @@
+{
+  "version": "0.2",
+  "ignorePaths": [],
+  "dictionaryDefinitions": [],
+  "dictionaries": [],
+  "words": [
+    "hypatia",
+    "libndp",
+    "libnm",
+    "makecache",
+    "nmcli",
+    "nofork",
+    "nopidfile",
+    "polkit",
+    "PPID",
+    "selinuxfs",
+    "STIME",
+    "udevd",
+    "veth"
+  ],
+  "ignoreWords": [],
+  "import": [
+    "../../../.vscode/cspell.json"
+  ]
+}

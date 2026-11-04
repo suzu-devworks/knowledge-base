@@ -1,0 +1,21 @@
+{
+  "version": "0.2",
+  "ignorePaths": [],
+  "dictionaryDefinitions": [],
+  "dictionaries": [],
+  "words": [
+    "ADDRCONF",
+    "HWADDR",
+    "libudev",
+    "lldp",
+    "mdns",
+    "NETDEV",
+    "nmcli",
+    "Virtio",
+    "wimax"
+  ],
+  "ignoreWords": [],
+  "import": [
+    "../../../.vscode/cspell.json"
+  ]
+}
