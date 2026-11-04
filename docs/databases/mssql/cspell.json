@@ -4,10 +4,17 @@
   "dictionaryDefinitions": [],
   "dictionaries": [],
   "words": [
+    "DBCC",
+    "DROPCLEANBUFFERS",
     "filetime",
+    "FILLFACTOR",
     "GETDATE",
+    "NONCLUSTERED",
+    "ntext",
     "nvarchar",
     "SQLEXPRESS",
+    "TEMPDB",
+    "varbinary",
     "varchar",
     "xcopy"
   ],

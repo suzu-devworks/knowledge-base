@@ -26,6 +26,7 @@
     "stdlib",
     "suzu",
     "sysconfig",
+    "sysdba",
     "sysinit",
     "tmpfiles",
     "usermod"
