@@ -32,7 +32,6 @@ telnet localhost 11211
 ```
 
 ```console
-$ telnet localhost 11211
 Trying ::1...
 Connected to localhost.
 Escape character is '^]'.

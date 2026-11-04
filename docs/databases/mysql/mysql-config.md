@@ -300,11 +300,13 @@ docker run --rm -p 3306:3306 -e MYSQL_ROOT_PASSWORD=***** \
 
 ログから一時パスワードを確認して変更します。
 
-```bash
+```console
 $ sudo grep 'temporary password' /var/log/mysqld.log
-2018-06-12T07:52:34.579110Z 5 [Note] [MY-010454] [Server] A temporary password is generated for root@localhost: ;tfL4guaoPRY
+
+2018-06-12T07:52:34.579110Z 5 [Note] [MY-010454] [Server] A temporary password is generated for root@localhost: ;
 
 $ mysql -u root -p
+
 Enter password: ********[Enter] <= 初期パスワード
 
 mysql> alter user 'root'@'localhost' identified by '********';

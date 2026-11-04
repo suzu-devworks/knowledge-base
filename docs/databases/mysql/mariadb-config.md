@@ -31,7 +31,7 @@ MySQLのオリジナルコードの作者である Michael "Monty" Widenius に�
 
 - [MariaDB Official Site](https://mariadb.org/)
 
-<!-- spell-checker: words rdbms  Widenius -->
+<!-- spell-checker: words Widenius -->
 
 ## Environments
 
@@ -52,17 +52,22 @@ sudo dnf install mariadb-server
 
 サービスの状態を確認し、起動します。
 
-```bash
-systemctl list-unit-files --type=service | grep mariadb
-```
-
 ```console
+$ systemctl list-unit-files --type=service | grep mariadb
+
 mariadb.service                             disabled     
 mariadb@.service                            disabled     
 ```
 
+サービスの確認:
+
 ```bash
 sudo systemctl start mariadb
+```
+
+サービスの状態確認:
+
+```bash
 sudo systemctl status mariadb
 ```
 
@@ -79,8 +84,15 @@ sudo systemctl status mariadb
 ```
 <!-- spell-checker: words libexec mysqld  -->
 
+サービスの停止:
+
 ```bash
 sudo systemctl stop mariadb
+```
+
+サービスのログ確認:
+
+```bash
 journalctl -xe -u mariadb
 ```
 <!-- spell-checker: words journalctl -->
@@ -174,11 +186,9 @@ grant SELECT,INSERT,UPDATE,DELETE,CREATE,DROP on test_db1.* to test_db1_user1;
 
 初期化用SQLを配置してコンテナを起動します。
 
-```bash
-ls initdb.d
-```
-
 ```console
+$ ls initdb.d
+
 100_create.sql  200_scott.sql.gz
 ```
 

@@ -511,21 +511,17 @@ OPTIONS=-4
 
 NG:
 
-```bash
-chronyc -a makestep
-```
-
 ```console
+$ chronyc -a makestep
+
 501 Not authorised
 ```
 
 OK:
 
-```bash
-sudo chronyc makestep
-```
-
 ```console
+$ sudo chronyc makestep
+
 200 OK
 ```
 

@@ -102,22 +102,18 @@ sudo dnf install clamav clamav-update clamav-scanner-systemd
 
 `/etc/freshclam.conf` 内の `Example` 行を確認します。
 
-```bash
-sudo grep -e Example /etc/freshclam.conf
-```
-
 ```console
+$ sudo grep -e Example /etc/freshclam.conf
+
 ## Example config file for freshclam
 #Example ★ コメントアウト済みであることを確認
 ```
 
 実行時に以下のエラーが表示された場合：
 
-```bash
-sudo freshclam
-```
-
 ```console
+$ sudo freshclam
+
 ERROR: Please edit the example config file /etc/freshclam.conf
 ERROR: Can't open/parse the config file /etc/freshclam.conf
 ```
@@ -154,11 +150,9 @@ MAILTO=root
 
 `/etc/sysconfig/freshclam` の確認：
 
-```bash
-sudo grep -e FRESHCLAM_DELAY /etc/sysconfig/freshclam
-```
-
 ```console
+$ sudo grep -e FRESHCLAM_DELAY /etc/sysconfig/freshclam
+
 # FRESHCLAM_DELAY= ★ コメントアウト済み
 ```
 
@@ -243,11 +237,10 @@ NotifyClamd /etc/clamd.d/scan.conf
 sudo freshclam --quiet
 ```
 
-```bash
-ls -la /var/lib/clamav/
-```
-
+<!-- spell-checker: disable -->
 ```console
+$ ls -la /var/lib/clamav/
+
 total 170448
 drwxr-xr-x.  2 clamupdate clamupdate      4096 Jan  7 22:52 .
 drwxr-xr-x. 63 root       root            4096 Jan  7 22:09 ..
@@ -255,15 +248,9 @@ drwxr-xr-x. 63 root       root            4096 Jan  7 22:09 ..
 -rw-r--r--.  1 clamupdate clamupdate  56363436 Jan  7 22:52 daily.cvd
 -rw-r--r--.  1 clamupdate clamupdate 117859675 Jan  7 22:52 main.cvd
 -rw-------.  1 clamupdate clamupdate        64 Jan  7 22:52 mirrors.dat
-```
-<!-- spell-checker: words drwxr -->
 
-```bash
-tail /var/log/freshclam.log
-```
+$ tail /var/log/freshclam.log
 
-<!-- spell-checker: disable -->
-```console
 Tue Jan  7 22:52:08 2020 -> Downloading main.cvd [100%]
 Tue Jan  7 22:52:14 2020 -> main.cvd updated (version: 59, sigs: 4564902, f-level: 60, builder: sigmgr)
 Can'query main.59.106.1.0.2606470000000000000000006810da54.ping.clamav.net
@@ -289,11 +276,9 @@ Tue Jan  7 22:52:32 2020 -> Database updated (6660758 signatures) from database.
 
 未設定状態で実行するとエラーになります。
 
-```bash
-clamdscan
-```
-
 ```console
+$ clamdscan
+
 ERROR: Please edit the example config file /etc/clamd.d/scan.conf
 ERROR: Can't parse clamd configuration file /etc/clamd.d/scan.conf
 ```
@@ -489,16 +474,13 @@ Creating new state
 
 SELinux の Boolean 値を確認します。
 
-```bash
-sudo getsebool -a | grep -E "(clam|virus)"
-```
-
-<!-- spell-checker: words getsebool -->
-
 ```console
+% sudo getsebool -a | grep -E "(clam|virus)"
+
 antivirus_can_scan_system --> on
 antivirus_use_jit --> on
 ```
+<!-- spell-checker: words getsebool -->
 
 `on` になっていない場合は永続設定を有効化します。
 
@@ -552,11 +534,9 @@ sudo setsebool -P antivirus_can_scan_system on
 
 一般ユーザーで `clamdscan` を実行した際に権限エラーとなる場合、ソケットファイル `/run/clamd.scan/clamd.sock` へのアクセス権を与えるため `virusgroup` ユーザーグループに追加します。
 
-```bash
-clamdscan
-```
-
 ```console
+$ clamdscan
+
 ERROR: Could not connect to clamd on LocalSocket /run/clamd.scan/clamd.sock: Permission denied
 ```
 
@@ -572,12 +552,10 @@ sudo usermod -aG virusgroup $USER
 
 カレントディレクトリをスキャンします。
 
-```bash
-clamdscan
-```
-
 ```console
-home/akira/: OK
+$ clamdscan
+
+home/user/: OK
 
 ----------- SCAN SUMMARY -----------
 Infected files: 0
@@ -618,7 +596,7 @@ EICAR が提供している無害なテスト用サンプルウイルスを取�
 
 サンプルウイルスの取得とスキャン・削除の実行：
 
-```bash
+```console
 # サンプルウイルス（無害）を取得
 $ wget http://www.eicar.org/download/eicar.com \
        http://www.eicar.org/download/eicar.com.txt \
@@ -627,14 +605,15 @@ $ wget http://www.eicar.org/download/eicar.com \
 
 # サンプルウイルスをスキャンして自動駆除（削除）
 $ clamdscan --remove
-/home/akira/working/eicar.com: Eicar-Test-Signature FOUND
-/home/akira/working/eicar.com: Removed.
-/home/akira/working/eicar.com.txt: Eicar-Test-Signature FOUND
-/home/akira/working/eicar.com.txt: Removed.
-/home/akira/working/eicar_com.zip: Eicar-Test-Signature FOUND
-/home/akira/working/eicar_com.zip: Removed.
-/home/akira/working/eicarcom2.zip: Eicar-Test-Signature FOUND
-/home/akira/working/eicarcom2.zip: Removed.
+
+/home/user/working/eicar.com: Eicar-Test-Signature FOUND
+/home/user/working/eicar.com: Removed.
+/home/user/working/eicar.com.txt: Eicar-Test-Signature FOUND
+/home/user/working/eicar.com.txt: Removed.
+/home/user/working/eicar_com.zip: Eicar-Test-Signature FOUND
+/home/user/working/eicar_com.zip: Removed.
+/home/user/working/eicarcom2.zip: Eicar-Test-Signature FOUND
+/home/user/working/eicarcom2.zip: Removed.
 
 ----------- SCAN SUMMARY -----------
 Infected files: 4 (ウイルスが発見され駆除された）
@@ -651,7 +630,7 @@ Time: 16.540 sec (0 m 16 s)
 
 ホームディレクトリ配下を再帰的にスキャンします。
 
-```bash
+```console
 $ clamscan -i -r ~
 
 ----------- SCAN SUMMARY -----------

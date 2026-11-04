@@ -42,11 +42,9 @@ Node 2 (Port: 11212):
 docker run --rm --name my-memcache2 -d -p 11212:11211 memcached:1.6-alpine memcached
 ```
 
-```bash
-docker ps
-```
-
 ```console
+$ docker ps
+
 CONTAINER ID   IMAGE                  COMMAND                  CREATED          STATUS          PORTS                                             NAMES
 8cc9787ebc4d   memcached:1.6-alpine   "docker-entrypoint.s…"   6 seconds ago    Up 5 seconds    0.0.0.0:11212->11211/tcp, [::]:11212->11211/tcp   my-memcache2
 003f8500ddce   memcached:1.6-alpine   "docker-entrypoint.s…"   28 seconds ago   Up 27 seconds   0.0.0.0:11211->11211/tcp, [::]:11211->11211/tcp   my-memcache1
@@ -102,11 +100,9 @@ print("key05.value :", client.get("key05"))
 
 作成した `registered-multiple.py` を実行して、データが正しく分散されていることを確認します。
 
-```bash
-python registered-multiple.py
-```
-
 ```console
+$ python registered-multiple.py
+
 key01.value : value01
 key02.value : value02
 key03.value : value03
@@ -120,16 +116,13 @@ Telnetで各ノードに接続し、キーが分散して格納されている�
 
 Node 1 (11211) の内容確認:
 
-```bash
-telnet 127.0.0.1 11211
-```
-
-```text
-stats cachedump 1 100
-```
 <!-- spell-checker: words cachedump -->
 
 ```console
+$ telnet 127.0.0.1 11211
+
+stats cachedump 1 100
+
 ITEM key04 [7 b; 0 s]
 ITEM key03 [7 b; 0 s]
 ITEM key01 [7 b; 0 s]
@@ -138,16 +131,11 @@ END
 
 Node 2 (11212) の内容確認:
 
-```bash
-telnet 127.0.0.1 11212
-```
-
-```text
-stats cachedump 1 100
-```
-<!-- spell-checker: words cachedump -->
-
 ```console
+$ telnet 127.0.0.1 11212
+
+stats cachedump 1 100
+
 ITEM key05 [7 b; 0 s]
 ITEM key02 [7 b; 0 s]
 END
@@ -163,11 +151,9 @@ Dockerの仮想インターフェースを無効化し、 Node 2 への接続を
 
 使用している Docker ネットワークを確認します。
 
-```bash
-docker inspect --format '{{json .NetworkSettings.Networks}}' my-memcache2
-```
-
 ```console
+$ docker inspect --format '{{json .NetworkSettings.Networks}}' my-memcache2
+
 {"bridge":{"IPAMConfig":... }}
 ```
 
@@ -179,11 +165,9 @@ docker network disconnect bridge my-memcache2
 
 繋がらないことを確認します。
 
-```bash
-telnet 127.0.0.1 11212
-```
-
 ```console
+$ telnet 127.0.0.1 11212
+
 Trying 127.0.0.1...
 telnet: Unable to connect to remote host: Connection refused
 ```
@@ -218,12 +202,9 @@ python update-data.py
 
 Node 1 (11211) のステータス確認:
 
-```text
-stats cachedump 1 100
-```
-<!-- spell-checker: words cachedump -->
-
 ```console
+stats cachedump 1 100
+
 ITEM key05 [9 b; 0 s]
 ITEM key04 [9 b; 0 s]
 ITEM key03 [9 b; 0 s]
@@ -232,12 +213,9 @@ ITEM key01 [9 b; 0 s]
 END
 ```
 
-```text
-lru_crawler metadump all
-```
-<!-- spell-checker: words metadump -->
-
 ```console
+$ lru_crawler metadump all
+
 OK
 key=key01 exp=-1 la=1793668833 cas=5 fetch=no cls=1 size=77 flags=16 
 key=key02 exp=-1 la=1793668833 cas=6 fetch=no cls=1 size=77 flags=16 
@@ -246,6 +224,7 @@ key=key04 exp=-1 la=1793668833 cas=8 fetch=no cls=1 size=77 flags=16
 key=key05 exp=-1 la=1793668833 cas=9 fetch=no cls=1 size=77 flags=16 
 END
 ```
+<!-- spell-checker: words metadump -->
 
 > Node 2 に元々格納されていたキーの一部（例: `key05`）が Node 1 側に書き込まれていることがわかります。
 
@@ -275,11 +254,9 @@ print("key05.value :", client.get("key05"))
 
 作成したスクリプトを実行します。
 
-```bash
-python update-data.py
-```
-
 ```console
+$ python update-data.py
+
 key01.value : updated01
 key02.value : value02
 key03.value : updated03

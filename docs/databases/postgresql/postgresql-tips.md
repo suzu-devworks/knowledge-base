@@ -33,8 +33,11 @@
 
 ### Connecting to PostgreSQL
 
-```bash
+```text
 # psql -h ホスト名 -p ポート番号 -U ロール名 -d データベース名
+```
+
+```bash
 psql -U postgres
 ```
 

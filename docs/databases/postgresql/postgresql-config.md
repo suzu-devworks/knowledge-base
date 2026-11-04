@@ -50,12 +50,9 @@ docker run --name some-postgres \
 
 ### Connect to postgres from psql
 
-```bash
-# psql -h ホスト名 -p ポート番号 -U ロール名 -d データベース名
-docker exec -it some-postgres psql -U postgres
-```
-
 ```console
+$ docker exec -it some-postgres psql -U postgres
+
 psql (12.4)
 Type "help" for help.
 ```

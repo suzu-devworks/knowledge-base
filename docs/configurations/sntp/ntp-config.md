@@ -315,11 +315,9 @@ sudo hwclock --systohc
 
 内部ネットワークから、構築した NTPD サーバーに対して時刻同期を要求した際に以下のエラーが発生しました。
 
-```bash
-sudo ntpdate -d <localTimeServer>
-```
-
 ```console
+$ sudo ntpdate -d <localTimeServer>
+
 transmit(xxx.xxx.xxx.xxx)
 ...
 xxx.xxx.xxx.xxx: Server dropped: no data

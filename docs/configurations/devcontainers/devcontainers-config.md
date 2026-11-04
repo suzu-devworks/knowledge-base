@@ -14,11 +14,9 @@
 macOS では TCP port=5000 は Sequoia 15.1.1 で使用されているようです。
 他を当たりましょう。
 
-```shell
-lsof -i:5000
-```
-
 ```console
+% lsof -i:5000
+
 COMMAND   PID  USER   FD   TYPE             DEVICE SIZE/OFF NODE NAME
 ControlCe 591 akira   10u  IPv4 0xdf59e5f5ee938f1d      0t0  TCP *:complex-main (LISTEN)
 ControlCe 591 akira   11u  IPv6 0x86f831f7b79a8621      0t0  TCP *:complex-main (LISTEN)
@@ -26,21 +24,17 @@ ControlCe 591 akira   11u  IPv6 0x86f831f7b79a8621      0t0  TCP *:complex-main 
 
 ### Empty reply from server before connecting to nginx
 
-```shell
-curl http://localhost:80
-```
-
 ```console
+% curl http://localhost:80
+
 curl: (52) Empty reply from server
 ```
 
 SSLでは別のエラーになる
 
-```shell
-curl https://localhost:443 
-```
-
 ```console
+% curl https://localhost:443 
+
 curl: (35) Recv failure: Connection reset by peer
 ```
 
@@ -56,12 +50,9 @@ ESET Cyber security を使用している場合ファイアーウォールに阻
 
 ### Empty reply from server before connecting to Flask (app server?)
 
-```shell
-curl -v http://localhost:5001
-```
-
 ```console
- ...
+# curl -v http://localhost:5001
+
 * Trying [::1]:5001...
 * connect to ::1 port 5001 from ::1 port 54675 failed: Connection refused
 * Trying 127.0.0.1:5001...
