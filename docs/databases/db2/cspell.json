@@ -4,10 +4,23 @@
   "dictionaryDefinitions": [],
   "dictionaries": [],
   "words": [
+    "COLNAME",
+    "DBNAME",
+    "HADR",
+    "LINUXX",
+    "OWNERTYPE",
+    "REPODB",
+    "SAMPLEDB",
+    "SYSCAT",
     "SYSCOLUMNS",
+    "SYSDUMMY",
     "SYSIBM",
+    "SYSIBMADM",
     "SYSTABLES",
-    "SYSVIEWS"
+    "SYSVIEWS",
+    "TABNAME",
+    "TABSCHEMA",
+    "testdb"
   ],
   "ignoreWords": [],
   "import": [
