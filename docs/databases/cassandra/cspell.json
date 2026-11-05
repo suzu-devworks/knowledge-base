@@ -14,6 +14,7 @@
     "Kindrat",
     "lastname",
     "memtable",
+    "mountpoint",
     "NEWSIZE",
     "nodetool",
     "permissons",
