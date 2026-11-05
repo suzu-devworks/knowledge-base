@@ -1,4 +1,4 @@
-# Bash
+# Bash Examples
 
 ## Table of Contents <!-- omit in toc -->
 
