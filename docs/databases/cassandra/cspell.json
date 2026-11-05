@@ -1,0 +1,33 @@
+{
+  "version": "0.2",
+  "ignorePaths": [],
+  "dictionaryDefinitions": [],
+  "dictionaries": [],
+  "words": [
+    "brctl",
+    "cqlsh",
+    "cqlshrc",
+    "Djdk",
+    "gradlew",
+    "kdcro",
+    "KEYSPACE",
+    "Kindrat",
+    "lastname",
+    "memtable",
+    "NEWSIZE",
+    "nodetool",
+    "permissons",
+    "PIDS",
+    "SIGSEGV",
+    "smallint",
+    "SPOF",
+    "timeuuid",
+    "tinyint",
+    "varchar",
+    "varint"
+  ],
+  "ignoreWords": [],
+  "import": [
+    "../../../.vscode/cspell.json"
+  ]
+}
