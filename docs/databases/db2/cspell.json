@@ -4,9 +4,13 @@
   "dictionaryDefinitions": [],
   "dictionaries": [],
   "words": [
+    "CCSID",
+    "CLDRCOLL",
+    "CODESET",
     "COLNAME",
     "DBNAME",
     "HADR",
+    "KUNIHAN",
     "LINUXX",
     "OWNERTYPE",
     "REPODB",

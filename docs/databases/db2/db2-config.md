@@ -9,6 +9,11 @@
   - [Environment Variables Configuration](#environment-variables-configuration)
   - [Start the Docker Container](#start-the-docker-container)
   - [Connection Verification](#connection-verification)
+- [Localizations](#localizations)
+  - [Checking the character encoding and collation of the current database](#checking-the-character-encoding-and-collation-of-the-current-database)
+  - [Create a Database with Shift\_JIS Encoding Japanese Territory](#create-a-database-with-shift_jis-encoding-japanese-territory)
+  - [Collation](#collation)
+  - [Time Zone](#time-zone)
 - [References](#references)
 
 ## Overview
@@ -155,6 +160,83 @@ To list the current command option settings, type LIST COMMAND OPTIONS.
 For more detailed help, refer to the Online Reference Manual.
 
 db2 => 
+```
+
+## Localizations
+
+初期データベースは UTF-8 US で作成されます。
+それで困ることも少なくなってきていますが、データベースの文字コードや照合順序が重要な場合は、データベースの再作成が必要になるので最初に検討する必要があります。
+
+- [Choosing the code page, territory, and collation for your database | Db2 for Linux, UNIX and Windows 12.1.x | IBM Documentation](https://www.ibm.com/docs/ja/db2/12.1.x?topic=support-choosing-code-page-territory-collation-your-database)
+
+### Checking the character encoding and collation of the current database
+
+現在の称号順の確認：
+
+```console
+db2inst1@db2server $ db2 get db cfg for testdb | grep -iE "code set|code page|territory|collating"
+
+ Database territory                                      = us
+ Database code page                                      = 1208
+ Database code set                                       = utf-8
+ Database collating sequence                             = IDENTITY
+ Alternate collating sequence              (ALT_COLLATE) = 
+```
+
+> コード・ページ 1208（CCSID 1208）は、IBM製品やDB2などにおいて UTF-8 を示す識別番号（CCSID: Coded Character Set Identifier）です。
+
+### Create a Database with Shift_JIS Encoding Japanese Territory
+
+```console
+db2inst1@db2server $ db2 "CREATE DATABASE testdb2 USING CODESET IBM-943 TERRITORY JP"
+
+DB20000I  The CREATE DATABASE command completed successfully.
+```
+
+> IBM-943 は、Shift_JIS を示す IBM のコードセットです。
+
+確認：
+
+```console
+[db2inst1@db2server ~]$ db2 get db cfg for testdb2 | grep -iE "code set|code page|territory|collating"
+ Database territory                                      = JP
+ Database code page                                      = 943
+ Database code set                                       = IBM-943
+ Database collating sequence                             = UNIQUE
+ Alternate collating sequence              (ALT_COLLATE) = 
+```
+
+### Collation
+
+DB2では、照合順序はデータベース作成時に指定して変更できません。
+初期データーベースでは、照合順序はデフォルトで IDENTITY (バイナリ照合) となります。
+
+Unicode称号順とそのほかのコードページだと照合順序の扱いが異なることがあるようです。
+
+- [Collating sequences | Db2 for Linux, UNIX and Windows 12.1.x | IBM Documentation](https://www.ibm.com/docs/ja/db2/12.1.x?topic=collation-collating-sequences )
+
+Shift_JIS の場合、照合順序は SYSTEM　または IDENTITY が指定することができ、デフォルトでは SYSTEM（UNIQUE） が使用されます。
+
+UTF-8 の場合、デフォルト照合順序は IDENTITY が使用されます。
+
+日本語関連でいくと次のような照合順を指定できます
+
+- CLDRCOLL_LJA (Japanese: CLDRCOLL_LJA_AN_CX_EX_FX_HX_NX_S3)
+- CLDRCOLL_LJA_KUNIHAN (Japanese: CLDRCOLL_LJA_KUNIHAN_AN_CX_EX_FX_HX_NX_S3)
+
+詳細は次を参照してください。
+
+- [Unicode Collation Algorithm-based collations | Db2 for Linux, UNIX and Windows 12.1.x | IBM Documentation](https://www.ibm.com/docs/ja/db2/12.1.x?topic=collation-unicode-algorithm-based-collations)
+
+### Time Zone
+
+DB2ではタイムゾーンは実行しているサーバーのローカルタイムゾーンが使用されます。
+そのためタイムゾーン設定はDB2ではなく、サーバー側で行う必要があります。
+
+たとえば docker の場合には環境変数で指定します。
+
+```bash
+docker run -e TZ=Asia/Tokyo ...
 ```
 
 ## References
