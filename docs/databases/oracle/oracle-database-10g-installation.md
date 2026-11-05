@@ -1,4 +1,4 @@
-# Oracle Database 10.1 Installation
+# Oracle Database 10g Installation
 
 ## Table of Contents <!-- omit in toc -->
 
