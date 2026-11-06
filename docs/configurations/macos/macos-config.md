@@ -3,14 +3,17 @@
 ## Table of Contents <!-- omit in toc -->
 
 - [Overview](#overview)
+- [Environment](#environment)
 - [Basic settings](#basic-settings)
   - [Computer name](#computer-name)
+  - [User Display Name](#user-display-name)
   - [Dock](#dock)
   - [Keyboard](#keyboard)
   - [Mouse](#mouse)
   - [Lock screen](#lock-screen)
   - [Finder display order and arrangement](#finder-display-order-and-arrangement)
-- [application install](#application-install)
+- [Application Configuration](#application-configuration)
+  - [Safari Development menu](#safari-development-menu)
   - [Google Chrome](#google-chrome)
   - [ESET Cyber Security Pro](#eset-cyber-security-pro)
   - [Canon Utility](#canon-utility)
@@ -22,10 +25,19 @@
   - [Command Line Tools (CLT) for Xcode](#command-line-tools-clt-for-xcode)
   - [Homebrew](#homebrew)
   - [Git for macOS](#git-for-macos)
+- [Tips](#tips)
+  - [Do not create a ".DS\_Store" file in a network folder](#do-not-create-a-ds_store-file-in-a-network-folder)
 
 ## Overview
 
 Configuration macOS Ventura (13.1) for Apple silicon
+
+## Environment
+
+- 2015-09-30: macOS El Capitan 10.11
+- 2020-01-25: macOS Catalina 10.15.2
+- 2023-06-01: macOS Ventura 13.1
+- 2026-11-06: macOS Tahoe 26.6.2
 
 ## Basic settings
 
@@ -33,14 +45,19 @@ Configuration macOS Ventura (13.1) for Apple silicon
 
 インストールプロセスにコンピュータ名の変更がないので真っ先に変更する
 
-- システム環境設定 > 一般 > 情報 > コンピューター名
-- システム環境設定 > 一般 > 共有 > ローカルホスト名
+- 🍎 > システム設定 > 一般 > 共有 > ローカルホスト名[編集]
+
+### User Display Name
+
+- 🍎 > システム設定 > ユーザとグループ
+  - ユーザーの一覧で、`control` を押しながら変更するユーザーを選択して表示する「詳細オプション」を押す
+  - フルネームを変更すると表示名が変わります
 
 ### Dock
 
 大きすぎるので小さくする
 
-- システム環境設定 > デスクトップと Dock > Dock サイズ
+- 🍎 > システム設定 > デスクトップと Dock > Dock サイズ
 
 ### Keyboard
 
@@ -60,12 +77,12 @@ defaults write -g ApplePressAndHoldEnabled -bool false
 
 気持ち悪いのでOFF
 
-- システム環境設定 > マウス > ナチュラルスクロール
+- 🍎 > システム設定 > マウス > ナチュラルスクロール
 
 ### Lock screen
 
-- システム環境設定 > ロック画面
-  - 使用していない場合にはスクリーンセーバを開始： 3分後
+- 🍎 > システム設定 > ロック画面
+  - 使用していない場合にはスクリーンセーバを開始： 5分後
   - バッテリー駆動時に使用していない場合はディスプレイをオフ： 5分後
   - 電源アダプター接続時に使用していない場合はディスプレイをオフ： 5分後
   - スクリーンセイバー開始後またはディスプレイがオフになったあとにパスワードを要求: 5秒後
@@ -76,7 +93,12 @@ defaults write -g ApplePressAndHoldEnabled -bool false
   - グループ分け： 種類
   - 表示順序：　名前
 
-## application install
+## Application Configuration
+
+### Safari Development menu
+
+- Safari > 設定 > 詳細
+  - 「Webデベロッパーメニューバ用のメニューを表示」をON
 
 ### Google Chrome
 
@@ -153,4 +175,12 @@ eval "$(/opt/homebrew/bin/brew shellenv)"
 
 ```shell
 brew install git
+```
+
+## Tips
+
+### Do not create a ".DS_Store" file in a network folder
+
+```zsh
+ defaults write com.apple.desktopservices DSDontWriteNetworkStores true
 ```

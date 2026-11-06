@@ -4,8 +4,14 @@
   "dictionaryDefinitions": [],
   "dictionaries": [],
   "words": [
+    "codesign",
+    "desktopservices",
+    "Dont",
     "MANPATH",
-    "shellenv"
+    "safarai",
+    "shellenv",
+    "taskgated",
+    "xquartz"
   ],
   "ignoreWords": [],
   "import": [
