@@ -3,7 +3,7 @@
 ## Table of Contents <!-- omit in toc -->
 
 - [Overview](#overview)
-- [Environment](#environment)
+- [Environments](#environments)
 - [Basic settings](#basic-settings)
   - [Computer name](#computer-name)
   - [User Display Name](#user-display-name)
@@ -32,7 +32,7 @@
 
 Configuration macOS Ventura (13.1) for Apple silicon
 
-## Environment
+## Environments
 
 - 2015-09-30: macOS El Capitan 10.11
 - 2020-01-25: macOS Catalina 10.15.2
