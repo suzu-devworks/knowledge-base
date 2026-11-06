@@ -22,8 +22,10 @@
     "SIGSEGV",
     "smallint",
     "SPOF",
+    "STCS",
     "timeuuid",
     "tinyint",
+    "TWCS",
     "varchar",
     "varint"
   ],

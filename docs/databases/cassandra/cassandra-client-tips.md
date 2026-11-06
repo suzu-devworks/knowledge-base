@@ -2,6 +2,12 @@
 
 ## Table of Contents <!-- omit in toc -->
 
+- [Overview](#overview)
+- [Environments](#environments)
+- [Getting Started](#getting-started)
+  - [\[SOLVED\] cgroup mount　point does not exist](#solved-cgroup-mountpoint-does-not-exist)
+  - [\[SOLVED\] assertion 'GDK\_IS\_X11\_DISPLAY (display)' failed](#solved-assertion-gdk_is_x11_display-display-failed)
+
 ## Overview
 
 Cassandra 3 用の Java 製 GUI クライアント。
